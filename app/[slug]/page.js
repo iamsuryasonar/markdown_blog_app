@@ -26,7 +26,7 @@ async function PostPage(props) {
 
     return (
         <div className='flex flex-col'>
-            <h1 className={`${roboto.className} px-4 py-2 self-start text-3xl font-bold capitalize`}>{postMetaData.title}</h1>
+            <h1 className={`${roboto.className} text-[#00FFCA] px-4 py-2 self-start text-3xl font-bold capitalize`}>{postMetaData.title}</h1>
             <span className='px-4 flex gap-1'>
                 <p className='text-sm font-thin'>{postMetaData.read.readingTime} min read</p>
                 <p className='text-sm font-thin'>•</p>

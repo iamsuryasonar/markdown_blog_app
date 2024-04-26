@@ -1,7 +1,7 @@
 ---
 title: Async and await
 slug: asyncawait
-date: 26-04-2024
+date: '2024-02-03'
 description: All about async and await
 ---
 ### Contents

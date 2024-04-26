@@ -1,7 +1,8 @@
 ---
 title: Javascript
 slug: javascript
-date: 26-04-2024
+date: '2024-01-10'
+description: Javascript notes
 ---
 
 ### Contents

@@ -1,7 +1,8 @@
 ---
 title: Promises in Javascript
 slug: promises
-date: 26-04-2024
+date: '2024-03-02'
+description: Promises in javascript 
 ---
 
 ### Contents

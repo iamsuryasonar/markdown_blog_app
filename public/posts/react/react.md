@@ -1,7 +1,8 @@
 ---
 title: React
 slug: react
-date: 26-04-2024
+date: '2024-02-16'
+description: React notes
 ---
 ### Contents
 - [HTML and CSS](#html-and-css)

@@ -1,7 +1,8 @@
 ---
 title: Object in Javascript
 slug: object
-date: 26-04-2024
+date: '2024-04-26'
+description: Objects in javascript
 ---
 ### Contents
 - [Object in javascript](#object-in-javascript)
