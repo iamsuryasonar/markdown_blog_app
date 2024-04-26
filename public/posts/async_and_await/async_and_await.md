@@ -1,3 +1,9 @@
+---
+title: Async and await
+slug: asyncawait
+date: 26-04-2024
+---
+### Contents
 - [Async/Await](#asyncawait)
 - [The only difference is the execution context between promise and async/await.](#the-only-difference-is-the-execution-context-between-promise-and-asyncawait)
 

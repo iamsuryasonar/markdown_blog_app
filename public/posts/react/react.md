@@ -1,3 +1,9 @@
+---
+title: React
+slug: react
+date: 26-04-2024
+---
+### Contents
 - [HTML and CSS](#html-and-css)
 - [React terms and concepts](#react-terms-and-concepts)
 - [React practice problem](#react-practice-problem)
@@ -1770,7 +1776,7 @@ function Box(props) {
 
 Extra example
 
-```JavaScript
+```javascript
 import React, { useState } from 'react';
 
 // StateProvider functional component
@@ -2528,7 +2534,7 @@ const store = createStore(counterReducer);
 
 Redux data flow diagram
 
-![alt_text](images/reduxflow.gif "image_tooltip")
+![alt_text](./images/reduxflow.gif "image_tooltip")
 
 ### Q. Redux set up
 -> 
@@ -3465,5 +3471,5 @@ Focus on logical implementation with a working model first. This is what Intervi
 
 # Git
 
-![alt_text](images/gitcheatsheet.png "image_tooltip")
+![alt_text](./images/gitcheatsheet.png "image_tooltip")
 

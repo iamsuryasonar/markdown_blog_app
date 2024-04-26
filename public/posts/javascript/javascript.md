@@ -1,3 +1,10 @@
+---
+title: Javascript
+slug: javascript
+date: 26-04-2024
+---
+
+### Contents
 - [Javascript questions and answers](#javascript-questions-and-answers)
     - [Q. Execution of javascript](#q-execution-of-javascript)
     - [Q. What is webpack?](#q-what-is-webpack)
@@ -167,7 +174,7 @@ javascript object guess output problems:
 
 [https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA](https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA)
 
-# Javascript questions and answers
+## Javascript questions and answers
 
 ### Q. Execution of javascript
 [Resource](https://www.javascripttutorial.net/javascript-execution-context/)
@@ -1039,7 +1046,7 @@ Once a promise reaches either a fulfilled or rejected state, it stays in that st
 In other words, a promise cannot go from the fulfilled state to the rejected state and vice versa. Also, it cannot go back from the fulfilled or rejected state to the pending state.
 Once a new Promise object is created, its state is pending. If a promise reaches a fulfilled or rejected state, it is resolved.
 
-![alt_text](images/promise.png "image_tooltip")
+![alt_text](./images/promise.png "image_tooltip")
 
 ### Q. Implement promise.all?
 
@@ -3970,7 +3977,7 @@ JavaScript knows what the primitive value of my number-like object is because it
 # Bonus
 
 OOPS, DBMS, SQL query, operating system, system security, data structures like trees, LinkedList, etc.
-# [React important Topics](React.md)
+# [React important Topics](React)
 
-# [Blind 75 DSA sheet](dsasheet.md)
+# [Blind 75 DSA sheet](dsasheet)
 

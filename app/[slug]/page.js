@@ -15,9 +15,10 @@ async function PostPage(props) {
     const htmlContent = await markdownToHtml(content)
 
     return (
-        <div className=''>
-            <p>{slug}</p>
-            <div className="markdown m-8">
+        <div className='flex flex-col'>
+            <h1 className='p-4 self-center text-3xl font-bold capitalize'>{slug.replace(/[_ -]/g, ' ')}</h1>
+            <div className='w-full h-[1px] bg-slate-800'></div>
+            <div className="markdown m-6">
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
             </div>
         </div>

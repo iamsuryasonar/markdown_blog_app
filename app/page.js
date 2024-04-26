@@ -6,10 +6,11 @@ export default function Home() {
 
   return (
     <section className='flex flex-col'>
-      <h1 className='p-2 self-center text-3xl font-bold'>Blog</h1>
-      <ul className='flex flex-col gap-4'>
+      <h1 className='p-4 self-center text-3xl font-bold'>Blog</h1>
+      <div className='w-full h-[1px] bg-slate-800'></div>
+      <ul className='flex flex-col gap-2 '>
         {allPostsData.map(({ id, date, title, ...rest }) => (
-          <PostCard id={id} date={date} title={title} />
+          <PostCard key={id} id={id} date={date} title={title} />
         ))}
       </ul>
     </section>
@@ -19,10 +20,9 @@ export default function Home() {
 function PostCard({ id, date, title }) {
   return (
     <Link key={id} href={`/${id}`}>
-      <li className='bg-slate-900 p-2 rounded-md'>
-        <p>{title}</p>
-        <p>{id}</p>
-        <p>{date}</p>
+      <li className='bg-slate-900 p-4 m-4 rounded-md border-[1px] border-slate-800'>
+        <p className='text-2xl'>{title}</p>
+        <p className='text-sm font-thin'>{date}</p>
       </li>
     </Link>
   )

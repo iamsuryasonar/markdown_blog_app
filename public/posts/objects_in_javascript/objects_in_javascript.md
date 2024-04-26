@@ -1,3 +1,9 @@
+---
+title: Object in Javascript
+slug: object
+date: 26-04-2024
+---
+### Contents
 - [Object in javascript](#object-in-javascript)
       - [Object.defineProperty()](#objectdefineproperty)
       - [delete](#delete)

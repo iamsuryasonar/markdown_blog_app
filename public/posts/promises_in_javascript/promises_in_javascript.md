@@ -1,3 +1,9 @@
+---
+title: Promises in Javascript
+slug: promises
+date: 26-04-2024
+---
+
 ### Contents
 - [Promises](#promises)
   - [.then()](#then)
@@ -536,4 +542,4 @@ and mean while rest of the codes are executed synchronously.
 
 # Async/Await
 
-[click here...](./async_await)
+[click here...](./async_and_await)
