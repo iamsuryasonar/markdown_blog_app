@@ -2,6 +2,7 @@
 title: Async and await
 slug: asyncawait
 date: 26-04-2024
+description: All about async and await
 ---
 ### Contents
 - [Async/Await](#asyncawait)
