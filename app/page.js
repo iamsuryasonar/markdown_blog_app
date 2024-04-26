@@ -15,9 +15,9 @@ export default function Home() {
 
   return (
     <section className='flex flex-col'>
-      <div className='flex justify-between items-center'>
-        <h1 className={`${roboto.className}  p-4 self-center text-4xl font-[900]`}>Web Snippets</h1>
-        <a href='https://iamsuryasonar.netlify.app' target='_blank'>
+      <div className='p-6 flex justify-between items-center'>
+        <h1 className={`${roboto.className} text-4xl font-[900]`}>Web Snippets</h1>
+        <a className='hover:border-[#00FFCA] border-[2px] border-transparent rounded-full p-[2px]' href='https://iamsuryasonar.netlify.app' target='_blank'>
           <img className='w-10 h-10 rounded-full' src='https://iamsuryasonar.netlify.app/assets/dp-bIzYPUqU.jpg'></img>
         </a>
       </div>
