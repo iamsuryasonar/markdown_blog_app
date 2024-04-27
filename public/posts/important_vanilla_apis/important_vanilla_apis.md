@@ -1,8 +1,8 @@
 ---
-title: Important vanilla functions
-slug: important_vanilla_functions
+title: Important vanilla apis
+slug: important_vanilla_apis
 date: '2024-04-27'
-description: Important vanilla functions that a web developer should know
+description: Important vanilla apis that a web developer should know
 categories:
   - Tech
   - Programming
