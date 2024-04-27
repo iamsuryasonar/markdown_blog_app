@@ -31,7 +31,7 @@ function SideBar({ tocHtml }) {
     }
 
     if (menu) {
-        return <aside ref={ref} className='h-full overscroll-contain overflow-y-auto flex flex-col fixed top-0 left-0 bottom-0 max-w-[600px] min-w-[30%] bg-slate-900 p-4'>
+        return <aside ref={ref} className='h-full overscroll-contain overflow-y-auto flex flex-col fixed top-0 left-0 bottom-0 w-full md:max-w-[30%] md:w-min-[600px] bg-slate-900 p-4'>
             <div className='flex flex-row justify-between items-center p-2'>
                 <Link className={`${roboto.className} font-[700] text-2xl`} href='/'> Home </Link>
                 <button
