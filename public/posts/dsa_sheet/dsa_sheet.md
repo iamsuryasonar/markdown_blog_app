@@ -3,20 +3,23 @@ title: DSA Sheet
 slug: dsasheet
 date: '2024-04-07'
 description: DSA questions with topics
----
-### Contents
+categories:
+  - Tech
+  - Programming
+toc: |
+    - [Array](#array)
+    - [Binary](#binary)
+    - [Dynamic Programming](#dynamic-programming)
+    - [Graph](#graph)
+    - [Interval](#interval)
+    - [Linked List](#linked-list)
+    - [Matrix](#matrix)
+    - [String](#string)
+    - [Tree](#tree)
+    - [Heap](#heap)
+    - [Resources](#resources)
 
-- [Array](#array)
-- [Binary](#binary)
-- [Dynamic Programming](#dynamic-programming)
-- [Graph](#graph)
-- [Interval](#interval)
-- [Linked List](#linked-list)
-- [Matrix](#matrix)
-- [String](#string)
-- [Tree](#tree)
-- [Heap](#heap)
-- [Resources](#resources)
+---
 
 Blind 75 Sheet and its questions are below :
 

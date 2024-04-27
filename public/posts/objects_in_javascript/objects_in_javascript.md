@@ -3,35 +3,38 @@ title: Object in Javascript
 slug: object
 date: '2024-04-26'
 description: Objects in javascript
+categories:
+  - Tech
+  - Programming
+toc: |
+    - [Object in javascript](#object-in-javascript)
+          - [Object.defineProperty()](#objectdefineproperty)
+          - [delete](#delete)
+          - [instanceof](#instanceof)
+          - [hasOwnProperty](#hasownproperty)
+          - [valueOf](#valueof)
+          - [Object coercion](#object-coercion)
+          - [Places that use object coercion include:](#places-that-use-object-coercion-include)
+        - [Some static methods of Object class](#some-static-methods-of-object-class)
+          - [Object.assign()](#objectassign)
+          - [Object.entries()](#objectentries)
+          - [Object.freeze()](#objectfreeze)
+          - [Object.getOwnPropertyDescriptor()](#objectgetownpropertydescriptor)
+          - [Object.getPrototypeOf()](#objectgetprototypeof)
+          - [Object.hasOwn()](#objecthasown)
+          - [Object.is()](#objectis)
+          - [Object.keys()](#objectkeys)
+          - [Object.values()](#objectvalues)
+        - [Getters](#getters)
+        - [setters](#setters)
+        - [Constructor function:](#constructor-function)
+        - [Prototype](#prototype)
+          - [Shadowing properties](#shadowing-properties)
+          - [Setting a prototype](#setting-a-prototype)
+          - [Prototypes and inheritance](#prototypes-and-inheritance)
+
+
 ---
-### Contents
-- [Object in javascript](#object-in-javascript)
-      - [Object.defineProperty()](#objectdefineproperty)
-      - [delete](#delete)
-      - [instanceof](#instanceof)
-      - [hasOwnProperty](#hasownproperty)
-      - [valueOf](#valueof)
-      - [Object coercion](#object-coercion)
-      - [Places that use object coercion include:](#places-that-use-object-coercion-include)
-    - [Some static methods of Object class](#some-static-methods-of-object-class)
-      - [Object.assign()](#objectassign)
-      - [Object.entries()](#objectentries)
-      - [Object.freeze()](#objectfreeze)
-      - [Object.getOwnPropertyDescriptor()](#objectgetownpropertydescriptor)
-      - [Object.getPrototypeOf()](#objectgetprototypeof)
-      - [Object.hasOwn()](#objecthasown)
-      - [Object.is()](#objectis)
-      - [Object.keys()](#objectkeys)
-      - [Object.values()](#objectvalues)
-    - [Getters](#getters)
-    - [setters](#setters)
-    - [Constructor function:](#constructor-function)
-    - [Prototype](#prototype)
-      - [Shadowing properties](#shadowing-properties)
-      - [Setting a prototype](#setting-a-prototype)
-      - [Prototypes and inheritance](#prototypes-and-inheritance)
-
-
 
 
 # Object in javascript

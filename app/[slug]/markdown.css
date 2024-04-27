@@ -143,3 +143,22 @@
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.144);
 }
+
+.sidebar {
+    padding: 30px 4px;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar li {
+    padding: 8px 0px;
+    color: #00FFCA;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sidebar li:hover {
+    color: white;
+}

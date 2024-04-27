@@ -3,11 +3,13 @@ title: Async and await
 slug: asyncawait
 date: '2024-02-03'
 description: All about async and await
+categories:
+  - Tech
+  - Programming
+toc: |
+    - [Async/Await](#asyncawait)
+    - [The only difference is the execution context between promise and async/await.](#the-only-difference-is-the-execution-context-between-promise-and-asyncawait)
 ---
-### Contents
-- [Async/Await](#asyncawait)
-- [The only difference is the execution context between promise and async/await.](#the-only-difference-is-the-execution-context-between-promise-and-asyncawait)
-
 # Async/Await
 
 - async and await are keywords in javascript,

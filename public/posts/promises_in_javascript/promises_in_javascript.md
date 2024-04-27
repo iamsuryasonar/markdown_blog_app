@@ -3,29 +3,31 @@ title: Promises in Javascript
 slug: promises
 date: '2024-03-02'
 description: Promises in javascript 
+categories:
+  - Tech
+  - Programming
+toc: |
+    - [Promises](#promises)
+    - [.then()](#then)
+    - [.catch()](#catch)
+    - [.finally()](#finally)
+    - [Promise.resolve()](#promiseresolve)
+    - [Promise.reject()](#promisereject)
+    - [Promise Concurrency](#promise-concurrency)
+        - [Promise.all()](#promiseall)
+        - [Promise.allSettled()](#promiseallsettled)
+        - [Promise.race()](#promiserace)
+        - [Promise.any()](#promiseany)
+    - [Syntax/Implementation](#syntaximplementation)
+        - [Promise syntax](#promise-syntax)
+        - [Promise.all](#promiseall-1)
+        - [Polyfill of Promise.all()](#polyfill-of-promiseall)
+    - [How Promise is executed -](#how-promise-is-executed--)
+    - [Here's a breakdown of the key points:](#heres-a-breakdown-of-the-key-points)
+    - [Async/Await](#asyncawait)
+
+
 ---
-
-### Contents
-- [Promises](#promises)
-  - [.then()](#then)
-  - [.catch()](#catch)
-  - [.finally()](#finally)
-  - [Promise.resolve()](#promiseresolve)
-  - [Promise.reject()](#promisereject)
-  - [Promise Concurrency](#promise-concurrency)
-    - [Promise.all()](#promiseall)
-    - [Promise.allSettled()](#promiseallsettled)
-    - [Promise.race()](#promiserace)
-    - [Promise.any()](#promiseany)
-  - [Syntax/Implementation](#syntaximplementation)
-    - [Promise syntax](#promise-syntax)
-    - [Promise.all](#promiseall-1)
-    - [Polyfill of Promise.all()](#polyfill-of-promiseall)
-- [How Promise is executed -](#how-promise-is-executed--)
-  - [Here's a breakdown of the key points:](#heres-a-breakdown-of-the-key-points)
-- [Async/Await](#asyncawait)
-
-
 
 
 # Promises
@@ -539,8 +541,3 @@ and mean while rest of the codes are executed synchronously.
 - Microtask Queue and Event Loop: When a Promise is resolved, the then() callback is added to the microtask queue. The event loop continuously checks the microtask queue for tasks to execute. When the call stack is empty, the event loop processes the microtask queue and executes the then() callback.
 
 - Synchronous Execution: While the then() callback is waiting in the microtask queue, the rest of the code continues to execute synchronously. This means that any code after the then() method is executed before the then() callback is executed.
-
-
-# Async/Await
-
-[click here...](./async_and_await)
