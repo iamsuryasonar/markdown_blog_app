@@ -1,8 +1,18 @@
 'use client'
+import Link from 'next/link';
 import { useState, useRef } from 'react'
 import { CgMenuMotion } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import useOutSideClick from '../hooks/useOnOutSideClick';
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+    weight: ['900', '700', '400', '300', '100'],
+    style: ['normal'],
+    subsets: ['latin'],
+    display: 'swap',
+    fontFamily: ["Roboto", 'sans-serif'],
+})
 
 function SideBar({ tocHtml }) {
     const [menu, setMenu] = useState(false);
@@ -21,12 +31,15 @@ function SideBar({ tocHtml }) {
     }
 
     if (menu) {
-        return <aside ref={ref} className='h-full overscroll-contain overflow-y-auto flex flex-col fixed top-0 left-0 bottom-0 max-w-[600px] bg-slate-900 p-4'>
-            <button
-                className='absolute top-5 right-5 text-[#00FFCA] hover:text-white rounded-full p-2 text-2xl'
-                onClick={() => { setMenu(!menu) }}>
-                <AiOutlineClose />
-            </button>
+        return <aside ref={ref} className='h-full overscroll-contain overflow-y-auto flex flex-col fixed top-0 left-0 bottom-0 max-w-[600px] min-w-[30%] bg-slate-900 p-4'>
+            <div className='flex flex-row justify-between items-center p-2'>
+                <Link className={`${roboto.className} font-[700] text-2xl`} href='/'> Home </Link>
+                <button
+                    className=' text-[#00FFCA] hover:text-white rounded-full text-2xl'
+                    onClick={() => { setMenu(!menu) }}>
+                    <AiOutlineClose />
+                </button>
+            </div>
             <div className='sidebar' onClick={onClickHandler} dangerouslySetInnerHTML={{ __html: tocHtml }} />
         </aside>
     } else {
