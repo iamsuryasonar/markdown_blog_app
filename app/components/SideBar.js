@@ -15,7 +15,7 @@ function SideBar({ tocHtml }) {
     useOutSideClick(ref, handleOutSideClick)
 
     function onClickHandler(e) {
-        if (e.target.tagName === 'LI' || e.target.tagName === 'A') {
+        if (e.target.tagName === 'A') {
             setMenu(!menu)
         }
     }
