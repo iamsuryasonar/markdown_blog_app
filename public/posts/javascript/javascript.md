@@ -43,7 +43,7 @@ toc: |
         - [Q. Higher order functions](#q-higher-order-functions)
         - [Q. Arguments array?](#q-arguments-array)
         - [Q. Arrow functions and its advantages?](#q-arrow-functions-and-its-advantages)
-        - [Q. Why is it said that the arrow function does not have its own this context?](#q-why-is-it-said-that-the-arrow-function-does-not-have-its-own-this-context)
+        - [Q. Why is it said that the arrow function does not have its own  context?](#q-why-is-it-said-that-the-arrow-function-does-not-have-its-own-this-context)
         - [Q. Difference between this context of arrow function and regular function?](#q-difference-between-this-context-of-arrow-function-and-regular-function)
         - [Q. Immediately invoked function?](#q-immediately-invoked-function)
         - [Q. Promises?](#q-promises)
@@ -1893,7 +1893,7 @@ console.log(person.getFullName());
 
 ### Q. This?
 
--> In JavaScript, this refers to the context within which a function is executed. The value of this is determined by how a function is invoked and can vary depending on the calling context. The behaviour of this can be influenced by the way a function is called: as a method, as a function, as a constructor, or using call or apply.
+-> In JavaScript,this refers to the object a function is attached to, in other words, this refers to the context within which a function is executed. The value of this is determined by how a function is invoked and can vary depending on the calling context. The behaviour of this can be influenced by the way a function is called: as a method, as a function, as a constructor, or using call or apply.
 
 The value of this is not static and can change dynamically based on the invocation context. Here are a few common scenarios for this in JavaScript:
 
