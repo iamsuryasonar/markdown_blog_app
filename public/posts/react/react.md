@@ -48,7 +48,7 @@ toc: |
         - [Q. Use of key in react](#q-use-of-key-in-react)
         - [Q. Does react re render child components when parent component re renders?](#q-does-react-re-render-child-components-when-parent-component-re-renders)
         - [Q. Pure components?](#q-pure-components)
-        - [Q. React memo(Component, arePropsEqual?)](#q-react-memocomponent-arepropsequal)
+        - [Q. React.memo(Component, arePropsEqual?)](#q-reactmemocomponent-arepropsequal)
         - [Q. Hooks?](#q-hooks)
           - [Q. useState()](#q-usestate)
           - [Q. useEffect()](#q-useeffect)
@@ -906,7 +906,7 @@ export default App;
 
 
 
-*Class Components:
+* Class Components:
 
 Class components are ES6 classes that extend from React.Component. They are the traditional way of creating components in React and have been widely used in the past. Class components have their own local state and lifecycle methods, such as componentDidMount and componentDidUpdate. They are suitable for complex components that require state management, lifecycle methods, and more advanced features.
 
@@ -1015,10 +1015,10 @@ class MyPureComponent extends React.PureComponent {
 
 In this example, MyPureComponent will only re-render when there are changes in its props or state. If the title and content props remain the same, the component will not re-render even if its parent component re-renders.
 
-In functional components, the concept of a pure component is not directly applicable, as functional components do not have built-in mechanisms for managing their own state changes. However, the concept of a pure component, which aims to minimise unnecessary re-renders, can still be applied to functional components using React.memo.
+In functional components, the concept of a pure component is not directly applicable. However, the concept of a pure component, which aims to minimise unnecessary re-renders, can still be applied to functional components using React.memo higher-order component.
 
 
-### Q. React memo(Component, arePropsEqual?) 
+### Q. React.memo(Component, arePropsEqual?) 
 
 -> Wrap a component in memo to get a memoized version of that component. This memoized version of your component will usually not be re-rendered when its parent component is re-rendered as long as its props have not changed. But React may still re-render it: memoization is a performance optimization, not a guarantee.
 
@@ -1064,7 +1064,7 @@ export default Greeting;
 
 A React component should always have pure rendering logic. This means that it must return the same output if its props, state, and context haven’t changed. By using memo, you are telling React that your component complies with this requirement, so React doesn’t need to re-render as long as its props haven’t changed. Even with memo, your component will re-render if its own state changes or if a context that it’s using changes.
 
-**Minimising props changes: **
+***Minimising props changes:***
 
 
 When you use memo, your component re-renders whenever any prop is not shallowly equal to what it was previously. This means that React compares every prop in your component with its previous value using the Object.is comparison. Note that Object.is(3, 3) is true, but Object.is({}, {}) is false.
