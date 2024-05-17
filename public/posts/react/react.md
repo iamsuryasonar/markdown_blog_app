@@ -9,116 +9,108 @@ categories:
   - React
   - Html/css/javascript
 toc: |
-    - [HTML and CSS](#html-and-css)
-    - [Q. Ways to center a div?](#q-ways-to-center-a-div)
-    - [Q. Media queries?](#q-media-queries)
-    - [Q. CSS Box model?](#q-css-box-model)
-    - [Q. Position?](#q-position)
-    - [Q. flexbox?](#q-flexbox)
-    - [Q. grid?](#q-grid)
-    - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
-- [HTML and CSS](#html-and-css)
-    - [Q. Ways to center a div?](#q-ways-to-center-a-div)
-    - [Q. Media queries?](#q-media-queries)
-    - [Q. CSS Box model?](#q-css-box-model)
-    - [Q. Position?](#q-position)
-    - [Q. flexbox?](#q-flexbox)
-    - [Q. grid?](#q-grid)
-    - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
-- [React  questions and answers](#react--questions-and-answers)
-    - [Q. SPA?](#q-spa)
-    - [Q. Bundler(webpack and parcel)](#q-bundlerwebpack-and-parcel)
-    - [Q.JSX?](#qjsx)
-    - [Q. Phases of react.](#q-phases-of-react)
-    - [Q. working of dom in react (reconciliation in react)](#q-working-of-dom-in-react-reconciliation-in-react)
-    - [Q. React fiber?](#q-react-fiber)
-    - [Q. ReactDOM.render()?](#q-reactdomrender)
-    - [Q. Components?](#q-components)
-    - [Q. Stateful and Stateless component?](#q-stateful-and-stateless-component)
-    - [Q. Controlled components?](#q-controlled-components)
-    - [Q. Uncontrolled Components?](#q-uncontrolled-components)
-    - [Q. What is equivalent of the following using React.createElement?](#q-what-is-equivalent-of-the-following-using-reactcreateelement)
-    - [Q. Synthetic Event?](#q-synthetic-event)
-    - [Q. props?](#q-props)
-    - [Q. What is the difference between state and props?](#q-what-is-the-difference-between-state-and-props)
-    - [Q. Reactive values?](#q-reactive-values)
-    - [Q. Reactivity in React?](#q-reactivity-in-react)
-    - [Q. Props drilling?](#q-props-drilling)
-    - [Q. Fragment?](#q-fragment)
-    - [Q. Component lifecycle?](#q-component-lifecycle)
-    - [Q. Phases of a React component's lifecycle](#q-phases-of-a-react-components-lifecycle)
-    - [Q. Difference between Mounting and rendering?](#q-difference-between-mounting-and-rendering)
-    - [Q. Elements vs component?](#q-elements-vs-component)
-    - [Q. Contextual rendering](#q-contextual-rendering)
-    - [Q. Class component vs functional component?](#q-class-component-vs-functional-component)
-    - [Q. How do we send data from child to parent in react js](#q-how-do-we-send-data-from-child-to-parent-in-react-js)
-    - [Q. Use of key in react](#q-use-of-key-in-react)
-    - [Q. Does react re render child components when parent component re renders?](#q-does-react-re-render-child-components-when-parent-component-re-renders)
-    - [Q. Pure components?](#q-pure-components)
-    - [Q. React.memo(Component, arePropsEqual?)](#q-reactmemocomponent-arepropsequal)
-    - [Q. Hooks?](#q-hooks)
-      - [Q. useState()](#q-usestate)
-      - [Q. useEffect()](#q-useeffect)
-      - [Q. useContext()](#q-usecontext)
-      - [Q. useMemo()](#q-usememo)
-      - [Q. useRef()](#q-useref)
-      - [Q. useCallback()](#q-usecallback)
-    - [Q. Higher-order component?](#q-higher-order-component)
-    - [Q. Render-prop?](#q-render-prop)
-    - [Q. Custom Hooks?](#q-custom-hooks)
-    - [Q. forwardRef?](#q-forwardref)
-    - [Q. Context api?](#q-context-api)
-    - [Q. How do setTimeout react in the useEffect hook?](#q-how-do-settimeout-react-in-the-useeffect-hook)
-    - [Q. startTransition](#q-starttransition)
-    - [Q. Code splitting?](#q-code-splitting)
-    - [Q. Lazy-loading components and Suspense](#q-lazy-loading-components-and-suspense)
-    - [Q. `<StrictMode>`](#q-strictmode)
-    - [Q. Pagination?](#q-pagination)
-    - [Q. Infinite Scroll pagination](#q-infinite-scroll-pagination)
-    - [Q. preventDefault()](#q-preventdefault)
-    - [Q. Dangerously setting the inner HTML?](#q-dangerously-setting-the-inner-html)
-    - [Q. Three important react patterns.](#q-three-important-react-patterns)
-    - [Q. Build a counter app?](#q-build-a-counter-app)
-    - [Q. Add and remove fruit app?](#q-add-and-remove-fruit-app)
-- [Redux](#redux)
-    - [Q. Describe basic flow if redux.](#q-describe-basic-flow-if-redux)
-    - [Q. Redux set up](#q-redux-set-up)
-    - [Q. Implementation syntax of React redux](#q-implementation-syntax-of-react-redux)
-    - [Q. Action creators?](#q-action-creators)
-    - [Q. How the reducer function is invoked after action creator is dispatched?](#q-how-the-reducer-function-is-invoked-after-action-creator-is-dispatched)
-    - [Q. What is a redux middleware?](#q-what-is-a-redux-middleware)
-    - [Q. Why redux?](#q-why-redux)
-    - [Q. Thunk](#q-thunk)
-    - [Q. Redux Toolkit](#q-redux-toolkit)
-      - [Redux Slices](#redux-slices)
-      - [Creating Slice Reducers and Actions](#creating-slice-reducers-and-actions)
-      - [But what about action creators?](#but-what-about-action-creators)
-      - [Thunk?](#thunk)
-      - [Reading Data with useSelector](#reading-data-with-useselector)
-      - [extraReducers?](#extrareducers)
-- [Problems](#problems)
-    - [Q. Why do React component names have to start with capital letters?](#q-why-do-react-component-names-have-to-start-with-capital-letters)
-    - [Q. What is the difference between npx and npm?](#q-what-is-the-difference-between-npx-and-npm)
-    - [Q. How to programmatically navigate using latest React Router version?](#q-how-to-programmatically-navigate-using-latest-react-router-version)
-    - [Q. How to pass data between sibling components using React router?](#q-how-to-pass-data-between-sibling-components-using-react-router)
-    - [Q. How to set focus on an input field after component mounts on UI?](#q-how-to-set-focus-on-an-input-field-after-component-mounts-on-ui)
-    - [Q. Why virtual DOM is faster to update than real DOM?](#q-why-virtual-dom-is-faster-to-update-than-real-dom)
-    - [Q. How to access the latest value of a text input field in a React component using the 'useRef' hook?](#q-how-to-access-the-latest-value-of-a-text-input-field-in-a-react-component-using-the-useref-hook)
-    - [Q. Create a React component that renders a nested list from a given array of objects.](#q-create-a-react-component-that-renders-a-nested-list-from-a-given-array-of-objects)
-    - [Q. What is the difference between useEffect and useLayoutEffect?](#q-what-is-the-difference-between-useeffect-and-uselayouteffect)
-    - [Q. Write a custom hook which can be used to debounce user's input.](#q-write-a-custom-hook-which-can-be-used-to-debounce-users-input)
-    - [Q. Write a custom hook to copy text to clipboard.](#q-write-a-custom-hook-to-copy-text-to-clipboard)
-    - [Q. How to Use the 'useId' Hook to generate unique ids.](#q-how-to-use-the-useid-hook-to-generate-unique-ids)
-    - [Q. Why React's useDeferredValue hook is useful?](#q-why-reacts-usedeferredvalue-hook-is-useful)
-    - [Q. How to detect 'click' outside React component?](#q-how-to-detect-click-outside-react-component)
-    - [Q. 3 ways to solve functions, arrays, objects recreated on every render.](#q-3-ways-to-solve-functions-arrays-objects-recreated-on-every-render)
-  - [Extra question to prepare-](#extra-question-to-prepare-)
-- [Resources](#resources)
-- [Interview tips -](#interview-tips--)
-- [Git](#git)
-- [HTML and CSS](#html-and-css-1)
-- [React terms and concepts](#react-terms-and-concepts)
-- [React practice problem](#react-practice-problem)
+  - [HTML and CSS](#html-and-css)
+      - [Q. Ways to center a div?](#q-ways-to-center-a-div)
+      - [Q. Media queries?](#q-media-queries)
+      - [Q. CSS Box model?](#q-css-box-model)
+      - [Q. Position?](#q-position)
+      - [Q. flexbox?](#q-flexbox)
+      - [Q. grid?](#q-grid)
+      - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
+  - [React  questions and answers](#react--questions-and-answers)
+      - [Q. SPA?](#q-spa)
+      - [Q. Bundler(webpack and parcel)](#q-bundlerwebpack-and-parcel)
+      - [Q.JSX?](#qjsx)
+      - [Q. Phases of react.](#q-phases-of-react)
+      - [Q. working of dom in react (reconciliation in react)](#q-working-of-dom-in-react-reconciliation-in-react)
+      - [Q. React fiber?](#q-react-fiber)
+      - [Q. ReactDOM.render()?](#q-reactdomrender)
+      - [Q. Components?](#q-components)
+      - [Q. Stateful and Stateless component?](#q-stateful-and-stateless-component)
+      - [Q. Controlled components?](#q-controlled-components)
+      - [Q. Uncontrolled Components?](#q-uncontrolled-components)
+      - [Q. What is equivalent of the following using React.createElement?](#q-what-is-equivalent-of-the-following-using-reactcreateelement)
+      - [Q. Synthetic Event?](#q-synthetic-event)
+      - [Q. props?](#q-props)
+      - [Q. What is the difference between state and props?](#q-what-is-the-difference-between-state-and-props)
+      - [Q. Reactive values?](#q-reactive-values)
+      - [Q. Reactivity in React?](#q-reactivity-in-react)
+      - [Q. Props drilling?](#q-props-drilling)
+      - [Q. Fragment?](#q-fragment)
+      - [Q. Component lifecycle?](#q-component-lifecycle)
+      - [Q. Phases of a React component's lifecycle](#q-phases-of-a-react-components-lifecycle)
+      - [Q. Difference between Mounting and rendering?](#q-difference-between-mounting-and-rendering)
+      - [Q. Elements vs component?](#q-elements-vs-component)
+      - [Q. Contextual rendering](#q-contextual-rendering)
+      - [Q. Class component vs functional component?](#q-class-component-vs-functional-component)
+      - [Q. How do we send data from child to parent in react js](#q-how-do-we-send-data-from-child-to-parent-in-react-js)
+      - [Q. Use of key in react](#q-use-of-key-in-react)
+      - [Q. Does react re render child components when parent component re renders?](#q-does-react-re-render-child-components-when-parent-component-re-renders)
+      - [Q. Pure components?](#q-pure-components)
+      - [Q. React.memo(Component, arePropsEqual?)](#q-reactmemocomponent-arepropsequal)
+      - [Q. Hooks?](#q-hooks)
+        - [Q. useState()](#q-usestate)
+        - [Q. useEffect()](#q-useeffect)
+        - [Q. useContext()](#q-usecontext)
+        - [Q. useMemo()](#q-usememo)
+        - [Q. useRef()](#q-useref)
+        - [Q. useCallback()](#q-usecallback)
+      - [Q. Higher-order component?](#q-higher-order-component)
+      - [Q. Render-prop?](#q-render-prop)
+      - [Q. Custom Hooks?](#q-custom-hooks)
+      - [Q. forwardRef?](#q-forwardref)
+      - [Q. Context api?](#q-context-api)
+      - [Q. How do setTimeout react in the useEffect hook?](#q-how-do-settimeout-react-in-the-useeffect-hook)
+      - [Q. startTransition](#q-starttransition)
+      - [Q. Code splitting?](#q-code-splitting)
+      - [Q. Lazy-loading components and Suspense](#q-lazy-loading-components-and-suspense)
+      - [Q. `<StrictMode>`](#q-strictmode)
+      - [Q. Pagination?](#q-pagination)
+      - [Q. Infinite Scroll pagination](#q-infinite-scroll-pagination)
+      - [Q. preventDefault()](#q-preventdefault)
+      - [Q. Dangerously setting the inner HTML?](#q-dangerously-setting-the-inner-html)
+      - [Q. Three important react patterns.](#q-three-important-react-patterns)
+      - [Q. Build a counter app?](#q-build-a-counter-app)
+      - [Q. Add and remove fruit app?](#q-add-and-remove-fruit-app)
+  - [Redux](#redux)
+      - [Q. Describe basic flow if redux.](#q-describe-basic-flow-if-redux)
+      - [Q. Redux set up](#q-redux-set-up)
+      - [Q. Implementation syntax of React redux](#q-implementation-syntax-of-react-redux)
+      - [Q. Action creators?](#q-action-creators)
+      - [Q. How the reducer function is invoked after action creator is dispatched?](#q-how-the-reducer-function-is-invoked-after-action-creator-is-dispatched)
+      - [Q. What is a redux middleware?](#q-what-is-a-redux-middleware)
+      - [Q. Why redux?](#q-why-redux)
+      - [Q. Thunk](#q-thunk)
+      - [Q. Redux Toolkit](#q-redux-toolkit)
+        - [Redux Slices](#redux-slices)
+        - [Creating Slice Reducers and Actions](#creating-slice-reducers-and-actions)
+        - [But what about action creators?](#but-what-about-action-creators)
+        - [Thunk?](#thunk)
+        - [Reading Data with useSelector](#reading-data-with-useselector)
+        - [extraReducers?](#extrareducers)
+  - [Problems](#problems)
+      - [Q. Why do React component names have to start with capital letters?](#q-why-do-react-component-names-have-to-start-with-capital-letters)
+      - [Q. What is the difference between npx and npm?](#q-what-is-the-difference-between-npx-and-npm)
+      - [Q. How to programmatically navigate using latest React Router version?](#q-how-to-programmatically-navigate-using-latest-react-router-version)
+      - [Q. How to pass data between sibling components using React router?](#q-how-to-pass-data-between-sibling-components-using-react-router)
+      - [Q. How to set focus on an input field after component mounts on UI?](#q-how-to-set-focus-on-an-input-field-after-component-mounts-on-ui)
+      - [Q. Why virtual DOM is faster to update than real DOM?](#q-why-virtual-dom-is-faster-to-update-than-real-dom)
+      - [Q. How to access the latest value of a text input field in a React component using the 'useRef' hook?](#q-how-to-access-the-latest-value-of-a-text-input-field-in-a-react-component-using-the-useref-hook)
+      - [Q. Create a React component that renders a nested list from a given array of objects.](#q-create-a-react-component-that-renders-a-nested-list-from-a-given-array-of-objects)
+      - [Q. What is the difference between useEffect and useLayoutEffect?](#q-what-is-the-difference-between-useeffect-and-uselayouteffect)
+      - [Q. Write a custom hook which can be used to debounce user's input.](#q-write-a-custom-hook-which-can-be-used-to-debounce-users-input)
+      - [Q. Write a custom hook to copy text to clipboard.](#q-write-a-custom-hook-to-copy-text-to-clipboard)
+      - [Q. How to Use the 'useId' Hook to generate unique ids.](#q-how-to-use-the-useid-hook-to-generate-unique-ids)
+      - [Q. Why React's useDeferredValue hook is useful?](#q-why-reacts-usedeferredvalue-hook-is-useful)
+      - [Q. How to detect 'click' outside React component?](#q-how-to-detect-click-outside-react-component)
+      - [Q. 3 ways to solve functions, arrays, objects recreated on every render.](#q-3-ways-to-solve-functions-arrays-objects-recreated-on-every-render)
+    - [Extra question to prepare-](#extra-question-to-prepare-)
+  - [Resources](#resources)
+  - [Interview tips -](#interview-tips--)
+  - [Git](#git)
+  - [HTML and CSS](#html-and-css-1)
+  - [React terms and concepts](#react-terms-and-concepts)
+  - [React practice problem](#react-practice-problem)
 
 ---
 
@@ -386,7 +378,7 @@ Each JSX element is just syntactic sugar for calling
 ```javascript
 React.createElement(component, props, ...children)
 ```
-. So, anything you can do with JSX can also be done with just plain JavaScript.
+So, anything you can do with JSX can also be done with just plain JavaScript.
 
 For example, this code written with JSX:
 ```javascript
@@ -446,7 +438,7 @@ After rendering is done and React updated the DOM, the browser will repaint the 
 
 Summary- When the state or props of a component change, React takes that part of the DOM (this is the second Virtual DOM) and updates it with the new state or props value. Then, it compares it with the previous Virtual DOM. This process is called reconciliation. It updates the previous Virtual DOM with the new changes. Then, in the commit phase, the minimum changes that were found during reconciliation are performed (appended, removed, prepended, like good old vanilla JS) to the actual DOM. But what if the root (the top-most) component needs to be rerendered? The whole tree will be reconstructed.
 
-### Q. working of dom in react (reconciliation in react)
+### Q. Working of dom in react (reconciliation in react)
 
 -> In React, the virtual DOM and the process of reconciliation play a crucial role in efficiently updating and rendering the actual DOM. Understanding how React handles the DOM is essential for building performant and responsive web applications.
 
@@ -566,7 +558,7 @@ function LoginForm() {
 Uncontrolled components have a few defining characteristics:
 - Using ref to get values directly from the DOM: Instead of using an event handler to read the input’s value, you can obtain the value directly through ref.
 - Reduced reliance on React’s state: Since these components don’t synchronize their state with React’s state mechanism, they might feel more familiar to developers who’ve worked with vanilla JavaScript.
-- 
+  
 ```javascript
   import React, { useRef } from "react";
 
@@ -659,7 +651,7 @@ By implementing one of these solutions, you can reduce the complexity of passing
 
 ### Q. Fragment?
 
--> Use Fragment, or the equivalent &lt;>...&lt;/> syntax, to group multiple elements together. You can use it to put multiple elements in any place where a single element can go. For example, a component can only return one element, but by using a Fragment you can group multiple elements together and then return them as a group:
+-> Use Fragment, or the equivalent `<>...</>` syntax, to group multiple elements together. You can use it to put multiple elements in any place where a single element can go. For example, a component can only return one element, but by using a Fragment you can group multiple elements together and then return them as a group:
 
 
 ```javascript
@@ -808,11 +800,11 @@ class MyClassComponent extends Component {
 ```
 
 
-
-
 * Functional Components:
 
-Functional components are simpler and more lightweight than class components. They are JavaScript functions that accept props as arguments and return React elements. Functional components do not have their own state or lifecycle methods but are commonly used for presenting UI elements based on props.
+Functional components are simpler and more lightweight than class components. They are JavaScript functions that accept props as arguments and return React elements. Functional components did not have their own state or lifecycle methods but were commonly used for presenting UI elements based on props.
+
+With the introduction of React Hooks, functional components can now manage local state and lifecycle aspects as well, making them more powerful and capable of handling complex logic that was previously exclusive to class components. Functional components are preferred for simpler components, while class components are still useful for more complex components that require state management and lifecycle methods.
 
 Example of a functional component:
 
@@ -823,10 +815,6 @@ const MyFunctionalComponent = (props) => {
   return <h1>Hello, I am a functional component!</h1>;
 };
 ```
-
-
-With the introduction of React Hooks, functional components can now manage local state and lifecycle aspects as well, making them more powerful and capable of handling complex logic that was previously exclusive to class components. Functional components are preferred for simpler components, while class components are still useful for more complex components that require state management and lifecycle methods.
-
 
 ### Q. How do we send data from child to parent in react js
 
@@ -905,7 +893,7 @@ In functional components, the concept of a pure component is not directly applic
 ### Q. React.memo(Component, arePropsEqual?) 
 
 -> Wrap a component in memo to get a memoized version of that component. This memoized version of your component will usually not be re-rendered when its parent component is re-rendered as long as its props have not changed. But React may still re-render it: memoization is a performance optimization, not a guarantee.
-
+Basically, memo is used to skip re-rendering when props are not changed. React normally re-renders a component whenever its parent re-renders. With memo, we can create a component that React will not re-render when its parent re-renders so long as its new props are the same as the old props. Such a component is said to be memoized.
 
 ```javascript
 import { memo } from 'react';
@@ -915,24 +903,11 @@ const SomeComponent = memo(function SomeComponent(props) {
 });
 ```
 
+- memo takes the component that you want to memoize as parameter. The memo does not modify this component, but returns a new memoized component instead. Any valid React component, including functions and forwardRef components, is accepted.
 
-**Parameters:**
+- optionaly meno also takes a function that accepts two arguments: the component’s previous props, and its new props. It should return true if the old and new props are equal: that is, if the component will render the same output and behave in the same way with the new props as with the old. Otherwise it should return false. Usually, you will not specify this function. By default, React will compare each prop with Object.is.
 
-Component: The component that you want to memoize. The memo does not modify this component, but returns a new, memoized component instead. Any valid React component, including functions and forwardRef components, is accepted.
-
-optional (arePropsEqual): A function that accepts two arguments: the component’s previous props, and its new props. It should return true if the old and new props are equal: that is, if the component will render the same output and behave in the same way with the new props as with the old. Otherwise it should return false. Usually, you will not specify this function. By default, React will compare each prop with Object.is.
-
-
-**Returns:**
-
-
-memo returns a new React component. It behaves the same as the component provided to memo except that React will not always re-render it when its parent is being re-rendered unless its props have changed.
-
-**Usage:**
-
-Skipping re-rendering when props are unchanged 
-
-React normally re-renders a component whenever its parent re-renders. With memo, you can create a component that React will not re-render when its parent re-renders so long as its new props are the same as the old props. Such a component is said to be memoized.
+- memo returns a new React component. It behaves the same as the component provided to memo except that React will not always re-render it when its parent is being re-rendered unless its props have changed.
 
 To memoize a component, wrap it in memo and use the value that it returns in place of your original component:
 
@@ -948,12 +923,11 @@ export default Greeting;
 
 A React component should always have pure rendering logic. This means that it must return the same output if its props, state, and context haven’t changed. By using memo, you are telling React that your component complies with this requirement, so React doesn’t need to re-render as long as its props haven’t changed. Even with memo, your component will re-render if its own state changes or if a context that it’s using changes.
 
-***Minimising props changes:***
+**Minimising props changes:**
 
+When you use memo, your component re-renders whenever any prop is not shallowly equal to what it was previously. This means that React compares every prop in your component with its previous value using the Object.is comparison. Note that `Object.is(3, 3)` is true, but `Object.is({}, {})` is false.
 
-When you use memo, your component re-renders whenever any prop is not shallowly equal to what it was previously. This means that React compares every prop in your component with its previous value using the Object.is comparison. Note that Object.is(3, 3) is true, but Object.is({}, {}) is false.
-
-To get the most out of memo, minimise the times that the props change. For example, if the prop is an object, prevent the parent component from re-creating that object every time by using useMemo:
+To get the most out of memo, minimise the times that the props change. For example, if the prop is an object, prevent the parent component from re-creating that object every time by using useMemo (more on it below):
 
 
 ```javascript
@@ -975,7 +949,7 @@ const Profile = memo(function Profile({ person }) {
 ```
 
 
-Note: class components can opt into this same behaviour by extending pure component from react
+> Note: class components can opt into this same behaviour by extending pure component from react
 
 
 ### Q. Hooks?
@@ -1039,9 +1013,7 @@ The set function returned by useState lets you update the state to a different v
 
 The set function only updates the state variable for the next render. If you read the state variable after calling the set function, you will still get the old value that was on the screen before your call.
 
-Note: 
-
-Calling the set function does not change the current state in the already executing code:
+> Note: Calling the set function does not change the current state in the already executing code:
 
 
 ```javascript
