@@ -21,7 +21,7 @@ toc: |
 
 ---
 
-Blind 75 Sheet and its questions are below :
+Blind 75 Sheet :
 
 
 ### Array

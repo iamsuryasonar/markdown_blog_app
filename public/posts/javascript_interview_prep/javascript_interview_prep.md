@@ -1,3 +1,4 @@
+
 ---
 title: Javascript interview prep
 slug: javascript
@@ -68,6 +69,7 @@ toc: |
         - [Q. Commonly used methods from the Object class](#q-commonly-used-methods-from-the-object-class)
         - [Q. getter and setter?](#q-getter-and-setter)
         - [Q. Prototype?](#q-prototype)
+        - [Q. What is the difference between __proto__ and prototype?](#q-what-is-the-difference-between-proto-and-prototype)
         - [Q. call, apply and bind?](#q-call-apply-and-bind)
         - [Q. Polyfill for bind?](#q-polyfill-for-bind)
         - [Q. Function currying?](#q-function-currying)
@@ -113,7 +115,7 @@ toc: |
             - [fill(): Fills all the elements of an array with a static value.](#fill-fills-all-the-elements-of-an-array-with-a-static-value)
             - [copyWithin(): Copies array elements within the array, to and from specified positions.](#copywithin-copies-array-elements-within-the-array-to-and-from-specified-positions)
         - [Q. Boxing and unboxing](#q-boxing-and-unboxing)
-        - [Q.  for(let i=0; i\<=3; i++){}, explain to me which block does let i belong?](#q--forlet-i0-i3-i-explain-to-me-which-block-does-let-i-belong)
+        - [Q. for(let i=0; i<=3; i++){}, explain to me which block does let i belong?](#q-forlet-i0-i3-i-explain-to-me-which-block-does-let-i-belong)
         - [Q. If i use var instead of let what would be its scope?](#q-if-i-use-var-instead-of-let-what-would-be-its-scope)
         - [Q. Hoisting?](#q-hoisting)
         - [Q. Closure?](#q-closure)
@@ -124,9 +126,6 @@ toc: |
     - [Random](#random)
           - [Primitive type](#primitive-type)
           - [Wrapper object coercion](#wrapper-object-coercion)
-    - [Bonus](#bonus)
-    - [React important Topics](#react-important-topics)
-    - [Blind 75 DSA sheet](#blind-75-dsa-sheet)
 ---
 
 
@@ -2284,6 +2283,10 @@ The instanceof operator tests to see if the prototype property of a constructor 
 Object instanceOf ClassName;
 ```
 
+### Q. What is the difference between __proto__ and prototype?
+-> The difference between `__proto__` and `prototype` is simple: `__proto__` is a property of an object instance, while `prototype` is a property of a constructor function.
+When you use `__proto__`, you're looking up properties and methods on an object's prototype chain. On the other hand, `prototype` defines the shared properties and methods that all instances created from a constructor function will have.
+
 ### Q. call, apply and bind?
 
 -> In JavaScript, the bind, call, and apply methods are used to manipulate the this context and to invoke functions with a specific context or set of arguments. These methods provide ways to control how a function is executed and which object it should use as its context.
@@ -3135,7 +3138,7 @@ console.log(age.toString()) // "7"
 Why does this work and not throw an error? It looks like both of the primitive types are actually objects! But they're not! They just behave like objects because of autoboxing. Whenever we try to access a method or property on a primitive, that primitive is wrapped into an object. That's called autoboxing. Autoboxing will connect the primitive to the related built-in prototype object. In our case that's String.prototype and Number.prototype. This gives us access to the prototype methods and properties.
 
 
-### Q.  for(let i=0; i&lt;=3; i++){}, explain to me which block does let i belong?
+### Q. for(let i=0; i<=3; i++){}, explain to me which block does let i belong?
 
 -> In the given code snippet,
 
