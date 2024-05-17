@@ -1,13 +1,23 @@
 ---
-title: React
+title: React interview preperation
 slug: react
 date: '2024-02-16'
 description: React notes
 categories:
   - Tech
   - Programming
+  - React
+  - Html/css/javascript
 toc: |
     - [HTML and CSS](#html-and-css)
+    - [Q. Ways to center a div?](#q-ways-to-center-a-div)
+    - [Q. Media queries?](#q-media-queries)
+    - [Q. CSS Box model?](#q-css-box-model)
+    - [Q. Position?](#q-position)
+    - [Q. flexbox?](#q-flexbox)
+    - [Q. grid?](#q-grid)
+    - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
+- [HTML and CSS](#html-and-css)
     - [Q. Ways to center a div?](#q-ways-to-center-a-div)
     - [Q. Media queries?](#q-media-queries)
     - [Q. CSS Box model?](#q-css-box-model)
@@ -119,9 +129,6 @@ toc: |
 ### Q. Ways to center a div?
 
 -> 
-
-
-
 * Using Flexbox (for both horizontal and vertical centering):
 
 ```css
@@ -254,7 +261,7 @@ Understanding the CSS box model is essential for designing and laying out web pa
 
 ### Q. Position?
 
--> In CSS, the position property is used to specify the positioning behaviour of an element within its containing element or the viewport. The position property can take several values, each of which controls how the element is positioned and interacts with other elements on the page. The different values for the position property are:
+-> The position property is used to specify the positioning behaviour of an element within its containing element or the viewport. The position property can take several values, each of which controls how the element is positioned and interacts with other elements on the page. The different values for the position property are:
 
 
 
@@ -267,20 +274,20 @@ Understanding the CSS box model is essential for designing and laying out web pa
 
 ### Q. flexbox?
 
--> In CSS, Flexbox (Flexible Box) is a layout model that provides an efficient way to distribute space among items in a container, even when their size is unknown or dynamic. Flexbox is designed to simplify the process of creating flexible and responsive layouts without using float or positioning properties. It offers a more effective way to align, distribute, and reorder elements within a container.
+-> Flexbox (Flexible Box) is a layout model that provides an efficient way to distribute space among items in a container, even when their size is unknown or dynamic. Flexbox is designed to simplify the process of creating flexible and responsive layouts without using float or positioning properties. It offers a more effective way to align, distribute, and reorder elements within a container.
 
 To use Flexbox, you apply the display: flex property to the container (parent) element. This allows the child elements to become flexible items that can be easily manipulated using various Flexbox properties. Some of the key properties used in Flexbox include:
 
 
 
 * flex-direction: Defines the direction in which the flex items are placed in the flex container. It can be set to row, row-reverse, column, or column-reverse.
-* 
+  
 * justify-content: Aligns flex items along the main axis of the flex container. It can be set to flex-start, flex-end, center, space-between, space-around, or space-evenly.
-* 
+  
 * align-items: Aligns flex items along the cross axis of the flex container. It can be set to stretch, flex-start, flex-end, center, or baseline.
-* 
+  
 * flex-wrap: Specifies whether flex items should wrap or not if they can't fit in the container along the main axis. It can be set to nowrap, wrap, or wrap-reverse.
-* 
+  
 * align-content: Aligns multiple lines of flex items along the cross axis. It is similar to align-items but it aligns lines of items instead of individual items.
 
 
@@ -326,11 +333,6 @@ Each of these storage mechanisms has its strengths and limitations, and the choi
 
 
 # React  questions and answers  
-
-https://www.newline.co/fullstack-react/30-days-of-react/
-
-https://www.educative.io/courses/building-teslas-battery-range-calculator-with-react-and-redux
-
 
 ### Q. SPA?
 
@@ -2909,6 +2911,7 @@ export default function OutsideAlerter() {
 
 ## Extra question to prepare- 
 
+
 - How can we fetch API data without using useEffect hook?
 - What are the security measures which should be considered during development?
 - Can we return setData inside a component?
@@ -2972,6 +2975,9 @@ export default function OutsideAlerter() {
 - Implement the Promise.all function
 - Flatten a nested JavaScript array without using Array.prototype.flat()
 
+https://www.newline.co/fullstack-react/30-days-of-react/
+
+https://www.educative.io/courses/building-teslas-battery-range-calculator-with-react-and-redux
 
 # Resources
 
