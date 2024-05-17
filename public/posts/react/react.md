@@ -3065,7 +3065,7 @@ Mistakes
 * File structure
 * Beautifying Ul
 * Breaking Ul to 20, 30 useless components
-* 
+
 Focus on logical implementation with a working model first. This is what Interviewers care about.
 
 # Git
