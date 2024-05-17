@@ -1,4 +1,4 @@
-H---
+---
 title: React
 slug: react
 date: '2024-02-16'
@@ -8,227 +8,109 @@ categories:
   - Programming
 toc: |
     - [HTML and CSS](#html-and-css)
-    - [React terms and concepts](#react-terms-and-concepts)
-    - [React practice problem](#react-practice-problem)
-    - [HTML and CSS](#html-and-css-1)
-        - [Q. Ways to center a div?](#q-ways-to-center-a-div)
-        - [Q. Media queries?](#q-media-queries)
-        - [Q. CSS Box model?](#q-css-box-model)
-        - [Q. Position?](#q-position)
-        - [Q. flexbox?](#q-flexbox)
-        - [Q. grid?](#q-grid)
-        - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
-    - [React  questions and answers](#react--questions-and-answers)
-        - [Q. SPA?](#q-spa)
-        - [Q. Bundler(webpack and parcel)](#q-bundlerwebpack-and-parcel)
-        - [Q.JSX?](#qjsx)
-        - [Q. Phases of react.](#q-phases-of-react)
-        - [Q. working of dom in react (reconciliation in react)](#q-working-of-dom-in-react-reconciliation-in-react)
-        - [Q. React fiber?](#q-react-fiber)
-        - [Q. ReactDOM.render()?](#q-reactdomrender)
-        - [Q. Components?](#q-components)
-        - [Q. Stateful and Stateless component?](#q-stateful-and-stateless-component)
-        - [Q. Controlled components?](#q-controlled-components)
-        - [Q. Uncontrolled Components?](#q-uncontrolled-components)
-        - [Q. What is equivalent of the following using React.createElement?](#q-what-is-equivalent-of-the-following-using-reactcreateelement)
-        - [Q. Synthetic Event?](#q-synthetic-event)
-        - [Q. props?](#q-props)
-        - [Q. What is the difference between state and props?](#q-what-is-the-difference-between-state-and-props)
-        - [Q. Reactive values?](#q-reactive-values)
-        - [Q. Reactivity in React?](#q-reactivity-in-react)
-        - [Q. Props drilling?](#q-props-drilling)
-        - [Q. Fragment?](#q-fragment)
-        - [Q. Component lifecycle?](#q-component-lifecycle)
-        - [Q. Phases of a React component's lifecycle](#q-phases-of-a-react-components-lifecycle)
-        - [Q. Difference between Mounting and rendering?](#q-difference-between-mounting-and-rendering)
-        - [Q. Elements vs component?](#q-elements-vs-component)
-        - [Q. Contextual rendering](#q-contextual-rendering)
-        - [Q. Class component vs functional component?](#q-class-component-vs-functional-component)
-        - [Q. How do we send data from child to parent in react js](#q-how-do-we-send-data-from-child-to-parent-in-react-js)
-        - [Q. Use of key in react](#q-use-of-key-in-react)
-        - [Q. Does react re render child components when parent component re renders?](#q-does-react-re-render-child-components-when-parent-component-re-renders)
-        - [Q. Pure components?](#q-pure-components)
-        - [Q. React.memo(Component, arePropsEqual?)](#q-reactmemocomponent-arepropsequal)
-        - [Q. Hooks?](#q-hooks)
-          - [Q. useState()](#q-usestate)
-          - [Q. useEffect()](#q-useeffect)
-          - [Q. useContext()](#q-usecontext)
-          - [Q. useMemo()](#q-usememo)
-          - [Q. useRef()](#q-useref)
-          - [Q. useCallback()](#q-usecallback)
-        - [Q. Higher-order component?](#q-higher-order-component)
-        - [Q. Render-prop?](#q-render-prop)
-        - [Q. Custom Hooks?](#q-custom-hooks)
-        - [Q. forwardRef?](#q-forwardref)
-        - [Q. Context api?](#q-context-api)
-        - [Q. How do setTimeout react in the useEffect hook?](#q-how-do-settimeout-react-in-the-useeffect-hook)
-        - [Q. startTransition](#q-starttransition)
-        - [Q. Code splitting?](#q-code-splitting)
-        - [Q. Lazy-loading components and Suspense](#q-lazy-loading-components-and-suspense)
-        - [Q. \<StrictMode\>](#q-strictmode)
-        - [Q. Pagination?](#q-pagination)
-        - [Q. Infinite Scroll pagination](#q-infinite-scroll-pagination)
-        - [Q. preventDefault()](#q-preventdefault)
-        - [Q. Dangerously setting the inner HTML?](#q-dangerously-setting-the-inner-html)
-        - [Q. Three important react patterns.](#q-three-important-react-patterns)
-        - [Q. Build a counter app?](#q-build-a-counter-app)
-        - [Q. Add and remove fruit app?](#q-add-and-remove-fruit-app)
-    - [Redux](#redux)
-        - [Q. Describe basic flow if redux.](#q-describe-basic-flow-if-redux)
-        - [Q. Redux set up](#q-redux-set-up)
-        - [Q. Implementation syntax of React redux](#q-implementation-syntax-of-react-redux)
-        - [Q. Action creators?](#q-action-creators)
-        - [Q. How the reducer function is invoked after action creator is dispatched?](#q-how-the-reducer-function-is-invoked-after-action-creator-is-dispatched)
-        - [Q. What is a redux middleware?](#q-what-is-a-redux-middleware)
-        - [Q. Why redux?](#q-why-redux)
-        - [Q. Thunk](#q-thunk)
-        - [Q. Redux Toolkit](#q-redux-toolkit)
-          - [Redux Slices](#redux-slices)
-          - [Creating Slice Reducers and Actions](#creating-slice-reducers-and-actions)
-          - [But what about action creators?](#but-what-about-action-creators)
-          - [Thunk?](#thunk)
-          - [Reading Data with useSelector](#reading-data-with-useselector)
-          - [extraReducers?](#extrareducers)
-    - [Problems](#problems)
-        - [Q. Why do React component names have to start with capital letters?](#q-why-do-react-component-names-have-to-start-with-capital-letters)
-        - [Q. What is the difference between npx and npm?](#q-what-is-the-difference-between-npx-and-npm)
-        - [Q. How to programmatically navigate using latest React Router version?](#q-how-to-programmatically-navigate-using-latest-react-router-version)
-        - [Q. How to pass data between sibling components using React router?](#q-how-to-pass-data-between-sibling-components-using-react-router)
-        - [Q. How to set focus on an input field after component mounts on UI?](#q-how-to-set-focus-on-an-input-field-after-component-mounts-on-ui)
-        - [Q. Why virtual DOM is faster to update than real DOM?](#q-why-virtual-dom-is-faster-to-update-than-real-dom)
-        - [Q. How to access the latest value of a text input field in a React component using the 'useRef' hook?](#q-how-to-access-the-latest-value-of-a-text-input-field-in-a-react-component-using-the-useref-hook)
-        - [Q. Create a React component that renders a nested list from a given array of objects.](#q-create-a-react-component-that-renders-a-nested-list-from-a-given-array-of-objects)
-        - [Q. What is the difference between useEffect and useLayoutEffect?](#q-what-is-the-difference-between-useeffect-and-uselayouteffect)
-        - [Q. Write a custom hook which can be used to debounce user's input.](#q-write-a-custom-hook-which-can-be-used-to-debounce-users-input)
-        - [Q. Write a custom hook to copy text to clipboard.](#q-write-a-custom-hook-to-copy-text-to-clipboard)
-        - [Q. How to Use the 'useId' Hook to generate unique ids.](#q-how-to-use-the-useid-hook-to-generate-unique-ids)
-        - [Q. Why React's useDeferredValue hook is useful?](#q-why-reacts-usedeferredvalue-hook-is-useful)
-        - [Q. How to detect 'click' outside React component?](#q-how-to-detect-click-outside-react-component)
-        - [Q. 3 ways to solve functions, arrays, objects recreated on every render.](#q-3-ways-to-solve-functions-arrays-objects-recreated-on-every-render)
-      - [Extra question to prepare-](#extra-question-to-prepare-)
-    - [Resources](#resources)
-    - [Interview tips -](#interview-tips--)
-    - [Git](#git)
+    - [Q. Ways to center a div?](#q-ways-to-center-a-div)
+    - [Q. Media queries?](#q-media-queries)
+    - [Q. CSS Box model?](#q-css-box-model)
+    - [Q. Position?](#q-position)
+    - [Q. flexbox?](#q-flexbox)
+    - [Q. grid?](#q-grid)
+    - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
+- [React  questions and answers](#react--questions-and-answers)
+    - [Q. SPA?](#q-spa)
+    - [Q. Bundler(webpack and parcel)](#q-bundlerwebpack-and-parcel)
+    - [Q.JSX?](#qjsx)
+    - [Q. Phases of react.](#q-phases-of-react)
+    - [Q. working of dom in react (reconciliation in react)](#q-working-of-dom-in-react-reconciliation-in-react)
+    - [Q. React fiber?](#q-react-fiber)
+    - [Q. ReactDOM.render()?](#q-reactdomrender)
+    - [Q. Components?](#q-components)
+    - [Q. Stateful and Stateless component?](#q-stateful-and-stateless-component)
+    - [Q. Controlled components?](#q-controlled-components)
+    - [Q. Uncontrolled Components?](#q-uncontrolled-components)
+    - [Q. What is equivalent of the following using React.createElement?](#q-what-is-equivalent-of-the-following-using-reactcreateelement)
+    - [Q. Synthetic Event?](#q-synthetic-event)
+    - [Q. props?](#q-props)
+    - [Q. What is the difference between state and props?](#q-what-is-the-difference-between-state-and-props)
+    - [Q. Reactive values?](#q-reactive-values)
+    - [Q. Reactivity in React?](#q-reactivity-in-react)
+    - [Q. Props drilling?](#q-props-drilling)
+    - [Q. Fragment?](#q-fragment)
+    - [Q. Component lifecycle?](#q-component-lifecycle)
+    - [Q. Phases of a React component's lifecycle](#q-phases-of-a-react-components-lifecycle)
+    - [Q. Difference between Mounting and rendering?](#q-difference-between-mounting-and-rendering)
+    - [Q. Elements vs component?](#q-elements-vs-component)
+    - [Q. Contextual rendering](#q-contextual-rendering)
+    - [Q. Class component vs functional component?](#q-class-component-vs-functional-component)
+    - [Q. How do we send data from child to parent in react js](#q-how-do-we-send-data-from-child-to-parent-in-react-js)
+    - [Q. Use of key in react](#q-use-of-key-in-react)
+    - [Q. Does react re render child components when parent component re renders?](#q-does-react-re-render-child-components-when-parent-component-re-renders)
+    - [Q. Pure components?](#q-pure-components)
+    - [Q. React.memo(Component, arePropsEqual?)](#q-reactmemocomponent-arepropsequal)
+    - [Q. Hooks?](#q-hooks)
+      - [Q. useState()](#q-usestate)
+      - [Q. useEffect()](#q-useeffect)
+      - [Q. useContext()](#q-usecontext)
+      - [Q. useMemo()](#q-usememo)
+      - [Q. useRef()](#q-useref)
+      - [Q. useCallback()](#q-usecallback)
+    - [Q. Higher-order component?](#q-higher-order-component)
+    - [Q. Render-prop?](#q-render-prop)
+    - [Q. Custom Hooks?](#q-custom-hooks)
+    - [Q. forwardRef?](#q-forwardref)
+    - [Q. Context api?](#q-context-api)
+    - [Q. How do setTimeout react in the useEffect hook?](#q-how-do-settimeout-react-in-the-useeffect-hook)
+    - [Q. startTransition](#q-starttransition)
+    - [Q. Code splitting?](#q-code-splitting)
+    - [Q. Lazy-loading components and Suspense](#q-lazy-loading-components-and-suspense)
+    - [Q. `<StrictMode>`](#q-strictmode)
+    - [Q. Pagination?](#q-pagination)
+    - [Q. Infinite Scroll pagination](#q-infinite-scroll-pagination)
+    - [Q. preventDefault()](#q-preventdefault)
+    - [Q. Dangerously setting the inner HTML?](#q-dangerously-setting-the-inner-html)
+    - [Q. Three important react patterns.](#q-three-important-react-patterns)
+    - [Q. Build a counter app?](#q-build-a-counter-app)
+    - [Q. Add and remove fruit app?](#q-add-and-remove-fruit-app)
+- [Redux](#redux)
+    - [Q. Describe basic flow if redux.](#q-describe-basic-flow-if-redux)
+    - [Q. Redux set up](#q-redux-set-up)
+    - [Q. Implementation syntax of React redux](#q-implementation-syntax-of-react-redux)
+    - [Q. Action creators?](#q-action-creators)
+    - [Q. How the reducer function is invoked after action creator is dispatched?](#q-how-the-reducer-function-is-invoked-after-action-creator-is-dispatched)
+    - [Q. What is a redux middleware?](#q-what-is-a-redux-middleware)
+    - [Q. Why redux?](#q-why-redux)
+    - [Q. Thunk](#q-thunk)
+    - [Q. Redux Toolkit](#q-redux-toolkit)
+      - [Redux Slices](#redux-slices)
+      - [Creating Slice Reducers and Actions](#creating-slice-reducers-and-actions)
+      - [But what about action creators?](#but-what-about-action-creators)
+      - [Thunk?](#thunk)
+      - [Reading Data with useSelector](#reading-data-with-useselector)
+      - [extraReducers?](#extrareducers)
+- [Problems](#problems)
+    - [Q. Why do React component names have to start with capital letters?](#q-why-do-react-component-names-have-to-start-with-capital-letters)
+    - [Q. What is the difference between npx and npm?](#q-what-is-the-difference-between-npx-and-npm)
+    - [Q. How to programmatically navigate using latest React Router version?](#q-how-to-programmatically-navigate-using-latest-react-router-version)
+    - [Q. How to pass data between sibling components using React router?](#q-how-to-pass-data-between-sibling-components-using-react-router)
+    - [Q. How to set focus on an input field after component mounts on UI?](#q-how-to-set-focus-on-an-input-field-after-component-mounts-on-ui)
+    - [Q. Why virtual DOM is faster to update than real DOM?](#q-why-virtual-dom-is-faster-to-update-than-real-dom)
+    - [Q. How to access the latest value of a text input field in a React component using the 'useRef' hook?](#q-how-to-access-the-latest-value-of-a-text-input-field-in-a-react-component-using-the-useref-hook)
+    - [Q. Create a React component that renders a nested list from a given array of objects.](#q-create-a-react-component-that-renders-a-nested-list-from-a-given-array-of-objects)
+    - [Q. What is the difference between useEffect and useLayoutEffect?](#q-what-is-the-difference-between-useeffect-and-uselayouteffect)
+    - [Q. Write a custom hook which can be used to debounce user's input.](#q-write-a-custom-hook-which-can-be-used-to-debounce-users-input)
+    - [Q. Write a custom hook to copy text to clipboard.](#q-write-a-custom-hook-to-copy-text-to-clipboard)
+    - [Q. How to Use the 'useId' Hook to generate unique ids.](#q-how-to-use-the-useid-hook-to-generate-unique-ids)
+    - [Q. Why React's useDeferredValue hook is useful?](#q-why-reacts-usedeferredvalue-hook-is-useful)
+    - [Q. How to detect 'click' outside React component?](#q-how-to-detect-click-outside-react-component)
+    - [Q. 3 ways to solve functions, arrays, objects recreated on every render.](#q-3-ways-to-solve-functions-arrays-objects-recreated-on-every-render)
+  - [Extra question to prepare-](#extra-question-to-prepare-)
+- [Resources](#resources)
+- [Interview tips -](#interview-tips--)
+- [Git](#git)
+- [HTML and CSS](#html-and-css-1)
+- [React terms and concepts](#react-terms-and-concepts)
+- [React practice problem](#react-practice-problem)
+
 ---
-
-
-# HTML and CSS
-
-* form and validation 
-* ways to centre a div
-* media queries 
-* css box model
-* position 
-* Flex
-* grid template and repeat function 
-* localstorage, session storage, cookie and index db.
-
-
-# React terms and concepts
-
-* spa meaning
-* bundler(webpack and parcel)
-* Jsx
-* working of dom in react (reconciliation in react, virtual dom)
-* ReactDOM.render()
-* components 
-* stateful vs stateless component 
-* props
-* prop drilling
-* fragment
-* component lifecycle -  lifecycle events
-* element vs component
-* contextual rendering
-* send data from child to parent 
-* counter app
-* fruit app
-* use of keys in react
-* pure component (in class component)
-* react memo - memoised component 
-* mixins and higher order components (both are used for reusable behaviour that can be shared among multiple components. )
-* class based vs functional components
-* difference between mounting and rendering 
-* Hooks
-* useState
-* useEffect
-* useContext
-* useMemo
-* useRef
-* refs - reference
-* higher order components
-* render prop
-* forward refs
-* custom hooks
-* how do setTimeout reacts in useEffect hook
-* context api
-* synthetic events
-* react fibre
-* startTransition()
-* performance optimisation in react
-* code splitting
-* lazy loading and suspense 
-* react strictmode
-* react developer tool
-* react router - https://www.youtube.com/watch?v=Ul3y1LXxzdU&ab_channel=WebDevSimplified
-* handle protected routes
-* how to manage nested routes in a role based routing
-* redux
-* middlewares in redux
-* redux thunk vs saga
-* interceptor in react
-* Axios
-* pagination
-* preventDefault()
-* dengerouslySetInnerHTML
-* jwt - json web token
-
-
-# React practice problem
-
-
-
-* Build Counter app
-* Shopping cart in react js
-* Dark mode - light mode
-* file explorer 
-* Flatten an array
-* Merge sort
-* Implement promise.all
-* Todo list
-* Build a traffic light where the lights switch from green to yellow to red after predetermined intervals and loop indefinitely. Each light should be lit for the following durations:
-* Red light: 4000ms
-* Yellow light: 500ms
-* Green light: 3000ms
-* Count number of times a value occurred in an array
-* Debounce - limit number of times a function executes, by delaying the execution by specified time.
-* Build Tabs component that displays a list of tab elements and one content at a time.
-* Build calculator
-* Build Holy grail layout- The Holy Grail layout is a famous CSS page layout that has traditionally been hard to implement. It consists of a header, footer, and three columns. The left column contains navigation items, the middle column contains the page contents, and the right column contains ads.
-* Build tic tac toe
-* Build a component that allows transferring of items between two lists, bulk selection/ deselection of items, and adding of new items.
-* Build a slider, on increasing/ decreasing the slider value should reflect in a pieChart.
-* Merge two object together.
-* Create a stopwatch
-* Star Rating- build a stat rating component that shows a row of star icons for users to select the number of filled stars corresponding to the rating.
-* Generate a table of numbers given the rows and columns.
-* Ability to call an API and parse JSON.
-* Ability to handle promises.
-* Ability to put data into state and use that to render on the page.
-* Basic CSS (flexbox, border styles, background, centering a div on page)
-* Ability  to handle events and gather target's value from input boxes (event.target.value)
-* Ability to use hooks such as useState, useEffect.
-* Ability to pass the right dependency array to useEffect.
-* Create an app to fetch data from a JSON API. Use this data to render on the page. Provide ability to paginate the results 
-* Create a typeahead component.(autocomplete using array of names)
-* Given a mock, use React to render on the page. eg. 10 box are there with a flip button on it to reveal an image on it.
-* Infinite scrolling app
-* Create a form that gathers user's data and sends it to the server.
-* Create a tic tac toe game.
-* Create a slideshow type app. The data of slides could be given. It contains an image url, and the title of the slide. Left and Right navigation buttons are needed.
-* Create a form app that has a different state of UI when a field is selected, has value or is visited. (Uses onFocus, onBlur events)
-* Create a ticker that increments value every second.
-* Create an app that allows user to click a button 5 times, and times them out afterwards.
-* Create an app that uses debouncing / throttling.
 
 
 # HTML and CSS
@@ -1126,7 +1008,7 @@ Additional Hooks-
 
 #### Q. useState()
 
--> useState is a Hook. We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else. The only argument to useState is the initial state.
+-> useState is a Hook. We call it inside a function component to add some local state to it. React will preserve this state between re-renders.
 
 ```javascript
 const [age, setAge] = useState(42);
@@ -1135,9 +1017,9 @@ const [age, setAge] = useState(42);
 
 useState returns an array with exactly two items:
 
-The current state of this state variable, initially set to the initial state you provided.
+- The current state of this state variable, initially set to the initial state you provided.
 
-The set function that lets you change it to any other value in response to interaction.
+- The set function that lets you change it to any other value in response to interaction.
 
 To update what’s on the screen, call the set function with some next state:
 
@@ -1219,7 +1101,7 @@ return()=>{
 
 -> The Effect Hook, useEffect, adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API. 
 
-You’ve likely performed data fetching, subscriptions, or manually changing the DOM from React components before. We call these operations “side effects” (or “effects” for short) because they can affect other components and can’t be done during rendering.
+You’ve likely performed data fetching, subscriptions, or manually changing the DOM from React components before. We call these operations “side effects” (or “effects” for short, means operations that are outside the scope of react) because they can affect other components and can’t be done during rendering.
 
 When you call useEffect, you’re telling React to run your “effect” function after flushing changes to the DOM. Effects are declared inside the component so they have access to its props and state. By default, React runs the effects after every render — including the first render. Effects may also optionally specify how to “clean up” after them by returning a function.
 
@@ -1227,214 +1109,100 @@ https://react.dev/learn/lifecycle-of-reactive-effects
 
 #### Q. useContext()
 
--> useContext is a React Hook that lets you read and subscribe to context from your component.
+-> useContext is a React Hook that lets you read and subscribe to context from your component. 
+- Call useContext at the top level of your component.
 
+- useContext is used to pass data deeply into the tree.
 
+- useContext returns the context value for the context you passed. To determine the context value, React searches the component tree and finds the closest context provider above for that particular context. React automatically re-renders components that read some context if it changes.
+
+- If React can’t find any providers of that particular context in the parent tree, the context value returned by useContext() will be equal to the default value that you specified when you created that context.
+Specify a fallback default value. This way, if you accidentally render some component without a corresponding provider, it won’t break.
 ```javascript
-const value = useContext(SomeContext)
+const ThemeContext = createContext(null); // not preferred
+const ThemeContext = createContext('light'); //prefered
 ```
 
-
-Call useContext at the top level of your component to read and subscribe to context.
-
+Example of useContext:
 
 ```javascript
-import { useContext } from 'react';
+import { useState, useContext, createContext } from 'react';
 
-function MyComponent() {
-  const theme = useContext(ThemeContext);
-  // ...
-```
+const ThemeContext = createContext('light');  // creating context while specifying a fallback value
 
+function ContextHook() {
+    const [theme, setTheme] = useState('light'); // state to track theme changes
 
-**Parameters** 
-
-
-  SomeContext: The context that you’ve previously created (will be discussed below) with createContext. The context itself does not hold the information, it only represents the kind of information you can provide or read from components.
-
-**Returns** 
-
-
-  useContext returns the context value for the calling component. It is determined as the value passed to the closest SomeContext. Provider above the calling component in the tree. If there is no such provider, then the returned value will be the defaultValue you have passed to createContext for that context. The returned value is always up-to-date. React automatically re-renders components that read some context if it changes.
-
-**Usage** 
-
-Passing data deeply into the tree.
-
-useContext returns the context value for the context you passed. To determine the context value, React searches the component tree and finds the closest context provider above for that particular context.
-
-To pass context to a Button, wrap it or one of its parent components into the corresponding context provider:
-
-Updating a value via context: 
-
-
-```javascript
-import { createContext, useContext, useState } from 'react';
-
-//context is created with default value null
-const ThemeContext = createContext(null);
-
-export default function MyApp() {
-  const [theme, setTheme] = useState('light');
-  return (
-    //context is made available to the wrapped components
-    //passing context as an string
-    <ThemeContext.Provider value={theme}>
-      <Form />
-      <label>
-        <input
-          type="checkbox"
-          checked={theme === 'dark'}
-          onChange={(e) => {
-            setTheme(e.target.checked ? 'dark' : 'light')
-          }}
-        />
-        Use dark mode
-      </label>
+    // passing the theme as well as update function down the tree of components
+    return <ThemeContext.Provider value={{ theme, setTheme }}> 
+        <div
+            style={{
+                height: '100svh',
+                backgroundColor: theme === 'light' ? 'white' : 'black',
+                color: theme === 'light' ? 'black' : 'white',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
+        >
+            <Button />
+        </div>
     </ThemeContext.Provider>
-  )
 }
 
-function Form({ children }) {
-  return (
-    <Panel title="Welcome">
-      <Button>Sign up</Button>
-      <Button>Log in</Button>
-    </Panel>
-  );
-}
+export default ContextHook;
 
-function Panel({ title, children }) {
-  //using useContext hook we can subscribe to ThemeContext context
-  const theme = useContext(ThemeContext);
-  const className = 'panel-' + theme;
-  return (
-    <section className={className}>
-      <h1>{title}</h1>
-      {children}
-    </section>
-  )
-}
+function Button() {
+    const { theme, setTheme } = useContext(ThemeContext) // application of useContext
 
-function Button({ children }) {
-  //using useContext hook we can subscribe to ThemeContext context
-  const theme = useContext(ThemeContext);
-  const className = 'button-' + theme;
-  return (
-    <button className={className}>
-      {children}
-    </button>
-  );
-}
-```
-
-
-It doesn’t matter how many layers of components there are between the provider and the Button. When a Button anywhere inside of Form calls useContext(ThemeContext), it will receive "dark" as the value.
-
-Updating an object via context
-
-
-```javascript
-import { createContext, useContext, useState } from 'react';
-
-const CurrentUserContext = createContext(null);
-
-export default function MyApp() {
-  const [currentUser, setCurrentUser] = useState(null);
-  return (
-    //passing context as an object
-    <CurrentUserContext.Provider
-      value={{
-        currentUser,
-        setCurrentUser
-      }}
+    return <button
+        style={{
+            backgroundColor: theme === 'light' ? 'black' : 'white',
+            color: theme === 'light' ? 'white' : 'black',
+            border: 'none',
+            padding: '7px 20px',
+        }}
+        onClick={() => {
+            theme === 'light' ? setTheme('dark') : setTheme('light')
+        }}
     >
-      <Form />
-    </CurrentUserContext.Provider>
-  );
-}
-
-function Form({ children }) {
-  return (
-    <Panel title="Welcome">
-      <LoginButton />
-    </Panel>
-  );
-}
-
-function LoginButton() {
-  const {
-    currentUser,
-    setCurrentUser
-  } = useContext(CurrentUserContext);
-
-  if (currentUser !== null) {
-    return <p>You logged in as {currentUser.name}.</p>;
-  }
-
-  return (
-    <Button onClick={() => {
-      setCurrentUser({ name: 'Advika' })
-    }}>Log in as Advika</Button>
-  );
-}
-
-function Panel({ title, children }) {
-  return (
-    <section className="panel">
-      <h1>{title}</h1>
-      {children}
-    </section>
-  )
-}
-
-function Button({ children, onClick }) {
-  return (
-    <button className="button" onClick={onClick}>
-      {children}
+        Toggle
     </button>
-  );
 }
 ```
 
-
-Specifying a fallback default value 
-
-If React can’t find any providers of that particular context in the parent tree, the context value returned by useContext() will be equal to the default value that you specified when you created that context:
-
-
-```javascript
-const ThemeContext = createContext(null);
-```
-
-
-The default value never changes. If you want to update context, use it with state as described above.
-
-Often, instead of null, there is some more meaningful value you can use as a default, for example:
-
-
-```javascript
-const ThemeContext = createContext('light');
-```
-
-
-This way, if you accidentally render some component without a corresponding provider, it won’t break.
 
 Refer for more:  [useContext – React](https://react.dev/reference/react/useContext)
 
 
 #### Q. useMemo()
 
-->useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+-> useMemo is a React Hook that lets you cache the result of a calculation between re-renders. Call useMemo at the top level of your component.
+
+You need to pass two things to useMemo:
+* A calculation function that takes no arguments, like () =>, and returns what you wanted to calculate.
+* A list of dependencies including every value within your component that’s used inside your calculation.
+
+On the initial render, the value you’ll get from useMemo will be the result of calling your calculation.
+
+On every subsequent render, React will compare the dependencies with the dependencies you passed during the last render. If none of the dependencies have changed (compared with Object.is), useMemo will return the value you already calculated before. Otherwise, React will re-run your calculation and return the new value.
+
+In other words, useMemo caches a calculation result between re-renders until its dependencies change.
+
+By default, React will re-run the entire body of your component every time that it re-renders. For example, if this TodoList updates its state or receives new props from its parent, the filterTodos function will re-run:
 
 
 ```javascript
-const cachedValue = useMemo(calculateValue, dependencies)
+function TodoList({ todos, tab, theme }) {
+  const visibleTodos = filterTodos(todos, tab);
+  // ...
+}
 ```
 
+Usually, this isn’t a problem because most calculations are very fast. However, if you’re filtering or transforming a large array, or doing some expensive computation, you might want to skip doing it again if data hasn’t changed. If both todos and tab are the same as they were during the last render, wrapping the calculation in useMemo like below, lets you reuse visibleTodos you’ve already calculated before.
 
-Call useMemo at the top level of your component to cache a calculation between re-renders:
-
+This type of caching is called memoization.
 
 ```javascript
 import { useMemo } from 'react';
@@ -1447,55 +1215,6 @@ function TodoList({ todos, tab }) {
   // ...
 }
 ```
-
-
-Parameters
-
-* calculateValue: The function calculating the value that you want to cache. It should be pure, should take no arguments, and should return a value of any type. React will call your function during the initial render. On next renders, React will return the same value again if the dependencies have not changed since the last render. Otherwise, it will call calculateValue, return its result, and store it so it can be reused later.
-* dependencies: The list of all reactive values referenced inside of the calculateValue code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. The list of dependencies must have a constant number of items and be written inline like [dep1, dep2, dep3]. React will compare each dependency with its previous value using the Object.is comparison.
-
-Returns
-
-
-On the initial render, useMemo returns the result of calling calculateValue with no arguments.
-
-During next renders, it will either return an already stored value from the last render (if the dependencies haven’t changed), or call calculateValue again, and return the result that calculateValue has returned.
-
-Usage
-
-
-You need to pass two things to useMemo:
-
-
-
-* A calculation function that takes no arguments, like () =>, and returns what you wanted to calculate.
-* A list of dependencies including every value within your component that’s used inside your calculation.
-
-    On the initial render, the value you’ll get from useMemo will be the result of calling your calculation.
-
-
-    On every subsequent render, React will compare the dependencies with the dependencies you passed during the last render. If none of the dependencies have changed (compared with Object.is), useMemo will return the value you already calculated before. Otherwise, React will re-run your calculation and return the new value.
-
-
-    In other words, useMemo caches a calculation result between re-renders until its dependencies change.
-
-
-Let’s walk through an example to see when this is useful.
-
-By default, React will re-run the entire body of your component every time that it re-renders. For example, if this TodoList updates its state or receives new props from its parent, the filterTodos function will re-run:
-
-
-```javascript
-function TodoList({ todos, tab, theme }) {
-  const visibleTodos = filterTodos(todos, tab);
-  // ...
-}
-```
-
-
-Usually, this isn’t a problem because most calculations are very fast. However, if you’re filtering or transforming a large array, or doing some expensive computation, you might want to skip doing it again if data hasn’t changed. If both todos and tab are the same as they were during the last render, wrapping the calculation in useMemo like earlier lets you reuse visibleTodos you’ve already calculated before.
-
-This type of caching is called memoization.
 
 Note: You should only rely on useMemo as a performance optimization. If your code doesn’t work without it, find the underlying problem and fix it first. Then you may add useMemo to improve performance.
 
@@ -1511,33 +1230,11 @@ Refer for more: [useMemo – React](https://react.dev/reference/react/useMemo)
 const ref = useRef(initialValue)
 ```
 
-
-Parameters:
-
-initialValue: The value you want the ref object’s current property to be initially. It can be a value of any type. This argument is ignored after the initial render.
-
-Returns
-
-useRef returns an object with a single property:
-
-current: Initially, it’s set to the initialValue you have passed. You can later set it to something else. If you pass the ref object to React as a ref attribute to a JSX node, React will set its current property.
-
-On the next render, useRef will return the same object.
-
-Note: 
-
-
-
-* You can mutate the ref.current property. Unlike state, it is mutable.
-* When you change the ref.current property, React does not re-render your component. React is not aware of when you change it because a ref is a plain JavaScript object.
-
-Usage: 
-
 useRef returns a ref object with a single current property initially set to the initial value you provided.
 
 On the next render, useRef will return the same object. You can change its current property to store information and read it later. This might remind you of state, but there is an important difference.
 
-Changing a ref does not trigger a re-render. This means refs are perfect for storing information that doesn’t affect the visual output of your component. For example, if you need to store an interval ID and retrieve it later, you can put it in a ref. To update the value inside the ref, you need to manually change its current property:
+Changing a ref does not trigger a re-render. This means refs are perfect for storing information that doesn’t affect the visual output of your component. For example, if you need to store an interval ID and retrieve it later, you can put it in a ref. To update the value inside the ref, you need to manually change its current property.
 
 
 ```javascript
@@ -1548,10 +1245,7 @@ function handleStartClick() {
   intervalRef.current = intervalId;
 }
 ```
-
-
 Later, you can read that interval ID from the ref so that you can call clear that interval:
-
 
 ```javascript
 function handleStopClick() {
@@ -1560,76 +1254,13 @@ function handleStopClick() {
 }
 ```
 
+>Note:  You can mutate the `ref.current` property. Unlike state, `ref.current` is mutable.When you change the `ref.current` property, React does not re-render your component. React is not aware of when you change it because a ref is a plain JavaScript object.
 
-By using a ref, you ensure that:
-
-You can store information between re-renders (unlike regular variables, which reset on every render).
-
-Changing it does not trigger a re-render (unlike state variables, which trigger a re-render).
-
-The information is local to each copy of your component (unlike the variables outside, which are shared).
-
-Changing a ref does not trigger a re-render, so refs are not appropriate for storing information you want to display on the screen. Use state for that instead. 
-
-Example:
-
-A stopwatch 
-
-This example uses a combination of state and refs. Both startTime and now are state variables because they are used for rendering. But we also need to hold an interval ID so that we can stop the interval on button press. Since the interval ID is not used for rendering, it’s appropriate to keep it in a ref, and manually update it.
-
-
-```javascript
-import { useState, useRef } from 'react';
-
-export default function Stopwatch() {
-  const [startTime, setStartTime] = useState(null);
-  const [now, setNow] = useState(null);
-  const intervalRef = useRef(null);
-
-  function handleStart() {
-    setStartTime(Date.now());
-    setNow(Date.now());
-
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setNow(Date.now());
-    }, 10);
-  }
-
-  function handleStop() {
-    clearInterval(intervalRef.current);
-  }
-
-  let secondsPassed = 0;
-  if (startTime != null && now != null) {
-    secondsPassed = (now - startTime) / 1000;
-  }
-
-  return (
-    <>
-      <h1>Time passed: {secondsPassed.toFixed(3)}</h1>
-      <button onClick={handleStart}>
-        Start
-      </button>
-      <button onClick={handleStop}>
-        Stop
-      </button>
-    </>
-  );
-}
-```
-
-
-React expects that the body of your component behaves like a pure function:
-
-If the inputs (props, state, and context) are the same, it should return exactly the same JSX.
-
-Manipulating the DOM with a ref:
+**Manipulating the DOM with a ref:**
 
 It’s particularly common to use a ref to manipulate the DOM. React has built-in support for this.
 
 First, declare a ref object with an initial value of null:
-
 
 ```javascript
 import { useRef } from 'react';
@@ -1649,7 +1280,7 @@ Then pass your ref object as the ref attribute to the JSX of the DOM node you wa
 ```
 
 
-After React creates the DOM node and puts it on the screen, React will set the current property of your ref object to that DOM node. Now you can access the &lt;input>’s DOM node and call methods like focus():
+After React creates the DOM node and puts it on the screen, React will set the current property of your ref object to that DOM node. Now you can access the `<input>`’s DOM node and call methods like focus():
 
  
 
@@ -1662,8 +1293,6 @@ After React creates the DOM node and puts it on the screen, React will set the c
 
 
 React will set the current property back to null when the node is removed from the screen.
-
-Note: We could reuse some stateful logic between components using Higher-order component and render-prop. Custom Hooks also let us do this.
 
 #### Q. useCallback()
 -> useCallback caches a function between re-renders until its dependencies change.
@@ -1695,11 +1324,11 @@ We know that,
 By default, when a component re-renders, React re-renders all of its children recursively. 
 suppose we have a function that we pass to the child component that is wrapped with memo (which causes it not to render if props are same as previous render).
 
-In JavaScript, a function () {} or () => {} always creates a different function, similar to how the {} object literal always creates a new object. 
+In JavaScript, a `function () {}` or `() => {}` always creates a different function, similar to how the `{}` object literal always creates a new object. 
 
-Memo optimisation did not work since for every parent component re-render child component will have a new function as prop.
+Memo optimisation does not work since for every parent component re-render child component will have a new function as prop.
 
-So, to solve this issue, we have useCallback that caches the function when dependencies are same as before. 
+So, to solve this problem, we can use useCallback, which caches the function when dependencies are same as before. 
 
 ### Q. Higher-order component?
 
@@ -1874,6 +1503,8 @@ The state of each component is completely independent. Custom Hooks are a way to
 
 Custom Hooks are more of a convention than a feature. If a function’s name starts with ”use” and it calls other Hooks, we say it is a custom Hook. 
 
+>Note: We could reuse some stateful logic between components using Higher-order component and render-prop. Custom Hooks also let us do this.
+
 ### Q. forwardRef?
 
 -> forwardRef lets your component expose a DOM node to the parent component with a ref.
@@ -1895,16 +1526,11 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 });
 ```
 
-
-Parameters
-
-render: The render function for your component. React calls this function with the props and ref that your component received from its parent. The JSX you return will be the output of your component.
-
-Returns
+forwardRef takes a function component. React calls this function component with the props and ref that your component should receive from its parent. The JSX you return will be the output of your component.
 
 forwardRef returns a React component that you can render in JSX. Unlike React components defined as plain functions, a component returned by forwardRef is also able to receive a ref prop.
 
-Usage:
+**Usage:**
 
 Exposing a DOM node to the parent component :
 
@@ -1967,7 +1593,7 @@ function Form() {
 ```
 
 
-This Form component passes a ref to MyInput. The MyInput component forwards that ref to the &lt;input> browser tag. As a result, the Form component can access that &lt;input> DOM node and call focus() on it.
+This Form component passes a ref to MyInput. The MyInput component forwards that ref to the `<input>` browser tag. As a result, the Form component can access that `<input>` DOM node and call `focus()` on it.
 
 
 ### Q. Context api?
@@ -2166,11 +1792,9 @@ function Editor() {
 
 
 
-### Q. &lt;StrictMode>
+### Q. `<StrictMode>`
 
-->
-
-&lt;StrictMode> lets you find common bugs in your components early during development.
+-> `<StrictMode>` lets you find common bugs in your components early during development.
 
 
 ```javascript
@@ -2329,7 +1953,7 @@ export default InfinitePagination;
 
 ### Q. preventDefault()
 
--> In React, you can prevent the default behaviour of an event by calling the preventDefault() method on the event object. This is commonly used with event handlers like onClick for links or form submissions to prevent the default action associated with the event, such as navigating to a new page or submitting a form.
+-> In React, you can prevent the default behaviour of an event by calling the `preventDefault()` method on the event object. This is commonly used with event handlers like onClick for links or form submissions to prevent the default action associated with the event, such as navigating to a new page or submitting a form.
 
 Here's an example of how to use preventDefault with an onClick event:
 
@@ -2357,7 +1981,7 @@ export default MyComponent;
 ```
 
 
-In this example, when the link is clicked, the handleClick function is called, and within that function, e.preventDefault() is called to prevent the default behaviour of the &lt;a> element, which is navigating to the URL specified in the href attribute.
+In this example, when the link is clicked, the handleClick function is called, and within that function, `e.preventDefault()` is called to prevent the default behaviour of the `<a>` element, which is navigating to the URL specified in the href attribute.
 
 You can apply the same concept to other event handlers, such as onSubmit for forms or onKeyDown for input elements, to prevent their default behaviours as needed. Just make sure to pass the event object (usually named e or event) as a parameter to the event handler function.
 
@@ -2372,7 +1996,7 @@ return <div dangerouslySetInnerHTML={markup}></div> ;
 ```
 
 
-dangerouslySetInnerHTML: An object of the form `{ __html:'&lt;p>some html&lt;/p>' }` with a raw HTML string inside. Overrides the innerHTML property of the DOM node and displays the passed HTML inside. This should be used with extreme caution! If the HTML inside isn’t trusted (for example, if it’s based on user data), you risk introducing an XSS vulnerability.
+dangerouslySetInnerHTML: An object of the form `{ __html:'<p>some html</p>' }` with a raw HTML string inside. Overrides the innerHTML property of the DOM node and displays the passed HTML inside. This should be used with extreme caution! If the HTML inside isn’t trusted (for example, if it’s based on user data), you risk introducing an XSS vulnerability.
 
 ### Q. Three important react patterns.
 ->
@@ -2546,8 +2170,8 @@ Redux data flow diagram
     * configureStore accepts a reducer function as a named argument
     * configureStore automatically sets up the store with good default settings
 * Provide the Redux store to the React application components
-    * Put a React Redux `&lt;Provider> component around your &lt;App />`
-    * Pass the Redux store as `&lt;Provider store= {store}>`
+    * Put a React Redux `<Provider> component around your `<App />`
+    * Pass the Redux store as `<Provider store= {store}>`
 * Create a Redux "slice" reducer with createSlice
     * Call createSlice with a string name, an initial state, and named reducer functions
     * Reducer functions may "mutate" the state using Immer
@@ -2838,7 +2462,7 @@ The builder object in extraReducers provides methods that let us define addition
 - builder.addCase(actionCreator, reducer): defines a case reducer that handles a single known action type based on either an RTK action creator or a plain action type string
 - builder.addMatcher(matcher, reducer): defines a case reducer that can run in response to any action where the matcher function returns true
 - builder.addDefaultCase(reducer): defines a case reducer that will run if no other case reducers were executed for this action.
-- You can chain these together, like builder.addCase().addCase().addMatcher().addDefaultCase(). If multiple matchers match the action, they will run in the order they were defined.
+- You can chain these together, like `builder.addCase().addCase().addMatcher().addDefaultCase()`. If multiple matchers match the action, they will run in the order they were defined.
 
 ```javascript
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
@@ -2873,7 +2497,7 @@ const postsSlice = createSlice({
 We'll handle all three action types that could be dispatched by the thunk, based on the Promise we returned:
 
 - When the request starts, we'll set the status enum to 'loading'
-- If the request succeeds, we mark the status as 'succeeded', and add the fetched posts to state.posts
+- If the request succeeds, we mark the status as 'succeeded', and add the fetched posts to `state.posts`
 - If the request fails, we'll mark the status as 'failed', and save any error message into the state so we can display it.
 
 # Problems
@@ -3039,7 +2663,7 @@ The depth of nesting is unknown and can vary for different objects.
 Implement the React component to render the nested list based on the provided data.
 
 Example Data:
-```
+```javascript
 const data = [
   {
     name: "Item 1",
@@ -3469,4 +3093,122 @@ Focus on logical implementation with a working model first. This is what Intervi
 # Git
 
 ![alt_text](./images/gitcheatsheet.png "image_tooltip")
+
+
+
+
+# HTML and CSS
+
+* form and validation 
+* ways to centre a div
+* media queries 
+* css box model
+* position 
+* Flex
+* grid template and repeat function 
+* localstorage, session storage, cookie and index db.
+
+# React terms and concepts
+
+* spa meaning
+* bundler(webpack and parcel)
+* Jsx
+* working of dom in react (reconciliation in react, virtual dom)
+* ReactDOM.render()
+* components 
+* stateful vs stateless component 
+* props
+* prop drilling
+* fragment
+* component lifecycle -  lifecycle events
+* element vs component
+* contextual rendering
+* send data from child to parent 
+* counter app
+* fruit app
+* use of keys in react
+* pure component (in class component)
+* react memo - memoised component 
+* mixins and higher order components (both are used for reusable behaviour that can be shared among multiple components. )
+* class based vs functional components
+* difference between mounting and rendering 
+* Hooks
+* useState
+* useEffect
+* useContext
+* useMemo
+* useRef
+* refs - reference
+* higher order components
+* render prop
+* forward refs
+* custom hooks
+* how do setTimeout reacts in useEffect hook
+* context api
+* synthetic events
+* react fibre
+* startTransition()
+* performance optimisation in react
+* code splitting
+* lazy loading and suspense 
+* react strictmode
+* react developer tool
+* react router - https://www.youtube.com/watch?v=Ul3y1LXxzdU&ab_channel=WebDevSimplified
+* handle protected routes
+* how to manage nested routes in a role based routing
+* redux
+* middlewares in redux
+* redux thunk vs saga
+* interceptor in react
+* Axios
+* pagination
+* preventDefault()
+* dengerouslySetInnerHTML
+* jwt - json web token
+
+
+# React practice problem
+
+* Build Counter app
+* Shopping cart in react js
+* Dark mode - light mode
+* file explorer 
+* Flatten an array
+* Merge sort
+* Implement promise.all
+* Todo list
+* Build a traffic light where the lights switch from green to yellow to red after predetermined intervals and loop indefinitely. Each light should be lit for the following durations:
+* Red light: 4000ms
+* Yellow light: 500ms
+* Green light: 3000ms
+* Count number of times a value occurred in an array
+* Debounce - limit number of times a function executes, by delaying the execution by specified time.
+* Build Tabs component that displays a list of tab elements and one content at a time.
+* Build calculator
+* Build Holy grail layout- The Holy Grail layout is a famous CSS page layout that has traditionally been hard to implement. It consists of a header, footer, and three columns. The left column contains navigation items, the middle column contains the page contents, and the right column contains ads.
+* Build tic tac toe
+* Build a component that allows transferring of items between two lists, bulk selection/ deselection of items, and adding of new items.
+* Build a slider, on increasing/ decreasing the slider value should reflect in a pieChart.
+* Merge two object together.
+* Create a stopwatch
+* Star Rating- build a stat rating component that shows a row of star icons for users to select the number of filled stars corresponding to the rating.
+* Generate a table of numbers given the rows and columns.
+* Ability to call an API and parse JSON.
+* Ability to handle promises.
+* Ability to put data into state and use that to render on the page.
+* Basic CSS (flexbox, border styles, background, centering a div on page)
+* Ability  to handle events and gather target's value from input boxes (event.target.value)
+* Ability to use hooks such as useState, useEffect.
+* Ability to pass the right dependency array to useEffect.
+* Create an app to fetch data from a JSON API. Use this data to render on the page. Provide ability to paginate the results 
+* Create a typeahead component.(autocomplete using array of names)
+* Given a mock, use React to render on the page. eg. 10 box are there with a flip button on it to reveal an image on it.
+* Infinite scrolling app
+* Create a form that gathers user's data and sends it to the server.
+* Create a tic tac toe game.
+* Create a slideshow type app. The data of slides could be given. It contains an image url, and the title of the slide. Left and Right navigation buttons are needed.
+* Create a form app that has a different state of UI when a field is selected, has value or is visited. (Uses onFocus, onBlur events)
+* Create a ticker that increments value every second.
+* Create an app that allows user to click a button 5 times, and times them out afterwards.
+* Create an app that uses debouncing / throttling.
 

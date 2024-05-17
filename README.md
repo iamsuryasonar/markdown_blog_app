@@ -52,7 +52,7 @@ markdown_blog_app/
 │   ├── hooks/              # Custom hooks
 │   ├── layout.js           # Layout page
 │   ├── page.js             # Home page
-├── lib/                    # Next.js pages
+├── lib/                    # Utilities
 │   ├── markdownToHtml.js       # Utility functions to convert markdown to html
 │   ├── postUtility.js          # Utility functions to extract markdown from public folder
 ├── public/                 # Static assets
