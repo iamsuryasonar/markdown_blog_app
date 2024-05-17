@@ -1,8 +1,8 @@
 ---
 title: Async and await
-slug: asyncawait
+slug: async_await
 date: '2024-02-03'
-description: All about async and await
+description: Deep dive - async and await
 categories:
   - Tech
   - Programming

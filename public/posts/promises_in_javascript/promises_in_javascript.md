@@ -2,7 +2,7 @@
 title: Promises in Javascript
 slug: promises
 date: '2024-03-02'
-description: Promises in javascript 
+description: Promise creation, handling and concurrency
 categories:
   - Tech
   - Programming
@@ -24,9 +24,6 @@ toc: |
         - [Polyfill of Promise.all()](#polyfill-of-promiseall)
     - [How Promise is executed -](#how-promise-is-executed--)
     - [Here's a breakdown of the key points:](#heres-a-breakdown-of-the-key-points)
-    - [Async/Await](#asyncawait)
-
-
 ---
 
 

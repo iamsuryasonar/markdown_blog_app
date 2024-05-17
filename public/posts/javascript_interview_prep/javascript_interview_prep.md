@@ -1,5 +1,5 @@
 ---
-title: Javascript
+title: Javascript interview prep
 slug: javascript
 date: '2024-01-10'
 description: Javascript notes
@@ -129,51 +129,6 @@ toc: |
     - [Blind 75 DSA sheet](#blind-75-dsa-sheet)
 ---
 
-**Java Script - mainly focused topics:**
-
-- Array methods
-- DOM
-- Closures
-- Promises
-- How to handle browser specific API's
-- ES6 concepts
-- Object String
-- Arrow function
-- Async/await
-- Prototypes
-- Error handling
-- EventLoop
-- setTimeOut() and Promise are running parallel. What will be executed first?
-- How can Prototypal inheritance can be achieved?
-- Design pattern for auto search Engine?
-  - Constructor Method
-  - Factory Method
-  - Prototype
-  - Singleton
-  - Builder
-- indexOf() is faster than includes() if you are checking character
-
-**Javascript revision**
-
-[javascript-interview-prep-cheatsheet freecodecamp](https://www.freecodecamp.org/news/javascript-interview-prep-cheatsheet)
-
-[https://www.interviewbit.com/javascript-interview-questions/](https://www.interviewbit.com/javascript-interview-questions/)
-
-Topics you should know to crack javascript interview:
-
-[https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d](https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d)
-
-practice problems:
-
-[https://www.fullstack.cafe/blog/javascript-code-interview-questions](https://www.fullstack.cafe/blog/javascript-code-interview-questions)
-
-guess the output?
-
-[https://github.com/lydiahallie/javascript-questions](https://github.com/lydiahallie/javascript-questions)
-
-javascript object guess output problems:
-
-[https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA](https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA)
 
 ## Javascript questions and answers
 
@@ -4015,8 +3970,49 @@ console.log(temp); // 10
 ```
 JavaScript knows what the primitive value of my number-like object is because it looks for and executes the valueOf method. As long as you have this method in your object
 
+**Java Script - main topics:**
 
+- Array methods
+- DOM
+- Closures
+- Promises
+- How to handle browser specific API's
+- ES6 concepts
+- Object String
+- Arrow function
+- Async/await
+- Prototypes
+- Error handling
+- EventLoop
+- setTimeOut() and Promise are running parallel. What will be executed first?
+- How can Prototypal inheritance can be achieved?
+- Design pattern for auto search Engine?
+  - Constructor Method
+  - Factory Method
+  - Prototype
+  - Singleton
+  - Builder
+- indexOf() is faster than includes() if you are checking character
 
-# Bonus
+**Javascript revision**
 
-OOPS, DBMS, SQL query, operating system, system security, data structures like trees, LinkedList, etc.
+[javascript-interview-prep-cheatsheet freecodecamp](https://www.freecodecamp.org/news/javascript-interview-prep-cheatsheet)
+
+[https://www.interviewbit.com/javascript-interview-questions/](https://www.interviewbit.com/javascript-interview-questions/)
+
+Topics you should know to crack javascript interview:
+
+[https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d](https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d)
+
+practice problems:
+
+[https://www.fullstack.cafe/blog/javascript-code-interview-questions](https://www.fullstack.cafe/blog/javascript-code-interview-questions)
+
+guess the output?
+
+[https://github.com/lydiahallie/javascript-questions](https://github.com/lydiahallie/javascript-questions)
+
+javascript object guess output problems:
+
+[https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA](https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA)
+

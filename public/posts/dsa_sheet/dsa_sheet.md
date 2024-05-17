@@ -2,7 +2,7 @@
 title: DSA Sheet
 slug: dsasheet
 date: '2024-04-07'
-description: DSA questions with topics
+description: DSA questions with topics/patterns
 categories:
   - Tech
   - Programming

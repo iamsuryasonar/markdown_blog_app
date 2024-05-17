@@ -1,5 +1,5 @@
 ---
-title: React interview preperation
+title: React interview prep
 slug: react
 date: '2024-02-16'
 description: React notes

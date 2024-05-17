@@ -1,8 +1,8 @@
 ---
-title: Important vanilla apis
-slug: important_vanilla_apis
+title: Vanilla apis
+slug: vanilla_apis
 date: '2024-04-27'
-description: Important vanilla apis that a web developer should know
+description: Vanilla api's that a web developer should know
 categories:
   - Tech
   - Programming

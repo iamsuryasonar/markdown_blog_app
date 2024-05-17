@@ -2,7 +2,7 @@
 title: Object in Javascript
 slug: object
 date: '2024-04-26'
-description: Objects in javascript
+description: All you need to know about javascript objects
 categories:
   - Tech
   - Programming
