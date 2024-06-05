@@ -2287,6 +2287,38 @@ Object instanceOf ClassName;
 -> The difference between `__proto__` and `prototype` is simple: `__proto__` is a property of an object instance, while `prototype` is a property of a constructor function.
 When you use `__proto__`, you're looking up properties and methods on an object's prototype chain. On the other hand, `prototype` defines the shared properties and methods that all instances created from a constructor function will have.
 
+```javascript
+function User(name) {
+    this.name = name;
+}
+
+let obj = {
+    name: 'John'
+}
+
+const prototypeObj = {
+    printName: function () {
+        console.log(this.name)
+    }
+}
+
+Object.setPrototypeOf(obj, prototypeObj)
+const user = new User('John')
+
+console.log(User.prototype)
+/* 
+    Empty object (its empty because we have not added any properties in it)
+    Every function gets a prototype property when we define a function.
+    This prototype object is used for inheritance: any instance created using 
+    the new keyword from this function will have this prototype object in its prototype chain.
+*/
+console.log(obj.prototype) // undefined
+/* 
+    The prototype property only exists on functions (or constructors), not on regular objects. obj is a regular object, so obj.prototype is undefined.
+*/
+console.log(obj.__proto__) // object containing printName function
+```
+
 ### Q. call, apply and bind?
 
 -> In JavaScript, the bind, call, and apply methods are used to manipulate the this context and to invoke functions with a specific context or set of arguments. These methods provide ways to control how a function is executed and which object it should use as its context.
