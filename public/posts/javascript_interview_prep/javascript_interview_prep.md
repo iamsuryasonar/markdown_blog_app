@@ -1,4 +1,3 @@
-
 ---
 title: Javascript interview prep
 slug: javascript
@@ -3580,6 +3579,18 @@ console.log( str.match(/\d\n/g) ); // 1\n,2\n
 As we can see, there are 2 matches instead of 3.
 
 That’s because there’s no newline after 3 (there’s text end though, so it matches $).
+
+# Design Patterns
+### Singleton pattern
+Singleton is a design pattern that ensures that a class has only one immutable instance. Said simply, the singleton pattern consists of an object that can't be copied or modified. It's often useful when we want to have some immutable single point of truth for our application.
+Let's say for example we want to have all of our app's configuration in a single object. And we want to disallow any duplication or modification of that object.
+
+
+### Factory Method Pattern
+
+
+
+
 
 # Resources
 
