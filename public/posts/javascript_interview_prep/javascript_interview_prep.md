@@ -13,6 +13,7 @@ toc: |
         - [Q. Tree shaking?](#q-tree-shaking)
         - [Q. What is Babel?](#q-what-is-babel)
         - [Q. Scope?](#q-scope)
+        - [Q. Module Scope](#q-module-scope)
         - [Q. Scope chaining or lexical scoping?](#q-scope-chaining-or-lexical-scoping)
         - [Q. Difference between Var, Let and Const?](#q-difference-between-var-let-and-const)
         - [Q. undefined vs null](#q-undefined-vs-null)
@@ -213,6 +214,85 @@ a();
 ```
 
 The function a doesn't have its own declaration of the variable b, so it looks for b in its outer scope, which, in this case, is the global scope. The variable b is found in the global scope, and its value (3) is then logged to the console.
+
+### Module scope:
+
+-> Modules have their own scope in javascript, which is separate from the global scope. This means that variables, functions, and classes defined in a module are not accessible outside the module unless they are explicitly exported. Similarly, to use variables, functions, or classes from another module, they must be explicitly imported.
+
+Key Features of Module Scope in JavaScript:
+
+ - Encapsulation:
+   - Variables, functions, and classes defined in a module are private to that module by default.
+   - This helps to avoid polluting the global scope and prevents name collisions.
+ - Exports and Imports:
+   - To make functions, variables, or classes available outside the module, you use the export keyword.
+   - To use functions, variables, or classes from another module, you use the import keyword.
+ - Top-Level Scope:
+   - In modules, top-level this is undefined, unlike in scripts where top-level this refers to the global object.
+   - Top-level variables and functions are not added to the global object.
+
+
+```javascript
+// Private to this module
+const PI = 3.14159;
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+// Exporting functions to be used in other modules
+export { add, subtract };
+```
+
+
+```javascript
+import { add, subtract } from './math.js';
+
+console.log(add(5, 3)); // 8
+console.log(subtract(5, 3)); // 2
+
+// PI is not accessible here because it was not exported
+// console.log(PI); // ReferenceError: PI is not defined
+```
+
+**Module Syntax**
+
+***Exporting:***
+
+- Named Exports:
+```javascript
+export const name = 'Alice';
+export function greet() { console.log('Hello'); }
+```
+- Default Export:
+```javascript
+export default function() { console.log('Default export'); }
+```
+
+***Importing:***
+
+- Named Imports:
+```javascript
+import { name, greet } from './module.js';
+```
+
+- Importing Everything:
+
+```javascript
+import * as myModule from './module.js';
+console.log(myModule.name);
+myModule.greet();
+````
+- Default Import:
+
+```javascript
+import myDefaultFunction from './module.js';
+myDefaultFunction();
+```
 
 ### Q. Difference between Var, Let and Const?
 
