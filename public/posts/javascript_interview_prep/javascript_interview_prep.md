@@ -215,7 +215,7 @@ a();
 
 The function a doesn't have its own declaration of the variable b, so it looks for b in its outer scope, which, in this case, is the global scope. The variable b is found in the global scope, and its value (3) is then logged to the console.
 
-### Module scope:
+### Q. Module scope:
 
 -> Modules have their own scope in javascript, which is separate from the global scope. This means that variables, functions, and classes defined in a module are not accessible outside the module unless they are explicitly exported. Similarly, to use variables, functions, or classes from another module, they must be explicitly imported.
 
