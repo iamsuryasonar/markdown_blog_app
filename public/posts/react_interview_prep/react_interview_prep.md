@@ -73,6 +73,8 @@ toc: |
       - [Q. Three important react patterns.](#q-three-important-react-patterns)
       - [Q. Build a counter app?](#q-build-a-counter-app)
       - [Q. Add and remove fruit app?](#q-add-and-remove-fruit-app)
+      - [Q. Error boundaries](#q-error-boundaries)
+      - [Q. Security](#q-security)
   - [Redux](#redux)
       - [Q. Describe basic flow if redux.](#q-describe-basic-flow-if-redux)
       - [Q. Redux set up](#q-redux-set-up)
@@ -2051,6 +2053,159 @@ const Fruit = () => {
 ```
 
 
+### Q. Error boundaries
+
+In React functional components, error boundaries are implemented differently compared to class components. React functional components do not support the traditional error boundary lifecycle methods (`componentDidCatch` and `getDerivedStateFromError`). However, you can still handle errors in functional components using the `ErrorBoundary` pattern but with a class component.
+
+Here’s how you can implement error boundaries in React using a class component for the boundary and functional components for the rest of your app:
+
+#### Implementing Error Boundaries with Functional Components
+
+1. **Create the Error Boundary Class Component:**
+    
+    Define an error boundary using a class component. This class component will catch errors in its child components.
+    
+```javascript
+
+import React from 'react';
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state to render fallback UI
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Log error details (could send to an error tracking service)
+    console.error('Error caught by Error Boundary:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Fallback UI when an error is caught
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+```
+ 
+2. **Use the Error Boundary in Functional Components:**
+    
+  Wrap your functional components with the `ErrorBoundary` class component. This will catch any errors that occur within those components.
+    
+```javascript
+import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
+
+// A functional component that may throw an error
+const ProblematicComponent = () => {
+  // Simulating an error
+  throw new Error('Simulated error');
+  return <div>Problematic Component</div>;
+};
+
+// Another functional component
+const SafeComponent = () => (
+  <div>Safe Component</div>
+);
+
+const App = () => (
+  <ErrorBoundary>
+    <SafeComponent />
+    <ProblematicComponent />
+  </ErrorBoundary>
+);
+
+export default App;
+```
+
+#### Handling Errors in Functional Components
+
+For handling errors within functional components, you can use `try-catch` blocks inside event handlers and asynchronous operations. However, this does not provide global error handling for rendering errors.
+
+```javascript
+import React, { useState } from 'react';
+
+const FunctionalComponentWithErrorHandling = () => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      // Simulate an API call
+      throw new Error('Simulated fetch error');
+      // const response = await fetch('https://api.example.com/data');
+      // const result = await response.json();
+      // setData(result);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={fetchData}>Fetch Data</button>
+      {error && <p>Error: {error}</p>}
+      {data && <p>Data: {data}</p>}
+    </div>
+  );
+};
+
+export default FunctionalComponentWithErrorHandling;
+```
+
+### Q. Security
+->Protecting resources comprises two key components:
+
+#### Authentication
+
+Authentication is the process of verifying the identity of a user. In single-page applications (SPAs), the prevalent method of authenticating users is through JSON Web Tokens ([JWT](https://jwt.io/)). When a user logs in or registers, they receive a token that is stored within the application. Subsequently, for each authenticated request, the token is sent in the header or via a cookie along with the request to validate the user's identity and access permissions.
+
+The most secure practice is to store the token in the application state. However, it's important to note that if the user refreshes the application, the token will be reset. That can lead to the loss of the user's authentication status.
+
+That is why tokens need to be are stored in a cookie or `localStorage/sessionStorage`.
+
+**`localStorage` vs cookie for storing tokens**
+
+Storing authentication tokens in localStorage can pose a security risk, especially in the context of Cross-Site Scripting ([XSS](https://owasp.org/www-community/attacks/xss/)) vulnerabilities, potentially leading to token theft by malicious actors.
+
+Opting to store tokens in cookies, configured with the `HttpOnly` attribute, can enhance security as they are inaccessible to client-side JavaScript. In our sample app, we utilize js-cookie for cookie management, assuming the real API would enforce the HttpOnly attribute for enhanced security, and the application does not have access to the cookie from the client side.
+
+==In addition to securely storing tokens, it's crucial to protect the entire application from Cross-Site Scripting (XSS) attacks. One key strategy is to sanitize all user inputs before displaying them in the application. By carefully sanitizing inputs, you can reduce the risk of XSS vulnerabilities, making the application more resilient to malicious attacks and enhancing overall security for users.==
+
+For a full list of security risks, check [OWASP](https://owasp.org/www-project-top-10-client-side-security-risks/).
+
+**Handling user data**
+
+User info should be considered a global piece of state which should be available from anywhere in the application.
+If you are already using `react-query`, you can use [react-query-auth](https://github.com/alan2207/react-query-auth) library for handling user state which will handle all the things for you after you provide it some configuration. Otherwise, you can use react context + hooks, or some 3rd party state management library.
+
+User information should be treated as a central piece of data accessible throughout the application. If you are already using `react-query`, consider using it for storing user data as well. Alternatively, you can leverage React context with hooks or opt for a third-party state management library to efficiently manage user state across your application.
+
+The application will assume the user is authenticated if a user object is present.
+
+#### Authorization
+
+Authorization is the process of verifying whether a user has permission to access a specific resource within the application.
+
+**RBAC (Role based access control)**
+
+In a role-based authorization model, access to resources is determined by defining specific roles and associating them with permissions. For example, roles such as `USER` and `ADMIN` can be assigned different levels of access rights within the application. Users are then granted access based on their roles; for instance, restricting certain functionalities to regular users while permitting administrators to access all features and functionalities.
+
+**PBAC (Permission based access control)**
+
+While Role-Based Access Control (RBAC) provides a structured methodology for authorization, there are instances where a more granular approach is necessary. Precision-Based Access Control (PBAC) offers a more flexible solution, particularly in scenarios where access permissions need to be finely tuned based on specific criteria, such as allowing only the owner of a resource to perform certain operations. For example, in the case of a user's comment, PBAC ensures that only the author of the comment has the privilege to delete it, adding a layer of precision and customization to access control mechanisms.
+
+
 
 # Redux 
 
@@ -2880,7 +3035,6 @@ export default function OutsideAlerter() {
 - put it outside if it not depend on any thing inside component
 - put it inside effect
 - useMemo or useCallback
-
 
 ## Extra question to prepare- 
 
