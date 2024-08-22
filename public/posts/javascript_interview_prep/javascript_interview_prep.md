@@ -78,7 +78,7 @@ toc: |
         - [Q. Events in javascript?](#q-events-in-javascript)
         - [Q. Event handling?](#q-event-handling)
         - [Q. Event propagation - bubbling and capturing?](#q-event-propagation---bubbling-and-capturing)
-        - [Q. Custom events?](#q-custom-events?)
+        - [Q. Custom events?](#q-custom-events)
         - [Q. Debouncing and throttling?](#q-debouncing-and-throttling)
         - [Q. Implement debouncing?](#q-implement-debouncing)
         - [Q. Implement throttling](#q-implement-throttling)
