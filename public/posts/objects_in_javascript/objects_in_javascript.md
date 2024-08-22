@@ -1,5 +1,6 @@
 ---
 title: Object in Javascript
+published: true
 slug: object
 date: '2024-04-26'
 description: All you need to know about javascript objects

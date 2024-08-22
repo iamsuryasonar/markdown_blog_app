@@ -1,5 +1,6 @@
 ---
 title: Vanilla apis
+published: true
 slug: vanilla_apis
 date: '2024-04-27'
 description: Vanilla api's that a web developer should know

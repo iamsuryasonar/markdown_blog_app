@@ -1,5 +1,6 @@
 ---
 title: React interview prep
+published: true
 slug: react
 date: '2024-02-16'
 description: React notes
@@ -3020,9 +3021,6 @@ Use redux with api call using redux toolkit (redux,redux-thunk)-
 [https://www.youtube.com/watch?v=2JBx_06dD1k&ab_channel=PiyushGarg](https://www.youtube.com/watch?v=2JBx_06dD1k&ab_channel=PiyushGarg)
 
 # Interview tips -
-
-[https://drive.google.com/file/d/1nG7IaU6B1ce9ifmPRQYFv38Uih7oOU_Z/view?usp=drivesdk](https://drive.google.com/file/d/1nG7IaU6B1ce9ifmPRQYFv38Uih7oOU_Z/view?usp=drivesdk)
-
 
 Tips:
 

@@ -1,5 +1,6 @@
 ---
 title: Javascript interview prep
+published: true
 slug: javascript
 date: '2024-01-10'
 description: Javascript notes
@@ -77,6 +78,7 @@ toc: |
         - [Q. Events in javascript?](#q-events-in-javascript)
         - [Q. Event handling?](#q-event-handling)
         - [Q. Event propagation - bubbling and capturing?](#q-event-propagation---bubbling-and-capturing)
+        - [Q. Custom events?](#q-custom-events?)
         - [Q. Debouncing and throttling?](#q-debouncing-and-throttling)
         - [Q. Implement debouncing?](#q-implement-debouncing)
         - [Q. Implement throttling](#q-implement-throttling)
@@ -2738,6 +2740,102 @@ document.getElementById('outer').addEventListener('click', function() {
 </body>
 </html>
 ```
+
+### Q. Custom events?
+Implementing custom events in JavaScript allows you to create and handle your own events beyond the built-in browser events like clicks and form submissions. Custom events are useful for creating modular and decoupled code. Here’s how you can implement and use custom events in JavaScript:
+
+**Creating and Dispatching Custom Events**
+
+**Create a Custom Event:**
+Use the CustomEvent constructor to create a new event. You can also pass additional data to the event using the detail property.
+
+```javascript
+const event = new CustomEvent('myCustomEvent', {
+  detail: {
+    key1: 'value1',
+    key2: 'value2'
+  }
+});
+```
+Here, 'myCustomEvent' is the name of the custom event, and detail contains any additional data you want to pass with the event.
+
+**Dispatch the Custom Event:**
+To dispatch the custom event, use the dispatchEvent method on the target element.
+
+```javascript
+const element = document.getElementById('myElement');
+element.dispatchEvent(event);
+```
+This will trigger the custom event on the specified element.
+
+**Listening for Custom Events**
+
+**Add an Event Listener:**
+To listen for a custom event, use the addEventListener method.
+
+```javascript
+element.addEventListener('myCustomEvent', (event) => {
+  console.log('Custom event received:', event.detail);
+});
+```
+In the event handler, event.detail contains the data you passed when dispatching the event.
+
+Complete Example
+Here’s a complete example demonstrating how to create, dispatch, and handle a custom event.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Event Example</title>
+</head>
+<body>
+  <button id="triggerEvent">Trigger Custom Event</button>
+  <div id="output"></div>
+
+  <script>
+    // Create a custom event
+    const myEvent = new CustomEvent('myCustomEvent', {
+      detail: {
+        message: 'Hello from custom event!',
+        timestamp: new Date()
+      }
+    });
+
+    // Get elements
+    const button = document.getElementById('triggerEvent');
+    const output = document.getElementById('output');
+
+    // Add event listener
+    document.addEventListener('myCustomEvent', (event) => {
+      output.innerHTML = `Event received! Message: ${event.detail.message}, Timestamp: ${event.detail.timestamp}`;
+    });
+
+    // Dispatch the custom event when the button is clicked
+    button.addEventListener('click', () => {
+      document.dispatchEvent(myEvent);
+    });
+  </script>
+</body>
+</html>
+```
+
+**Explanation:**
+Create a Custom Event:
+myEvent is created with the name 'myCustomEvent' and some data in detail.
+
+- Add an Event Listener:
+An event listener is added to the document to handle 'myCustomEvent'.
+
+- Dispatch the Event:
+When the button is clicked, the custom event is dispatched on the document, and the event listener updates the content of the output div.
+
+- Benefits of Custom Events
+ - Decoupling: Custom events allow different parts of your application to communicate without being directly connected.
+ - Modularity: Custom events can help you create modular components that interact with each other through events.
+
 
 ### Q. Debouncing and throttling?
 

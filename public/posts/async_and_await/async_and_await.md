@@ -1,5 +1,6 @@
 ---
 title: Async and await
+published: true
 slug: async_await
 date: '2024-02-03'
 description: Deep dive - async and await

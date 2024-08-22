@@ -1,5 +1,6 @@
 ---
 title: Promises in Javascript
+published: true
 slug: promises
 date: '2024-03-02'
 description: Promise creation, handling and concurrency
