@@ -113,6 +113,26 @@ Gets or sets the text content of an element.
 element.textContent = 'New text content';
 const textContent = element.textContent;
 ```
+
+### Height and width
+
+**height from top of the document**
+```javascript
+let scrollTop = document.documentElement.scrollTop
+```
+**height of the document viewport**
+```javascript
+let clientHeight = document.documentElement.clientHeight
+```
+**total height of the document**
+```javascript
+let scrollHeight = document.documentElement.scrollHeight
+```
+**scroll percentage**
+```javascript
+const percentage = (scrollTop / (scrollHeight - clientHeight)) * 100
+```
+
 ### Style  
 `element.style`
 Accesses the inline CSS styles of an element.
