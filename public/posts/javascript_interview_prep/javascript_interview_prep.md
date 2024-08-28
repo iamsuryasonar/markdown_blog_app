@@ -123,11 +123,12 @@ toc: |
         - [Q. Closure?](#q-closure)
         - [Q. Api call using fetch](#q-api-call-using-fetch)
     - [Regular Expressions](#regular-expressions)
-    - [Resources](#resources)
-    - [problem solving:](#problem-solving)
+    - [Problem solving](#problem-solving)
     - [Random](#random)
-          - [Primitive type](#primitive-type)
-          - [Wrapper object coercion](#wrapper-object-coercion)
+      - [Q. Primitive type](#q-primitive-type)
+      - [Q. Wrapper object coercion](#q-wrapper-object-coercion)
+      - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
+    - [Resources](#resources)
 ---
 
 
@@ -138,7 +139,7 @@ toc: |
 
 ### Q. What is webpack?
 
--> Webpack is a popular module bundler for JavaScript applications. It is primarily used to manage and bundle the dependencies and assets of a web application, such as JavaScript files, CSS stylesheets, images, and other resources.Webpack takes a modular approach to application development, allowing developers to split their codebase into smaller modules that can be organised and managed more efficiently. It analyses the dependencies between these modules and creates a dependency graph. Based on this graph, it then bundles the modules together into a single or multiple optimised bundles that can be loaded by the browser.
+ Webpack is a popular module bundler for JavaScript applications. It is primarily used to manage and bundle the dependencies and assets of a web application, such as JavaScript files, CSS stylesheets, images, and other resources.Webpack takes a modular approach to application development, allowing developers to split their codebase into smaller modules that can be organised and managed more efficiently. It analyses the dependencies between these modules and creates a dependency graph. Based on this graph, it then bundles the modules together into a single or multiple optimised bundles that can be loaded by the browser.
 
 ### Q. Tree shaking?
 
@@ -147,13 +148,13 @@ It is done by tools like webpack.
 
 ### Q. What is Babel?
 
--> Babel is a widely used JavaScript compiler that allows developers to write code in the latest version of JavaScript (ES6/ES7/ESNext) and convert it into backward-compatible versions that can run in older environments. It enables developers to use modern JavaScript features and syntax while ensuring compatibility with older browsers and platforms.
+ Babel is a widely used JavaScript compiler that allows developers to write code in the latest version of JavaScript (ES6/ES7/ESNext) and convert it into backward-compatible versions that can run in older environments. It enables developers to use modern JavaScript features and syntax while ensuring compatibility with older browsers and platforms.
 
 JSX should not be implemented directly by browsers, but instead requires a compiler to transform it into ECMAScript. This is where Babel comes in. Babel acts as this compiler allowing us to leverage all the benefits of JSX while building React components.
 
 ### Q. Scope?
 
--> Scope is an environment where a variable can be accessed.
+ Scope is an environment where a variable can be accessed.
 
 there are three types of scopes in javascript-
 
@@ -201,7 +202,7 @@ console.log(blockScopedVariable);  // Error: blockScopedVariable is not defined
 
 ### Q. Scope chaining or lexical scoping?
 
-->
+
 
 when a variable is not declared within the current scope of a function, the JavaScript engine will look for the variable in outer scopes. This behaviour is known as "lexical scoping" or "scope chaining."
 
@@ -219,7 +220,7 @@ The function a doesn't have its own declaration of the variable b, so it looks f
 
 ### Q. Module scope:
 
--> Modules have their own scope in javascript, which is separate from the global scope. This means that variables, functions, and classes defined in a module are not accessible outside the module unless they are explicitly exported. Similarly, to use variables, functions, or classes from another module, they must be explicitly imported.
+ Modules have their own scope in javascript, which is separate from the global scope. This means that variables, functions, and classes defined in a module are not accessible outside the module unless they are explicitly exported. Similarly, to use variables, functions, or classes from another module, they must be explicitly imported.
 
 Key Features of Module Scope in JavaScript:
 
@@ -298,7 +299,7 @@ myDefaultFunction();
 
 ### Q. Difference between Var, Let and Const?
 
-->
+
 
 - While let and const are block-scoped, var declarations are either globally scoped or function-scoped.
 - Let variables can be updated but not re-declared, const variables cannot be updated or re-declared, and var variables may both be updated and re-declared inside their scope.
@@ -396,7 +397,7 @@ Because it is hoisted in separate memory space and could only be accessed when i
 
 [undefined-vs-null-javascript](https://flexiple.com/javascript/undefined-vs-null-javascript)
 
--> In JavaScript, undefined is a primitive value that is assigned to variables that have been declared but have not yet been assigned a value. It represents the absence of a value or the uninitialized state.
+ In JavaScript, undefined is a primitive value that is assigned to variables that have been declared but have not yet been assigned a value. It represents the absence of a value or the uninitialized state.
 
 null can be assigned to a variable as a representation of no value. Type of null is an object.
 
@@ -414,7 +415,7 @@ undefined===null //false
 
 ### Q. Template literals
 
--> Template literals, introduced in ECMAScript 2015 (ES6), are a way to work with strings in JavaScript that allows for easy interpolation of variables and multiline strings. They provide a more convenient and readable syntax for creating strings compared to traditional string concatenation.
+ Template literals, introduced in ECMAScript 2015 (ES6), are a way to work with strings in JavaScript that allows for easy interpolation of variables and multiline strings. They provide a more convenient and readable syntax for creating strings compared to traditional string concatenation.
 
 Key features of template literals include:
 
@@ -434,7 +435,7 @@ console.log(message);
 
 ### Q. Object.is()
 
--> Object.is() determines whether two values are the same value. Two values are the same if one of the following holds:
+ Object.is() determines whether two values are the same value. Two values are the same if one of the following holds:
 
 - both undefined(meaning both values reference the same object in memory)
 - both BigInts with the same numeric value
@@ -478,7 +479,7 @@ Object.is(NaN, Number.NaN); // true
 
 ### Q. == vs ===
 
-->In JavaScript, == (loose equality) and === (strict equality) are used to compare values for equality. Here's the difference between them:
+In JavaScript, == (loose equality) and === (strict equality) are used to compare values for equality. Here's the difference between them:
 
 Loose Equality (==):
 
@@ -572,13 +573,13 @@ So, the entire expression evaluates to true, and console.log will output true to
 
 ### Q. Optional chaining?
 
--> The ?. (optional chaining) operator in JavaScript is used to safely access properties or methods of an object when there's a possibility that the object might be null or undefined. It allows you to avoid "TypeError" exceptions that would occur if you attempted to access properties or methods of a null or undefined value directly.
+ The ?. (optional chaining) operator in JavaScript is used to safely access properties or methods of an object when there's a possibility that the object might be null or undefined. It allows you to avoid "TypeError" exceptions that would occur if you attempted to access properties or methods of a null or undefined value directly.
 
 For example, formData?.hint, if formData is null or undefined, accessing hint directly would result in an error. However, by using the ?. operator, you can safely access the hint property, and if formData is null or undefined, the expression will simply evaluate to undefined without causing an error.
 
 ### Q. ?? (nullish coalescing operator)
 
--> The ?? operator is called the "nullish coalescing operator," and it is used in JavaScript to provide a default value for a variable or expression when the value on the left-hand side is null or undefined. It's specifically designed to handle nullish values and differs from the || (logical OR) operator, which considers values like 0, false, and empty strings "" as falsy and would return the right-hand side expression even if the left-hand side is falsy.
+ The ?? operator is called the "nullish coalescing operator," and it is used in JavaScript to provide a default value for a variable or expression when the value on the left-hand side is null or undefined. It's specifically designed to handle nullish values and differs from the || (logical OR) operator, which considers values like 0, false, and empty strings "" as falsy and would return the right-hand side expression even if the left-hand side is falsy.
 
 Here's how the ?? operator works:
 
@@ -591,7 +592,7 @@ In this example, because null is a nullish value, the ?? operator returns the ri
 
 ### Q. !! Double negation operator?
 
--> Consider the expression:
+ Consider the expression:
 
 ```javascript
 let value = 'hello';
@@ -633,7 +634,7 @@ console.log(booleanEquivalent); // Outputs: true
 
 ### Q. Deep Copy?
 
--> A deep copy creates a completely independent copy of the original object or array, including all nested values. Changes made to the copy will not affect the original, and vice versa.
+ A deep copy creates a completely independent copy of the original object or array, including all nested values. Changes made to the copy will not affect the original, and vice versa.
 
 Here's an example of deep copying an object:
 
@@ -648,7 +649,7 @@ In this example, JSON.stringify() is used to convert the originalObj to a JSON s
 
 ### Q. Shallow Copy
 
-->A shallow copy creates a new object or array, but the nested values are still referenced from the original object. In other words, the new copy points to the same memory locations as the original, so modifying the nested values in either the original or the copy will affect both.
+A shallow copy creates a new object or array, but the nested values are still referenced from the original object. In other words, the new copy points to the same memory locations as the original, so modifying the nested values in either the original or the copy will affect both.
 
 Here's an example of shallow copying an object:
 
@@ -667,7 +668,7 @@ In this example, Object.assign() is used to create a shallow copy of originalObj
 
 ### Q. Default parameters in a function
 
--> Default parameters in JavaScript allow you to specify default values for function parameters. These default values are used when the corresponding arguments are not provided or are explicitly set as undefined. Default parameters provide a convenient way to make function parameters optional or to define fallback values.
+ Default parameters in JavaScript allow you to specify default values for function parameters. These default values are used when the corresponding arguments are not provided or are explicitly set as undefined. Default parameters provide a convenient way to make function parameters optional or to define fallback values.
 
 ```javascript
 function greet(name = 'Anonymous', message = 'Hello') {
@@ -679,7 +680,7 @@ In the above example, the greet function has two parameters: name and message. T
 
 ### Q. Is javascript pass by value or pass by reference?
 
--> It behaves differently for primitives and Non-primitives(objects).
+ It behaves differently for primitives and Non-primitives(objects).
 
 for primitives it is pass by value. but for non-primitives it is passed by reference.
 
@@ -718,11 +719,11 @@ console.log(obj3.value);  // "Me too!"
 
 ### Q. Callback Functions
 
--> Callbacks in JavaScript are a way to handle asynchronous operations and control the flow of execution. A callback is a function that is passed as an argument to another function and gets invoked when a certain operation or task is completed.
+ Callbacks in JavaScript are a way to handle asynchronous operations and control the flow of execution. A callback is a function that is passed as an argument to another function and gets invoked when a certain operation or task is completed.
 
 ### Q. Timers in javascript
 
--> Timers in JavaScript are used to schedule the execution of code at specific time intervals or after a certain delay. JavaScript provides three timer functions for this purpose: setTimeout, setInterval, and clearTimeout/clearInterval.
+ Timers in JavaScript are used to schedule the execution of code at specific time intervals or after a certain delay. JavaScript provides three timer functions for this purpose: setTimeout, setInterval, and clearTimeout/clearInterval.
 
 setTimeout: The setTimeout function is used to schedule the execution of a function once after a specified delay.
 
@@ -749,7 +750,7 @@ clearInterval(intervalId); // Stop the repeated execution scheduled by setInterv
 
 ### Q. Destructuring
 
--> Destructuring allows you to extract values from arrays or properties from objects into distinct variables, making it easier to access and use specific values.
+ Destructuring allows you to extract values from arrays or properties from objects into distinct variables, making it easier to access and use specific values.
 
 ```javascript
 // Array destructuring
@@ -765,7 +766,7 @@ console.log(age); // Output: 30
 
 ### Q. Spread Syntax
 
--> The spread syntax allows you to expand elements of an array or properties of an object in places where multiple elements or properties are expected.
+ The spread syntax allows you to expand elements of an array or properties of an object in places where multiple elements or properties are expected.
 
 ```javascript
 // Array spread syntax
@@ -781,7 +782,7 @@ console.log(newObj); // Output: { a: 1, b: 2, c: 3 }
 
 ### Q. Rest Operation?
 
--> The rest operation is the opposite of the spread syntax. It allows you to collect multiple elements into an array or multiple properties into an object.
+ The rest operation is the opposite of the spread syntax. It allows you to collect multiple elements into an array or multiple properties into an object.
 
 ```javascript
 // Rest operation in array
@@ -799,7 +800,7 @@ console.log(rest); // Output: { city: 'New York', country: 'USA' }
 
 ### Q. Rest Parameters
 
--> Rest parameters allow you to represent an indefinite number of function arguments as an array. It is denoted by the prefix ... followed by the parameter name.
+ Rest parameters allow you to represent an indefinite number of function arguments as an array. It is denoted by the prefix ... followed by the parameter name.
 
 ```javascript
 function sum(...numbers) {
@@ -812,7 +813,7 @@ In the above example, the sum function uses rest parameters (...numbers) to acce
 
 ### Q. Try/catch
 
--> The try-catch statement in JavaScript is used to catch and handle errors that occur within a specific block of code. It provides a structured way to handle exceptions and gracefully handle errors during program execution.
+ The try-catch statement in JavaScript is used to catch and handle errors that occur within a specific block of code. It provides a structured way to handle exceptions and gracefully handle errors during program execution.
 
 ```javascript
 try {
@@ -824,7 +825,7 @@ try {
 
 ### Q. Function statement
 
--> Normal function creation is function statement,
+ Normal function creation is function statement,
 
 ```javascript
 function a(){ 
@@ -834,7 +835,7 @@ console.log('hello world');
 
 ### Q. Function expression
 
--> Assigning a function to a variable is called a function expression.
+ Assigning a function to a variable is called a function expression.
 
 ```javascript
 let result  = function(){
@@ -844,7 +845,7 @@ console.log('hello world')
 
 ### Q. Difference between function statement and function expression?
 
--> The major difference between function statement and expression is Hoisting.
+ The major difference between function statement and expression is Hoisting.
 
 ```javascript
 b();  //hello world
@@ -862,11 +863,11 @@ As we can see in the above example, calling c gives error because it was hoisted
 
 ### Q. Function declaration
 
--> Function declaration and function statement are the same thing.
+ Function declaration and function statement are the same thing.
 
 ### Q. Named function expression
 
-->  A function expression with a function name is called a named function expression.
+  A function expression with a function name is called a named function expression.
 
 ```javascript
 let a = function b(){
@@ -876,7 +877,7 @@ console.log('hello world')
 
 ### Q.Anonymous function?
 
--> It is a function without a name.
+ It is a function without a name.
 
 ```javascript
 function(){
@@ -888,16 +889,16 @@ Declaring a function like this will result to an error, it should be used in a p
 
 ### Q. Function arguments and function parameters
 
--> A function argument is the value passed to a function when it is called.
+ A function argument is the value passed to a function when it is called.
 
 A function parameter is a value received by a function.
 
 ### Q. Higher order functions
 
--> A function that takes a function as an argument or returns a function from it is known as higher order functions.
+ A function that takes a function as an argument or returns a function from it is known as higher order functions.
 
 ### Q. Arguments array?
--> Arguments is an array-like object accessible inside functions that contains the values of the arguments passed to that function.
+ Arguments is an array-like object accessible inside functions that contains the values of the arguments passed to that function.
 
 ```javascript
 function func1(a, b, c) {
@@ -929,7 +930,7 @@ The arguments object is useful for functions called with more arguments than the
 
 ### Q. Arrow functions and its advantages?
 
--> Arrow functions, introduced in ES6, provide a concise syntax for writing JavaScript functions. They offer several advantages over traditional function expressions, making them a popular choice in modern JavaScript development. Some of the key advantages of arrow functions include:
+ Arrow functions, introduced in ES6, provide a concise syntax for writing JavaScript functions. They offer several advantages over traditional function expressions, making them a popular choice in modern JavaScript development. Some of the key advantages of arrow functions include:
 
 - Shorter Syntax: Arrow functions have a more concise syntax compared to traditional function expressions, making code more compact and easier to read, especially for simple functions.
 
@@ -993,7 +994,7 @@ since the method b belongs to the obj, its this value will be the obj itself.
 
 ### Q. Why is it said that the arrow function does not have its own this context?
 
--> The statement that "arrow functions do not have their own this context" refers to the fact that arrow functions behave differently than regular functions when it comes to the binding of the this keyword.
+ The statement that "arrow functions do not have their own this context" refers to the fact that arrow functions behave differently than regular functions when it comes to the binding of the this keyword.
 
 In a regular function, the value of this is dynamically determined by how the function is called. It can be influenced by the way the function is invoked, such as with methods, constructors, or as a standalone function. This dynamic behavior of this can sometimes lead to confusion and errors, especially in nested functions or callback scenarios.
 
@@ -1001,7 +1002,7 @@ On the other hand, arrow functions capture the this value from their surrounding
 
 ### Q. Difference between this context of arrow function and regular function?
 
-**->**
+****
 **regular function**
 
 this of a regular method is the object that it is inside.
@@ -1054,7 +1055,7 @@ obj.regularMethod();
 
 ### Q. Immediately invoked function?
 
--> An immediately invoked function expression (IIFE) is a JavaScript function that is executed as soon as it is defined. It is a way to create a self-contained scope, preventing variable declarations from polluting the global scope. IIFEs are often used to encapsulate code and avoid naming conflicts.
+ An immediately invoked function expression (IIFE) is a JavaScript function that is executed as soon as it is defined. It is a way to create a self-contained scope, preventing variable declarations from polluting the global scope. IIFEs are often used to encapsulate code and avoid naming conflicts.
 
 Here's a basic example of an IIFE:
 
@@ -1075,7 +1076,7 @@ In this example, the function is defined and invoked immediately using the paren
 
 ### Q. Promises?
 
--> By definition, a promise is an object that encapsulates the result of an asynchronous operation.
+ By definition, a promise is an object that encapsulates the result of an asynchronous operation.
 
 A promise object has a state that can be one of the following:
 
@@ -1115,7 +1116,7 @@ Once a new Promise object is created, its state is pending. If a promise reaches
 
 ### Q. Implement promise.all?
 
--> To implement a simplified version of Promise.all in JavaScript, you can create a function that takes an array of promises and returns a new promise. This new promise will resolve when all the input promises have resolved, or reject as soon as any of the input promises reject. Here is an example implementation:
+ To implement a simplified version of Promise.all in JavaScript, you can create a function that takes an array of promises and returns a new promise. This new promise will resolve when all the input promises have resolved, or reject as soon as any of the input promises reject. Here is an example implementation:
 
 ```javascript
 function simplifiedPromiseAll(promises) {
@@ -1168,7 +1169,7 @@ This simplified implementation demonstrates the basic mechanics of Promise.all b
 
 ### Q. How is an asynchronous operation handled?
 
-->
+
 
 1. An asynchronous operation is initiated, and its callback is registered.
 2. The operation is handed off to the browser or Node.js runtime environment, allowing the rest of the code to continue executing.
@@ -1179,7 +1180,7 @@ This simplified implementation demonstrates the basic mechanics of Promise.all b
 
 ### Q. Async/await?
 
-->In javascript, async is a keyword, used with a function, it always returns a promise, await is also a keyword, which is always used inside an async function. In simple terms, what it does is that, it waits till the await'ed promise is settled, then proceeds to further lines of code below it.
+In javascript, async is a keyword, used with a function, it always returns a promise, await is also a keyword, which is always used inside an async function. In simple terms, what it does is that, it waits till the await'ed promise is settled, then proceeds to further lines of code below it.
 
 Advancely, when a promise is awaited to be settled, that whole async function is suspended and the state of execution is saved by the javascript runtime environment, and after the awaited promise is settled it is put in the call stack again and starts executing from where it left.
 
@@ -1330,7 +1331,7 @@ showServiceCost();
 Using await pauses the execution of its surrounding async function until the promise is settled (that is, fulfilled or rejected). When execution resumes, the value of the await expression becomes that of the fulfilled promise.
 
 ### Q. Top level await?
-->Top-level await enables developers to use the await keyword outside of async functions. It acts like a big async function causing other modules who import them to wait before they start evaluating their body.
+Top-level await enables developers to use the await keyword outside of async functions. It acts like a big async function causing other modules who import them to wait before they start evaluating their body.
 
 The old behavior
 
@@ -1397,7 +1398,7 @@ try {
 In this case, the app.mjs module will wait for the user.mjs module to complete before executing its body.
 
 ### Q. Map and set data structure
-->
+
 #### Map
 
 The Map object holds key - value pairs and remembers the original insertion order of the keys.Any value(both objects and primitive values) may be used as either a key or a value.
@@ -1461,7 +1462,7 @@ console.log([...mySet2]); // [1, 2, 3, 4]
 
 ### Q. Map data structure?
 
--> Before ES6, we often used an object to emulate a map by mapping a key to a value of any type. But using an object as a map has some side effects:
+ Before ES6, we often used an object to emulate a map by mapping a key to a value of any type. But using an object as a map has some side effects:
 An object always has a default key like the prototype.
 A key of an object must be a string or a symbol, you cannot use an object as a key.
 An object does not have a property that represents the size of the map.
@@ -1658,7 +1659,7 @@ Useful JavaScript Map methods
 
 ### Q. Set data structure?
 
--> ES6 provides a new type Set that stores a collection of unique values of any type. To create a new empty Set, you use the following syntax:
+ ES6 provides a new type Set that stores a collection of unique values of any type. To create a new empty Set, you use the following syntax:
 
 ```javascript
 let setObject = new Set();
@@ -1727,7 +1728,7 @@ We have a server
 
 ### Q. map,filter and reduce?
 
--> map, filter, and reduce are higher-order functions in JavaScript that are commonly used to manipulate and process arrays. These functions provide a more functional and declarative approach to working with arrays, allowing you to perform various operations in a concise and readable manner.
+ map, filter, and reduce are higher-order functions in JavaScript that are commonly used to manipulate and process arrays. These functions provide a more functional and declarative approach to working with arrays, allowing you to perform various operations in a concise and readable manner.
 
 - map:
 
@@ -1764,7 +1765,7 @@ const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentV
 
 ### Q. Difference between map and forEach?
 
--> The map and forEach methods are both array methods in JavaScript, but they serve slightly different purposes and have different return values. Here are the key differences between map and forEach:
+ The map and forEach methods are both array methods in JavaScript, but they serve slightly different purposes and have different return values. Here are the key differences between map and forEach:
 
 Return Value:
 
@@ -1791,7 +1792,7 @@ numbers2.forEach((num) => console.log(num * 2)); // logs 2, 4, 6, 8, 10
 
 ### Q. Modules?
 
--> Modules in JavaScript are a way to organise and encapsulate code into separate files, allowing for better code organisation, reusability, and maintainability. Modules enable you to split your code into smaller, more manageable units, each with its own scope, dependencies, and exports.
+ Modules in JavaScript are a way to organise and encapsulate code into separate files, allowing for better code organisation, reusability, and maintainability. Modules enable you to split your code into smaller, more manageable units, each with its own scope, dependencies, and exports.
 
 The import and export statements are used to facilitate this communication.
 
@@ -1833,7 +1834,7 @@ console.log(myName); // Output: John
 ```
 
 ### Q. .js, .cjs, .mjs what is the difference?
--> CJS, MJS, and .JS are file extensions used to denote different types of JavaScript files. Here's the difference between them:
+ CJS, MJS, and .JS are file extensions used to denote different types of JavaScript files. Here's the difference between them:
 
 .JS (JavaScript):
 The .js extension is the most common file extension for JavaScript files. It is used to indicate that a file contains JavaScript code. .js files can be executed in different JavaScript environments, such as web browsers, servers, and other JavaScript runtime environments.
@@ -1893,11 +1894,11 @@ The third example showcases ECMAScript modules. The MJS extension is used to ind
 
 ### Q. OOP(classes, object, prototype, constructor, inheritance,polymorphism, encapsulation,abstraction)
 
-->
+
 
 ### Q. Object?
 
--> An object is a collection of key/value pairs or properties. When the value is a function, the property becomes a method. Typically, you use methods to describe the object’s behaviors.
+ An object is a collection of key/value pairs or properties. When the value is a function, the property becomes a method. Typically, you use methods to describe the object’s behaviors.
 
 JavaScript allows you to define methods of an object using the object literal syntax as shown in the following example:
 
@@ -1957,7 +1958,7 @@ console.log(person.getFullName());
 
 ### Q. This?
 
--> In JavaScript,this refers to the object a function is attached to, in other words, this refers to the context within which a function is executed. The value of this is determined by how a function is invoked and can vary depending on the calling context. The behaviour of this can be influenced by the way a function is called: as a method, as a function, as a constructor, or using call or apply.
+ In JavaScript,this refers to the object a function is attached to, in other words, this refers to the context within which a function is executed. The value of this is determined by how a function is invoked and can vary depending on the calling context. The behaviour of this can be influenced by the way a function is called: as a method, as a function, as a constructor, or using call or apply.
 
 The value of this is not static and can change dynamically based on the invocation context. Here are a few common scenarios for this in JavaScript:
 
@@ -1978,14 +1979,14 @@ Arrow functions create a closure over the this value of its surrounding scope, w
 When used as an event handler, this typically refers to the element that received the event.
 
 ### Q. Proxy
--> The Proxy object enables you to create a proxy for another object, which can intercept and redefine fundamental operations for that object.
+ The Proxy object enables you to create a proxy for another object, which can intercept and redefine fundamental operations for that object.
 
 [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
 
 
 ### Q. Constructor function?
 
-->
+
 
 ```javascript
  let person = {
@@ -2096,7 +2097,7 @@ To resolve this, you can use the prototype so that all instances of a custom typ
 
 ### Q. Commonly used methods from the Object class
 
--> In JavaScript, the Object class provides several static methods that can be used to perform operations on objects. Here are some commonly used methods from the Object class:
+ In JavaScript, the Object class provides several static methods that can be used to perform operations on objects. Here are some commonly used methods from the Object class:
 
 - Object.entries:
 
@@ -2130,7 +2131,7 @@ console.log(values); // [1, 2, 3]
 
 ### Q. getter and setter?
 
--> In JavaScript, getter and setter methods are used to define object properties in a way that allows for more controlled access and manipulation. They enable you to define custom behaviour for reading and writing object properties, providing a way to encapsulate data and ensure data integrity.
+ In JavaScript, getter and setter methods are used to define object properties in a way that allows for more controlled access and manipulation. They enable you to define custom behaviour for reading and writing object properties, providing a way to encapsulate data and ensure data integrity.
 
 - Getter:
 
@@ -2200,7 +2201,7 @@ try {
 
 ### Q. Prototype?
 
-->Prototype is a mechanism by which javascript objects inherit features from one another.
+Prototype is a mechanism by which javascript objects inherit features from one another.
 
 Each object in JavaScript has a prototype, which is either another object or null. The prototype is used to add properties and methods that are accessible to all instances of a particular object type.
 
@@ -2367,7 +2368,7 @@ Object instanceOf ClassName;
 ```
 
 ### Q. What is the difference between __proto__ and prototype?
--> The difference between `__proto__` and `prototype` is simple: `__proto__` is a property of an object instance, while `prototype` is a property of a constructor function.
+ The difference between `__proto__` and `prototype` is simple: `__proto__` is a property of an object instance, while `prototype` is a property of a constructor function.
 When you use `__proto__`, you're looking up properties and methods on an object's prototype chain. On the other hand, `prototype` defines the shared properties and methods that all instances created from a constructor function will have.
 
 ```javascript
@@ -2404,7 +2405,7 @@ console.log(obj.__proto__) // object containing printName function
 
 ### Q. call, apply and bind?
 
--> In JavaScript, the bind, call, and apply methods are used to manipulate the this context and to invoke functions with a specific context or set of arguments. These methods provide ways to control how a function is executed and which object it should use as its context.
+ In JavaScript, the bind, call, and apply methods are used to manipulate the this context and to invoke functions with a specific context or set of arguments. These methods provide ways to control how a function is executed and which object it should use as its context.
 
 - call:
 
@@ -2491,7 +2492,7 @@ Note: Polyfill for bind , and function currying are frequently asked follow up q
 
 ### Q. Polyfill for bind?
 
--> This polyfill checks if the bind method is already defined for the Function prototype. If it's not, it defines a new bind method that behaves similarly to the native bind method. The polyfill captures the this value and the provided arguments, and it returns a new function that, when called, applies the original function with the saved context and arguments.
+ This polyfill checks if the bind method is already defined for the Function prototype. If it's not, it defines a new bind method that behaves similarly to the native bind method. The polyfill captures the this value and the provided arguments, and it returns a new function that, when called, applies the original function with the saved context and arguments.
 
 ```javascript
 const person = {
@@ -2584,7 +2585,7 @@ In that case we will just concatenate both params and args2
 
 ### Q. Function currying?
 
--> Function currying in JavaScript is a technique that involves converting a function with multiple arguments into a series of functions that take one argument at a time. It allows you to create reusable functions and partially apply arguments to create more specialized functions. Currying helps in creating higher-order functions that are more flexible and composable.
+ Function currying in JavaScript is a technique that involves converting a function with multiple arguments into a series of functions that take one argument at a time. It allows you to create reusable functions and partially apply arguments to create more specialized functions. Currying helps in creating higher-order functions that are more flexible and composable.
 
 There are two ways to achieve function currying
 
@@ -2634,7 +2635,7 @@ multiplyBy2(5) //10
 ```
 
 ### Q. Function composition
--> Function composition is the process of chaining together multiple functions to form a new function. It involves applying a series of transformations or operations to an input value, where the output of one function becomes the input of the next function in the composition chain.
+ Function composition is the process of chaining together multiple functions to form a new function. It involves applying a series of transformations or operations to an input value, where the output of one function becomes the input of the next function in the composition chain.
 Use case:
 
 ```javascript
@@ -2659,7 +2660,7 @@ The debate between composition and inheritance is an ongoing one. While inherita
 
 ### Q. Events in javascript?
 
--> In JavaScript, events are actions or occurrences that happen in the browser or within a web page. They allow you to respond to user interactions and perform specific actions based on those interactions. Here's what you need to know about events in JavaScript:
+ In JavaScript, events are actions or occurrences that happen in the browser or within a web page. They allow you to respond to user interactions and perform specific actions based on those interactions. Here's what you need to know about events in JavaScript:
 
 Event Handlers: Event handlers are functions that are executed when a specific event occurs. You can attach event handlers to HTML elements using the on prefix followed by the event name. For example, onclick, onmouseover, onkeydown, etc.
 
@@ -2675,7 +2676,7 @@ Event Delegation: Event delegation is a technique where you attach a single even
 
 ### Q. Event handling?
 
-->Event handling in JavaScript involves responding to various events that occur in the browser, such as user interactions (like clicks and keystrokes) or system events. You can handle events by attaching event listeners to specific elements in the DOM, allowing you to execute code in response to those events. Here's a basic example of event handling in
+Event handling in JavaScript involves responding to various events that occur in the browser, such as user interactions (like clicks and keystrokes) or system events. You can handle events by attaching event listeners to specific elements in the DOM, allowing you to execute code in response to those events. Here's a basic example of event handling in
 
 ```html
 <!DOCTYPE html>
@@ -2704,7 +2705,7 @@ Event handling is an essential part of web development, allowing you to create i
 
 ### Q. Event propagation - bubbling and capturing?
 
--> Event propagation in JavaScript can occur in two ways: bubbling (from the innermost to outermost element) and capturing (from outermost to innermost element).
+ Event propagation in JavaScript can occur in two ways: bubbling (from the innermost to outermost element) and capturing (from outermost to innermost element).
 
 Event bubbling and event capturing are two different phases of event propagation in the DOM (Document Object Model) that describe how events are handled when an element's event is triggered and how that event propagates through the DOM tree.
 
@@ -2839,7 +2840,7 @@ When the button is clicked, the custom event is dispatched on the document, and 
 
 ### Q. Debouncing and throttling?
 
--> Debouncing is a technique that delays the execution of a function until the user stops performing a certain action for a specified amount of time. 
+ Debouncing is a technique that delays the execution of a function until the user stops performing a certain action for a specified amount of time. 
 It helps prevent excessive function calls triggered by rapid events, such as keystrokes or scroll movements.
 
 Throttling is a technique that limits the execution of a function to once in every specified time interval.
@@ -2851,7 +2852,7 @@ Use throttling when you have to make a request after a certain limit(delay). eg.
 
 ### Q. Implement debouncing?
 
--> Debouncing is a technique used in JavaScript to limit the number of times a function is called, especially in scenarios where the function call is triggered frequently, such as during user input. It ensures that the function is only executed after a certain period of inactivity. Here's a simple implementation of a debounce function:
+ Debouncing is a technique used in JavaScript to limit the number of times a function is called, especially in scenarios where the function call is triggered frequently, such as during user input. It ensures that the function is only executed after a certain period of inactivity. Here's a simple implementation of a debounce function:
 
 ```javascript
 function debounce(func, delay) {
@@ -2907,7 +2908,7 @@ debouncedFunction.call(obj); // Output: Debounced Function
 ```
 
 ### Q. Implement throttling
--> Throttling is a technique that limits the execution of a function to once in every specified time interval.
+ Throttling is a technique that limits the execution of a function to once in every specified time interval.
 
 
 ```javascript
@@ -2946,7 +2947,7 @@ window.addEventListener("resize", () => {
 
 ### Q. Generator Function?
 
--> A generator function in JavaScript is a special type of function that can be paused and resumed during its execution. It allows you to control the generation of a series of values and provides a powerful way to create iterators. Generator functions are defined using the function* syntax and use the yield keyword to pause the function and yield a value.
+ A generator function in JavaScript is a special type of function that can be paused and resumed during its execution. It allows you to control the generation of a series of values and provides a powerful way to create iterators. Generator functions are defined using the function* syntax and use the yield keyword to pause the function and yield a value.
 
 Here is a simple example of a generator function:
 
@@ -2968,7 +2969,7 @@ In this example, the numberGenerator function is a generator function that yield
 
 ### Q. Async and defer?
 
--> async and defer are attributes that can be applied to the &lt;script> tag in HTML, and they are used to control the loading and execution of external JavaScript files. They are particularly useful for optimising the loading and rendering of web pages, especially when dealing with scripts that are not required to be executed immediately during the initial page load.
+ async and defer are attributes that can be applied to the &lt;script> tag in HTML, and they are used to control the loading and execution of external JavaScript files. They are particularly useful for optimising the loading and rendering of web pages, especially when dealing with scripts that are not required to be executed immediately during the initial page load.
 
 Here's how they work:
 
@@ -3000,7 +3001,7 @@ When using async and defer, it's important to consider the script's dependency o
 
 ### Q. String methods
 
-->
+
 
 ```javascript
 const str = 'Hello, World!';
@@ -3328,7 +3329,7 @@ console.log(numbers); // Output: [1, 1, 2, 3, 5]
 ```
 
 ### Q. Boxing and unboxing
-->  
+  
 Boxing is the process in which a primitive value is wrapped in an Object. When a primitive type is treated as an object, e.g., calling the `toUpperCase()` function, JavaScript would automatically wrap the primitive type into the corresponding object type. This new object type is then linked to the related built-in `<.prototype>`, so you can use prototype methods on primitive types.
 
 Primitive types don't have methods or properties on them.
@@ -3351,7 +3352,7 @@ Why does this work and not throw an error? It looks like both of the primitive t
 
 ### Q. for(let i=0; i<=3; i++){}, explain to me which block does let i belong?
 
--> In the given code snippet,
+ In the given code snippet,
 
 The variable i belongs to the block defined by the for loop. In JavaScript, the let keyword is block-scoped, which means that variables declared with let are only accessible within the block they are defined in.
 
@@ -3359,7 +3360,7 @@ In this case, the block is the body of the for loop, which is delimited by the o
 
 ### Q. If i use var instead of let what would be its scope?
 
--> If you use var instead of let in the given code snippet:
+ If you use var instead of let in the given code snippet:
 
 The variable i would have function scope, rather than block scope. In JavaScript, variables declared with var are function-scoped, which means they are accessible within the entire function in which they are defined.
 
@@ -3369,9 +3370,9 @@ However, if the code snippet is not within any function and is executed in the g
 
 ### Q. Hoisting?
 
--> JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, before the execution of the code.
+ JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, before the execution of the code.
 
-Internally ->
+Internally 
 Javascript executed in two phases.
 Memory creation phase and
 Code execution phase.
@@ -3389,9 +3390,9 @@ Following behaviors may be regarded as hoisting:
 3. The declaration of the variable causes behaviour changes in its scope before the line in which it is declared.
 4. The side effects of a declaration are produced before evaluating the rest of the code that contains it.
 
-Hoisting a let const variable -> Let and const are also hoisted, but in a separate memory than a var variable. And it is not assigned with undefined because it remains in the temporal dead zone till it is initialised.
+Hoisting a let const variable  Let and const are also hoisted, but in a separate memory than a var variable. And it is not assigned with undefined because it remains in the temporal dead zone till it is initialised.
 
-Proof that let and const are hoisted->
+Proof that let and const are hoisted
 
 ```javascript
 // hoisting a let/const variable.
@@ -3423,7 +3424,7 @@ Hence it is proved that let is hoisted and the same goes for const.
 
 ### Q. Closure?
 
--> A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+ A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 Or
 
@@ -3461,7 +3462,7 @@ When a function is defined, it creates a closure, which includes not only the fu
 
 ### Q. Api call using fetch
 
-->
+
 
 ```javascript
 fetch('https://jsonplaceholder.typicode.com/todos/4')
@@ -3771,106 +3772,7 @@ Let's say for example we want to have all of our app's configuration in a single
 
 
 
-
-# Resources
-
-**Javascript core:**
-
-Javascript tutorials-
-
-[https://javascript.info/](https://javascript.info/)
-
-[https://www.javascripttutorial.net/](https://www.javascripttutorial.net/)
-
-Namaste javascript - S01 -
-
-[https://www.youtube.com/watch?v=pN6jk0uUrD8&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=pN6jk0uUrD8&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&ab_channel=AkshaySaini)
-
-Namaste javascript - S02 -
-
-[https://www.youtube.com/watch?v=78Homn79Qsk&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=78Homn79Qsk&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&ab_channel=AkshaySaini)
-
-[https://www.youtube.com/@akshaymarch7](https://www.youtube.com/@akshaymarch7)
-
-Javascript concepts: chaiaurcode
-
-[https://youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&si=EYV930xMma3x_a-8](https://youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&si=EYV930xMma3x_a-8)
-
-how to use async await?
-
-[https://youtu.be/_9vgd9XKlDQ?si=8LHCRGrh8dJPfnbB](https://youtu.be/_9vgd9XKlDQ?si=8LHCRGrh8dJPfnbB)
-
-coercion
-
-[https://youtu.be/00vjwv2BJqE?si=ABcUQ7cOuukh8nnH](https://youtu.be/00vjwv2BJqE?si=ABcUQ7cOuukh8nnH)
-
-The Wrapper Object-
-All primitives have no properties. Strings are primitives; therefore, Strings have no properties. But how is it possible that we can access toLowerCase() method.
-[https://javascriptrefined.io/the-wrapper-object-400311b29151](https://javascriptrefined.io/the-wrapper-object-400311b29151)
-
-Prototype, class, constructor function, new keyword.
-
-[https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/](https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/)
-
-Values vs reference explained.
-
-[https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
-
-Multi-threading in javascript.
-
-[https://www.scaler.com/topics/javascript-multithreading/](https://www.scaler.com/topics/javascript-multithreading/)
-
-Javascript is a loosely typed language.
-
-[https://xiaoyunyang.medium.com/javascript-is-a-loosely-typed-language-meaning-you-dont-have-to-specify-what-type-of-information-137408d54fc7](https://xiaoyunyang.medium.com/javascript-is-a-loosely-typed-language-meaning-you-dont-have-to-specify-what-type-of-information-137408d54fc7)
-
-How does javascript handles asynchronous operations?
-
-[https://www.freecodecamp.org/news/javascript-asynchronous-operations-in-the-browser/](https://www.freecodecamp.org/news/javascript-asynchronous-operations-in-the-browser/)
-
-[https://youtu.be/28AXSTCpsyU?si=kRYljn7-4KOpvNff](https://youtu.be/28AXSTCpsyU?si=kRYljn7-4KOpvNff)
-
-Oop in javascript(object, prototype, inheritance, constructor, class and subclass)
-
-[https://youtu.be/vDJpGenyHaA?si=MHGFAOXQekFHCF6w](https://youtu.be/vDJpGenyHaA?si=MHGFAOXQekFHCF6w)
-
-Oop(classes, getter,setter, static, polymorphism) in JavaScript
-
-[https://youtu.be/2ZphE5HcQPQ?si=7sMytZW8Fpc-clcA](https://youtu.be/2ZphE5HcQPQ?si=7sMytZW8Fpc-clcA)
-
-Call, apply and bind
-
-[https://youtu.be/75W8UPQ5l7k](https://youtu.be/75W8UPQ5l7k)
-
-Polyfill for bind method
-
-[https://youtu.be/ke_y6z0xRpk](https://youtu.be/ke_y6z0xRpk)
-
-Denouncing and throttling etc
-
-[https://dev.to/otamnitram/throttling-and-debouncing-avoiding-unnecessary-api-calls-2god](https://dev.to/otamnitram/throttling-and-debouncing-avoiding-unnecessary-api-calls-2god)
-
-[https://youtu.be/Zo-6_qx8uxg](https://youtu.be/Zo-6_qx8uxg)
-
-Event Bubbling, Capturing aka Trickling in Javascript?
-
-[https://www.youtube.com/watch?v=aVSf0b1jVKk&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=aVSf0b1jVKk&ab_channel=AkshaySaini)
-
-Event Delegation in Javascript
-
-[https://www.youtube.com/watch?v=3KJI1WZGDrg&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=3KJI1WZGDrg&ab_channel=AkshaySaini)
-
-Solve javascript problems
-
-Interview for unacademy
-
-[https://youtu.be/abbdJ4Yfm54?si=m5FP3PAf7TCGsRmN](https://youtu.be/abbdJ4Yfm54?si=m5FP3PAf7TCGsRmN)
-
-Some interview questions -
-
-[https://drive.google.com/file/d/1nG7IaU6B1ce9ifmPRQYFv38Uih7oOU_Z/view?usp=drivesdk](https://drive.google.com/file/d/1nG7IaU6B1ce9ifmPRQYFv38Uih7oOU_Z/view?usp=drivesdk)
-
-# problem solving:
+# Problem solving
 
 1. Reverse Words in a Sentence
 2. Implementing a Class Hierarchy with Inheritance
@@ -4132,21 +4034,21 @@ console.log(findPairsWithSum(array, targetSum)); // Output: [[0, 5], [1, 4], [2,
 
 # Random 
 
-#### Primitive type
+#### Q. Primitive type
 Javascript **primitives** are data types that is not an object and do not have properties or methods directly associated with them.
 **Since it is not an object it does not have any prototype linked to it. So how are we accessing methods like toString(), toLowertCase(),toFixed() etc?**
 
 When you try to access any property or method on primitive value, Javascript coerces the primitive to its corresponding object wrapper,
 allowing access to properties and methods via the prototype chain.
 
-#### Wrapper object coercion
+#### Q. Wrapper object coercion
 
 All primitive types, except null and undefined, have their corresponding object wrapper types.
 
 ```javascript
 var str = 'hello';
 str.custom = 1;
-console.log(str.custom); // -> undefined
+console.log(str.custom); //  undefined
 ```
 JavaScript creates a wrapper String object, sets its custom property to 1, and then discards it. Basically, it runs something like the following code:
 ```javascript
@@ -4196,29 +4098,125 @@ console.log(temp); // 10
 ```
 JavaScript knows what the primitive value of my number-like object is because it looks for and executes the valueOf method. As long as you have this method in your object
 
-**Java Script - main topics:**
+### Q. localstorage, session storage, cookie and index db?
 
-- Array methods
-- DOM
-- Closures
-- Promises
-- How to handle browser specific API's
-- ES6 concepts
-- Object String
-- Arrow function
-- Async/await
-- Prototypes
-- Error handling
-- EventLoop
-- setTimeOut() and Promise are running parallel. What will be executed first?
-- How can Prototypal inheritance can be achieved?
-- Design pattern for auto search Engine?
-  - Constructor Method
-  - Factory Method
-  - Prototype
-  - Singleton
-  - Builder
-- indexOf() is faster than includes() if you are checking character
+* localStorage:
+    * Stores data with no expiration date.
+    * The data persists even when the browser is closed and reopened.
+    * Accessed via the localStorage object in the browser.
+* sessionStorage:
+    * Stores data for a single session, meaning the data is lost when the tab or window is closed.
+    * Accessed via the sessionStorage object in the browser.
+    * Useful for storing temporary data that should be cleared when the session ends.
+* Cookies:
+    * Small pieces of data stored in the browser.
+    * Typically used for session management, user personalization, and tracking.
+    * Can be set to expire after a specific period or when the browser is closed.
+* IndexedDB:
+    * A low-level API for client-side storage of significant amounts of structured data.
+    * Provides a more powerful and flexible way to store data than localStorage or cookies.
+    * Ideal for applications that require complex data querying and indexing.
+
+Each of these storage mechanisms has its strengths and limitations, and the choice of which one to use depends on the specific requirements of the application. It's important to consider factors such as data size, data persistence, data structure, and security when selecting the appropriate storage solution for your web application.
+
+# Resources
+
+**Javascript core:**
+
+Javascript tutorials-
+
+[https://javascript.info/](https://javascript.info/)
+
+[https://www.javascripttutorial.net/](https://www.javascripttutorial.net/)
+
+Namaste javascript - S01 -
+
+[https://www.youtube.com/watch?v=pN6jk0uUrD8&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=pN6jk0uUrD8&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&ab_channel=AkshaySaini)
+
+Namaste javascript - S02 -
+
+[https://www.youtube.com/watch?v=78Homn79Qsk&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=78Homn79Qsk&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&ab_channel=AkshaySaini)
+
+[https://www.youtube.com/@akshaymarch7](https://www.youtube.com/@akshaymarch7)
+
+Javascript concepts: chaiaurcode
+
+[https://youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&si=EYV930xMma3x_a-8](https://youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&si=EYV930xMma3x_a-8)
+
+how to use async await?
+
+[https://youtu.be/_9vgd9XKlDQ?si=8LHCRGrh8dJPfnbB](https://youtu.be/_9vgd9XKlDQ?si=8LHCRGrh8dJPfnbB)
+
+coercion
+
+[https://youtu.be/00vjwv2BJqE?si=ABcUQ7cOuukh8nnH](https://youtu.be/00vjwv2BJqE?si=ABcUQ7cOuukh8nnH)
+
+The Wrapper Object-
+All primitives have no properties. Strings are primitives; therefore, Strings have no properties. But how is it possible that we can access toLowerCase() method.
+[https://javascriptrefined.io/the-wrapper-object-400311b29151](https://javascriptrefined.io/the-wrapper-object-400311b29151)
+
+Prototype, class, constructor function, new keyword.
+
+[https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/](https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/)
+
+Values vs reference explained.
+
+[https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
+
+Multi-threading in javascript.
+
+[https://www.scaler.com/topics/javascript-multithreading/](https://www.scaler.com/topics/javascript-multithreading/)
+
+Javascript is a loosely typed language.
+
+[https://xiaoyunyang.medium.com/javascript-is-a-loosely-typed-language-meaning-you-dont-have-to-specify-what-type-of-information-137408d54fc7](https://xiaoyunyang.medium.com/javascript-is-a-loosely-typed-language-meaning-you-dont-have-to-specify-what-type-of-information-137408d54fc7)
+
+How does javascript handles asynchronous operations?
+
+[https://www.freecodecamp.org/news/javascript-asynchronous-operations-in-the-browser/](https://www.freecodecamp.org/news/javascript-asynchronous-operations-in-the-browser/)
+
+[https://youtu.be/28AXSTCpsyU?si=kRYljn7-4KOpvNff](https://youtu.be/28AXSTCpsyU?si=kRYljn7-4KOpvNff)
+
+Oop in javascript(object, prototype, inheritance, constructor, class and subclass)
+
+[https://youtu.be/vDJpGenyHaA?si=MHGFAOXQekFHCF6w](https://youtu.be/vDJpGenyHaA?si=MHGFAOXQekFHCF6w)
+
+Oop(classes, getter,setter, static, polymorphism) in JavaScript
+
+[https://youtu.be/2ZphE5HcQPQ?si=7sMytZW8Fpc-clcA](https://youtu.be/2ZphE5HcQPQ?si=7sMytZW8Fpc-clcA)
+
+Call, apply and bind
+
+[https://youtu.be/75W8UPQ5l7k](https://youtu.be/75W8UPQ5l7k)
+
+Polyfill for bind method
+
+[https://youtu.be/ke_y6z0xRpk](https://youtu.be/ke_y6z0xRpk)
+
+Denouncing and throttling etc
+
+[https://dev.to/otamnitram/throttling-and-debouncing-avoiding-unnecessary-api-calls-2god](https://dev.to/otamnitram/throttling-and-debouncing-avoiding-unnecessary-api-calls-2god)
+
+[https://youtu.be/Zo-6_qx8uxg](https://youtu.be/Zo-6_qx8uxg)
+
+Event Bubbling, Capturing aka Trickling in Javascript?
+
+[https://www.youtube.com/watch?v=aVSf0b1jVKk&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=aVSf0b1jVKk&ab_channel=AkshaySaini)
+
+Event Delegation in Javascript
+
+[https://www.youtube.com/watch?v=3KJI1WZGDrg&ab_channel=AkshaySaini](https://www.youtube.com/watch?v=3KJI1WZGDrg&ab_channel=AkshaySaini)
+
+Solve javascript problems
+
+Interview for unacademy
+
+[https://youtu.be/abbdJ4Yfm54?si=m5FP3PAf7TCGsRmN](https://youtu.be/abbdJ4Yfm54?si=m5FP3PAf7TCGsRmN)
+
+Some interview questions -
+
+[https://drive.google.com/file/d/1nG7IaU6B1ce9ifmPRQYFv38Uih7oOU_Z/view?usp=drivesdk](https://drive.google.com/file/d/1nG7IaU6B1ce9ifmPRQYFv38Uih7oOU_Z/view?usp=drivesdk)
+
 
 **Javascript revision**
 
@@ -4242,3 +4240,26 @@ javascript object guess output problems:
 
 [https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA](https://youtu.be/XnFIX3c7xoI?si=byJVK4Y-BAPch8NA)
 
+**Java Script - main topics:**
+
+- Array methods
+- DOM
+- Closures
+- Promises
+- How to handle browser specific API's
+- ES6 concepts
+- Object String
+- Arrow function
+- Async/await
+- Prototypes
+- Error handling
+- EventLoop
+- setTimeOut() and Promise are running parallel. What will be executed first?
+- How can Prototypal inheritance can be achieved?
+- Design pattern for auto search Engine?
+  - Constructor Method
+  - Factory Method
+  - Prototype
+  - Singleton
+  - Builder
+- indexOf() is faster than includes() if you are checking character
