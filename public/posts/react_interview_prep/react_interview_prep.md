@@ -103,7 +103,6 @@ toc: |
   - [Resources](#resources)
   - [Interview tips -](#interview-tips--)
   - [Git](#git)
-  - [HTML and CSS](#html-and-css-1)
   - [React terms and concepts](#react-terms-and-concepts)
   - [React practice problem](#react-practice-problem)
 
@@ -3005,20 +3004,6 @@ Focus on logical implementation with a working model first. This is what Intervi
 # Git
 
 ![alt_text](./images/gitcheatsheet.png "image_tooltip")
-
-
-
-
-# HTML and CSS
-
-* form and validation 
-* ways to centre a div
-* media queries 
-* css box model
-* position 
-* Flex
-* grid template and repeat function 
-* localstorage, session storage, cookie and index db.
 
 # React terms and concepts
 

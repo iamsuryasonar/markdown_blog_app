@@ -40,7 +40,7 @@ toc: |
         - [Q. Difference between function statement and function expression?](#q-difference-between-function-statement-and-function-expression)
         - [Q. Function declaration](#q-function-declaration)
         - [Q. Named function expression](#q-named-function-expression)
-        - [Q.Anonymous function?](#qanonymous-function)
+        - [Q. Anonymous function?](#q-anonymous-function)
         - [Q. Function arguments and function parameters](#q-function-arguments-and-function-parameters)
         - [Q. Higher order functions](#q-higher-order-functions)
         - [Q. Arguments array?](#q-arguments-array)
@@ -127,7 +127,6 @@ toc: |
     - [Random](#random)
       - [Q. Primitive type](#q-primitive-type)
       - [Q. Wrapper object coercion](#q-wrapper-object-coercion)
-      - [Q. localstorage, session storage, cookie and index db?](#q-localstorage-session-storage-cookie-and-index-db)
     - [Resources](#resources)
 ---
 
@@ -298,8 +297,6 @@ myDefaultFunction();
 ```
 
 ### Q. Difference between Var, Let and Const?
-
-
 
 - While let and const are block-scoped, var declarations are either globally scoped or function-scoped.
 - Let variables can be updated but not re-declared, const variables cannot be updated or re-declared, and var variables may both be updated and re-declared inside their scope.
@@ -680,10 +677,11 @@ In the above example, the greet function has two parameters: name and message. T
 
 ### Q. Is javascript pass by value or pass by reference?
 
- It behaves differently for primitives and Non-primitives(objects).
+It behaves differently for primitives and Non-primitives(objects).
 
 for primitives it is pass by value. but for non-primitives it is passed by reference.
 
+However, if you assign a new object to the passed object, the changes will not be reflected.
 eg:
 
 ```javascript
@@ -875,7 +873,7 @@ console.log('hello world')
 }
 ```
 
-### Q.Anonymous function?
+### Q. Anonymous function?
 
  It is a function without a name.
 
@@ -4098,26 +4096,6 @@ console.log(temp); // 10
 ```
 JavaScript knows what the primitive value of my number-like object is because it looks for and executes the valueOf method. As long as you have this method in your object
 
-### Q. localstorage, session storage, cookie and index db?
-
-* localStorage:
-    * Stores data with no expiration date.
-    * The data persists even when the browser is closed and reopened.
-    * Accessed via the localStorage object in the browser.
-* sessionStorage:
-    * Stores data for a single session, meaning the data is lost when the tab or window is closed.
-    * Accessed via the sessionStorage object in the browser.
-    * Useful for storing temporary data that should be cleared when the session ends.
-* Cookies:
-    * Small pieces of data stored in the browser.
-    * Typically used for session management, user personalization, and tracking.
-    * Can be set to expire after a specific period or when the browser is closed.
-* IndexedDB:
-    * A low-level API for client-side storage of significant amounts of structured data.
-    * Provides a more powerful and flexible way to store data than localStorage or cookies.
-    * Ideal for applications that require complex data querying and indexing.
-
-Each of these storage mechanisms has its strengths and limitations, and the choice of which one to use depends on the specific requirements of the application. It's important to consider factors such as data size, data persistence, data structure, and security when selecting the appropriate storage solution for your web application.
 
 # Resources
 
