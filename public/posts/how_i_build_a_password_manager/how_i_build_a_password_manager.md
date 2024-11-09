@@ -49,7 +49,7 @@ Yes, password of each service would need to be re-encrypted with the new master 
 
 ### How It Works:
 
-![[password manager architecture.jpeg]]
+![Password manager architecture](images/password_manager_architecture.jpeg)
 
 **Encryption Process:**
 
