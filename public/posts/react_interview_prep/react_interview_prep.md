@@ -26,6 +26,7 @@ toc: |
       - [Q. Synthetic Event?](#q-synthetic-event)
       - [Q. props?](#q-props)
       - [Q. What is the difference between state and props?](#q-what-is-the-difference-between-state-and-props)
+      - [Q. Why we need to copy state before updating?](#q-why-we-need-to-copy-state-before-updating)
       - [Q. Reactive values?](#q-reactive-values)
       - [Q. Reactivity in React?](#q-reactivity-in-react)
       - [Q. Props drilling?](#q-props-drilling)
@@ -48,6 +49,7 @@ toc: |
         - [Q. useMemo()](#q-usememo)
         - [Q. useRef()](#q-useref)
         - [Q. useCallback()](#q-usecallback)
+      - [Q. Using function as ref](#q-using-function-as-ref)
       - [Q. Higher-order component?](#q-higher-order-component)
       - [Q. Render-prop?](#q-render-prop)
       - [Q. Custom Hooks?](#q-custom-hooks)
@@ -398,6 +400,11 @@ React's synthetic events work similarly to native events but provide a consisten
  State is a data structure that starts with a default value when a Component mounts. It may be mutated across time, mostly as a result of user events.
 
 Props (short for properties) are a Component's configuration. They are received from above and immutable as far as the Component receiving them is concerned. A Component cannot change its props, but it is responsible for putting together the props of its child Components. Callback functions can also be passed in as props.
+
+### Q. Why we need to copy state before updating?
+React uses a virtual DOM to efficiently update the UI. When state changes, React compares the previous state with the new state to determine what needs to be updated.  
+If you modify the existing state directly, React may not detect the change because it only compares references, not the actual content.  
+Libraries like React.memo and useMemo rely on reference equality `===`  to prevent unnecessary renders.
 
 ### Q. Reactive values?
  In React, "reactive values" refer to the values declared directly inside the component body that:
@@ -1087,6 +1094,31 @@ In JavaScript, a `function () {}` or `() => {}` always creates a different funct
 Memo optimisation does not work since for every parent component re-render child component will have a new function as prop.
 
 So, to solve this problem, we can use useCallback, which caches the function when dependencies are same as before. 
+
+
+### Q. Using function as ref
+
+
+```javascript
+import React from "react";  
+  
+function App() {  
+
+	const setRef = (element) => {  
+		if (element) {  
+			element.onclick = () => alert("Button clicked!");  
+		}  
+	};  
+	  
+	return (  
+		<div>  
+			<button ref={setRef}>Click Me</button>  
+		</div>  
+	);  
+}  
+  
+export default App;
+```
 
 ### Q. Higher-order component?
 

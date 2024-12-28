@@ -67,6 +67,7 @@ toc: |
         - [Q. This?](#q-this)
         - [Q. Proxy](#q-proxy)
         - [Q. Constructor function?](#q-constructor-function)
+        - [Q. What does new do?](#q-what-does-new-do)
         - [Q. Commonly used methods from the Object class](#q-commonly-used-methods-from-the-object-class)
         - [Q. getter and setter?](#q-getter-and-setter)
         - [Q. Prototype?](#q-prototype)
@@ -122,6 +123,11 @@ toc: |
         - [Q. Hoisting?](#q-hoisting)
         - [Q. Closure?](#q-closure)
         - [Q. Api call using fetch](#q-api-call-using-fetch)
+        - [Q. Two way data binding](#q-two-way-data-binding)
+        - [Q. Floating point errors](#q-floating-point-errors)
+        - [Q. How to properly reverse a string?](#q-how-to-properly-reverse-a-string)
+        - [Q. Use Strict](#q-use-strict)
+        - [Q. UTF-8](#q-utf-8)
     - [Regular Expressions](#regular-expressions)
     - [Problem solving](#problem-solving)
     - [Random](#random)
@@ -2093,6 +2099,45 @@ The problem with the constructor function is that when you create multiple insta
 
 To resolve this, you can use the prototype so that all instances of a custom type can share the same methods.
 
+### Q. What does `new` do?
+
+When a function is called with the new keyword, the function will be used as a constructor. new will do the following things:
+
+Creates a blank, plain JavaScript object. For convenience, let's call it newInstance.
+
+Points newInstance's [[Prototype]] to the constructor function's prototype property, if the prototype is an Object. Otherwise, newInstance stays as a plain object with Object.prototype as its [[Prototype]].
+
+> Properties/objects added to the constructor function's prototype property are therefore accessible to all instances created from the constructor function.
+
+Executes the constructor function with the given arguments, binding newInstance as the this context (i.e. all references to this in the constructor function now refer to newInstance).
+
+If the constructor function returns a non-primitive, this return value becomes the result of the whole new expression. Otherwise, if the constructor function doesn't return anything or returns a primitive, newInstance is returned instead. (Normally constructors don't return a value, but they can choose to do so to override the normal object creation process.)
+
+**Demonstration**
+
+```javascript
+const myNew = (constructor, ...args) => {
+  let that = Object.create(constructor.prototype);
+
+  let obj = constructor.apply(that,args);
+
+  if(obj && typeof obj === 'object'){
+    return obj;
+  }else{
+    return that;
+  }
+}
+
+function Func(name,age){
+  this.name = name,
+  this.age = age
+}
+
+let objInstance = myNew(Func,'John',13);
+console.log(objInstance)
+```
+
+
 ### Q. Commonly used methods from the Object class
 
  In JavaScript, the Object class provides several static methods that can be used to perform operations on objects. Here are some commonly used methods from the Object class:
@@ -3488,6 +3533,210 @@ The response.ok property is a boolean that is true if the status code of the res
 When you make a request to an API endpoint using the Fetch API, the response you receive is indeed a Response object. The Response object contains information about the HTTP response, including the headers and status code, as well as methods to extract the response body in different formats.
 
 To handle JSON data, you typically use the response.json() method to parse the response body as JSON ie. convert json to javascript object.
+
+### Q. Two way data binding
+
+When an input is changed update the value, add a setter to the value which sets the inputs content. E.g this element:
+
+```html
+<input id="age">
+```
+
+And some js:
+
+```javascript
+var person = (function(el){
+ return {
+   set age(v){
+    el.value = v;
+   },
+   get age(){
+     return el.value;
+   }
+ };
+})(document.getElementById("age"));
+
+//So you can do:
+person.age = 15;
+```
+
+And the input will change. Changing the input changes person.age
+
+Another example
+
+```javascript
+// Property binding 
+
+var person = { 
+	set name(v) { 
+		document.getElementById('name').value = v; 
+	}, 
+	get name() { 
+		return document.getElementById('name').value; 
+	}, 
+	set age(v) { 
+		document.getElementById('age').value = v; 
+	}, 
+	get age() { 
+		return document.getElementById('age').value; 
+	}
+};
+
+// You can now set values as such
+person.name = 'Cesar'; 
+person.age = 12; // Event binding completes the two way
+function logToConsole(event) { 
+	console.log(event.target.value);
+}
+// You can set person.name or person.age in console as well.
+```
+
+```html
+<label for="name">Name: </label><input id="name" onkeyup="logToConsole(event)"> <label for="age">Age: </label><input id="age" onkeyup="logToConsole(event)">
+```
+
+### Q. Floating point errors
+
+In JavaScript, floating-point errors can occur due to the way numbers are represented in binary. Numbers are often approximated to the nearest value that can be represented in the floating-point format, which can lead to small inaccuracies. This is especially problematic when performing comparisons between floating-point numbers.  
+  
+JavaScript provides a constant called `Number.EPSILON` to help with this. `Number.EPSILON` is the smallest difference between two representable numbers in JavaScript (about `2.220446049250313e-16`). You can use it to determine if two floating-point numbers are "close enough" to be considered equal.  
+  
+**Common Use Case: Comparing Floating-Point Numbers**  
+  
+Instead of directly comparing two floating-point numbers (which may result in incorrect results due to precision errors), you can check if the difference between them is smaller than `EPSILON`.  
+  
+**Example:**  
+  
+```javascript  
+const epsilon = Number.EPSILON;  
+  
+function areApproximatelyEqual(a, b) {  
+return Math.abs(a - b) < epsilon;  
+}  
+  
+const num1 = 0.1 + 0.2;  
+const num2 = 0.3;  
+  
+console.log(areApproximatelyEqual(num1, num2)); // true  
+```  
+
+**Why `EPSILON` is Useful:**  
+  
+When performing calculations with floating-point numbers, even simple arithmetic (like `0.1 + 0.2`) can lead to small precision errors. Without using `EPSILON`, a comparison like `0.1 + 0.2 === 0.3` would return `false` due to such small errors. By using `EPSILON`, you can compare numbers safely by checking if their difference is negligible.  
+  
+**Example of Floating Point Error:**  
+
+```javascript  
+const num1 = 0.1 + 0.2; // Result is 0.30000000000000004  
+const num2 = 0.3;  
+  
+console.log(num1 === num2); // false, because of floating-point precision error  
+```  
+  
+**Correct Comparison Using `EPSILON`:**  
+
+```javascript  
+console.log(Math.abs(num1 - num2) < Number.EPSILON); // true  
+```  
+  
+**Larger Tolerances:**  
+
+If you need a larger tolerance (i.e., you're dealing with larger numbers or want more flexibility), you can multiply `EPSILON` by a scaling factor based on the magnitude of the numbers involved:  
+  
+```javascript  
+function areApproximatelyEqual(a, b, tolerance = 1e-10) {  
+return Math.abs(a - b) < tolerance;  
+}  
+  
+const largeNum1 = 1234567890.123456;  
+const largeNum2 = 1234567890.123457;  
+  
+console.log(areApproximatelyEqual(largeNum1, largeNum2)); // true, based on the tolerance  
+```
+
+### Q. How to properly reverse a string?
+
+When you reverse a string containing Unicode characters in JavaScript, you might encounter issues with surrogate pairs. This happens because JavaScript strings are internally represented as sequences of 16-bit values (UTF-16), and surrogate pairs are used to represent characters outside the Basic Multilingual Plane (BMP), which require more than one 16-bit unit.  
+  
+**Understanding Surrogate Pairs:**  
+  
+Surrogate pairs are two 16-bit code units used to represent characters that have a code point greater than `0xFFFF` (i.e., characters that are outside the BMP, such as emojis and many historic scripts). These are represented in the form of two JavaScript `charCode` values, each corresponding to part of the surrogate pair.  
+  
+For example, the emoji "😊" has a Unicode code point `0x1F60A`, which is represented as a surrogate pair in JavaScript:  
+- High surrogate: `0xD83D`  
+- Low surrogate: `0xDE0A`  
+  
+**Why Reversing a String Can Break Surrogate Pairs:**  
+  
+When you reverse a string, JavaScript treats it as a sequence of 16-bit units (characters), not as full Unicode code points. This means if the string contains a surrogate pair (which requires two 16-bit units), reversing the string may cause the pair to be broken.  
+  
+For example:  
+- Original string: `"😊abc"`  
+- Internally, this string could be represented as `['\uD83D', '\uDE0A', 'a', 'b', 'c']`.  
+  
+If you reverse it:  
+- Reversed array: `['c', 'b', 'a', '\uDE0A', '\uD83D']`.  
+  
+The reversed string would incorrectly separate the surrogate pair, causing the emoji to become an invalid character.  
+  
+**How to Handle Surrogate Pairs Correctly While Reversing:**  
+  
+To safely reverse a string with surrogate pairs, you need to handle the characters properly as code points, not individual 16-bit units. One way to do this is by using `Array.from()` which converts the string into an array of characters while correctly handling surrogate pairs, and then reversing it.  
+  
+Here's an example of how to safely reverse a string that includes surrogate pairs:  
+  
+```javascript  
+function reverseStringWithSurrogatePairs(str) {  
+// Convert the string to an array of Unicode code points (handles surrogate pairs)  
+const arr = Array.from(str);  
+  
+// Reverse the array and join it back into a string  
+return arr.reverse().join('');  
+}  
+  
+const input = "😊abc";  
+const reversed = reverseStringWithSurrogatePairs(input);  
+  
+console.log(reversed); // Output: "cba😊"  
+```  
+
+### Q. Use Strict
+
+`use strict` is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.
+
+Some of the key benefits of strict mode include:
+
+**Makes debugging easier.** Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions, alerting you sooner to problems in your code and directing you more quickly to their source.
+
+**Prevents accidental globals.** Without strict mode, assigning a value to an undeclared variable automatically creates a global variable with that name. This is one of the most common errors in JavaScript. In strict mode, attempting to do so throws an error.
+
+**Eliminates `this` coercion.** Without strict mode, a reference to a `this` value of null or undefined is automatically coerced to the global. This can cause many headfakes and pull-out-your-hair kind of bugs. In strict mode, referencing a a `this` value of null or undefined throws an error.
+
+**Disallows duplicate parameter values.** Strict mode throws an error when it detects a duplicate named argument for a function (e.g., `function foo(val1, val2, val1){}`), thereby catching what is almost certainly a bug in your code that you might otherwise have wasted lots of time tracking down.
+
+>Note: It used to be (in ECMAScript 5) that strict mode would disallow duplicate property names (e.g. `var object = {foo: "bar", foo: "baz"};`) but as of ECMAScript 2015 this is no longer the case.
+
+**Makes eval() safer.** There are some differences in the way `eval()` behaves in strict mode and in non-strict mode. Most significantly, in strict mode, variables and functions declared inside of an `eval()` statement are not created in the containing scope (they are created in the containing scope in non-strict mode, which can also be a common source of problems).
+
+**Throws error on invalid usage of `delete`.** The `delete` operator (used to remove properties from objects) cannot be used on non-configurable properties of the object. Non-strict code will fail silently when an attempt is made to delete a non-configurable property, whereas strict mode will throw an error in such a case.
+
+### Q. UTF-8
+UTF-8 stands for "Unicode Transformation Format - 8-bit". It is a character encoding standard used to represent text in computers, supporting all characters in the Unicode standard.
+
+**Key Features of UTF-8:**
+
+1. Variable Length Encoding -
+    - Uses 1 to 4 bytes to encode characters.
+    - ASCII characters (0–127) are encoded using a single byte, making it backward-compatible with ASCII.
+    - Non-ASCII characters, like emojis or symbols, use 2, 3, or 4 bytes.
+2. Universal Compatibility -
+    - Supports all languages and symbols, making it widely used for international text processing.
+3. Efficient Storage -
+    - Uses fewer bytes for common characters, reducing storage requirements for ASCII text.
+4. Self-Synchronizing -
+    - Can detect character boundaries easily, even in case of data corruption.
+5. Web Standard -
+    - Default encoding for web content (HTML5), ensuring broad compatibility across browsers and systems.
 
 # Regular Expressions
 
