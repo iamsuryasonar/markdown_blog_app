@@ -21,6 +21,7 @@ toc: |
     - [display vs visibility](#q-display-vs-visibility)
     - [DOM reflow?](#q-dom-reflow)
     - [Inline, block and inline-block?](#q-inline-block-and-inline-block)
+    - [CSS selectors](#q.css-selectors)
     - [Selector Specificity](#q.selector-specificity)
     - [What are the reasons to use preprocessor?](#q-what-are-the-reasons-to-use-preprocessor)
 ---
@@ -304,6 +305,148 @@ Reflow can be triggered by various changes in the DOM or CSS, such as:
   - Padding, margin, and border are respected on all sides.
   - Allows elements to sit next to each other, similar to inline, but with the ability to set dimensions and control layout, similar to block.
   - Commonly used for buttons, images, and other elements where precise sizing and layout control are needed while keeping them on the same line.
+
+### Q. CSS selectors
+
+CSS selectors are patterns used to select and style HTML elements. They define which elements a set of CSS rules will apply to. Here's an overview of different types of CSS selectors:
+
+**1. Basic Selectors**
+
+a. **Universal Selector (`*`)**
+
+- Matches all elements.
+
+`* {   margin: 0;   padding: 0; }`
+
+b. **Type Selector (Element Selector)**
+
+- Matches all elements of a specific type.
+
+`p {   font-size: 16px; }`
+
+c. **Class Selector (`.classname`)**
+
+- Matches elements with a specific class.
+
+`.button {   background-color: blue; }`
+
+d. **ID Selector (`#id`)**
+
+- Matches an element with a specific ID.
+
+`#header {   color: white; }`
+
+e. **Group Selector (`,`)**
+
+- Applies the same styles to multiple selectors.
+
+`h1, h2, h3 {   font-family: Arial, sans-serif; }`
+
+**2. Attribute Selectors**
+
+a. **Presence (`[attr]`)**
+
+- Matches elements with a specific attribute.
+
+`[required] {   border: 1px solid red; }`
+
+b. **Value (`[attr=value]`)**
+
+- Matches elements with a specific attribute value.
+
+`[input type="text"] {   width: 100%; }`
+
+c. **Partial Matching**
+
+- **Begins with (`^=`):**
+
+`[class^="btn"] {   padding: 10px; }`
+
+- **Ends with (`$=`):**
+
+`[href$=".pdf"] {   color: green; }`
+
+- **Contains (`*=`):**
+
+`[data-type*="menu"] {   font-weight: bold; }`
+
+**3. Combinators**
+
+a. **Descendant Selector ( )**
+
+- Matches elements that are descendants of another element.
+
+`div p {   color: gray; }`
+
+b. **Child Selector (`>`)**
+
+- Matches direct children of an element.
+
+`ul > li {   list-style: none; }`
+
+c. **Adjacent Sibling Selector (`+`)**
+
+- Matches the next sibling of an element.
+
+`h1 + p {   margin-top: 10px; }`
+
+d. **General Sibling Selector (`~`)**
+
+- Matches all siblings of an element.
+
+`h1 ~ p {   color: blue; }`
+
+**4. Pseudo-classes**
+
+a. **Dynamic Pseudo-classes**
+
+- **Hover (`:hover`):**
+
+`a:hover {   text-decoration: underline; }`
+
+- **Focus (`:focus`):**
+
+`input:focus {   border-color: blue; }`
+
+b. **Structural Pseudo-classes**
+
+- **First child (`:first-child`):**
+
+`p:first-child {   font-size: 20px; }`
+
+- **Nth child (`:nth-child(n)`):**
+
+`tr:nth-child(odd) {   background-color: #f2f2f2; }`
+
+**5. Pseudo-elements**
+
+- **Before (`::before`):**
+
+`h1::before {   content: "★";   color: gold; }`
+
+- **After (`::after`):**
+
+`h1::after {   content: "✓";   color: green; }`
+
+**6. Advanced Selectors**
+
+a. **Not Selector (`:not()`)**
+
+- Excludes certain elements.
+
+`div:not(.active) {   opacity: 0.5; }`
+
+b. **Is Selector (`:is()`)**
+
+- Simplifies writing complex selectors.
+
+`:is(h1, h2, h3) {   font-weight: bold; }`
+
+c. **Where Selector (`:where()`)**
+
+- Like `:is()` but with no specificity.
+
+`:where(header, footer) {   background-color: lightgray; }`
 
 ### Q. Selector Specificity
 
