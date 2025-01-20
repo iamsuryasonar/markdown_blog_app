@@ -21,9 +21,10 @@ toc: |
     - [display vs visibility](#q-display-vs-visibility)
     - [DOM reflow?](#q-dom-reflow)
     - [Inline, block and inline-block?](#q-inline-block-and-inline-block)
-    - [CSS selectors](#q.css-selectors)
-    - [Selector Specificity](#q.selector-specificity)
+    - [CSS selectors](#q-css-selectors)
+    - [Selector Specificity](#q-selector-specificity)
     - [What are the reasons to use preprocessor?](#q-what-are-the-reasons-to-use-preprocessor)
+    - [Units in CSS](#q-units-in-css)
 ---
 
 
@@ -463,3 +464,14 @@ When multiple rules apply to the same element, CSS uses **specificity** to deter
 
 ### Q. What are the reasons to use preprocessor?
 Allows you write css in high level with some special syntax (declaring variable, nested syntax, mathematical operations, etc.) and that is compiled to css. Preprocessor helps you to speed up develop, maintain, ensure best practices and also confirms concatenation, compression, etc.
+
+### Q. Units in CSS
+
+|Unit|Description|Relative To|Example|
+|---|---|---|---|
+|`em`|Relative to the parent element’s font size.|Parent element’s font size|`1.5em` = 1.5 times parent font size|
+|`rem`|Relative to the root element's font size (`<html>`)|Root element’s font size|`2rem` = 2 times root font size|
+|`px`|Fixed pixel value (absolute unit).|N/A|`16px` = fixed 16 pixels|
+|`%`|Relative to the parent element’s size (width/height).|Parent element’s width/height|`50%` = 50% of parent element’s width/height|
+|`vw`|Relative to the viewport width.|Viewport width|`50vw` = 50% of viewport width|
+|`vh`|Relative to the viewport height.|Viewport height|`100vh` = 100% of viewport height|
