@@ -21,7 +21,7 @@ toc: |
     - [display vs visibility](#q-display-vs-visibility)
     - [DOM reflow?](#q-dom-reflow)
     - [Inline, block and inline-block?](#q-inline-block-and-inline-block)
-    - [What is specificity? How do u calculate specificity?](#q-what-is-specificity-how-do-u-calculate-specificity)
+    - [Selector Specificity](#q.selector-specificity)
     - [What are the reasons to use preprocessor?](#q-what-are-the-reasons-to-use-preprocessor)
 ---
 
@@ -305,9 +305,18 @@ Reflow can be triggered by various changes in the DOM or CSS, such as:
   - Allows elements to sit next to each other, similar to inline, but with the ability to set dimensions and control layout, similar to block.
   - Commonly used for buttons, images, and other elements where precise sizing and layout control are needed while keeping them on the same line.
 
-### Q. What is specificity? How do u calculate specificity?
-Specificity is a process of determining which css rule will be applied to an element. It actually determines which rules will take precedence.
-inline style usually wins then id then class value (or pseudo-class or attribute selector), universal selector (*) has no specificity.
+### Q. Selector Specificity
+
+When multiple rules apply to the same element, CSS uses **specificity** to determine which rule takes precedence:
+
+1. Inline styles (highest specificity): `style="color: red;"`.
+2. ID selectors: `#id`.
+3. Class, attribute, and pseudo-class selectors: `.class`, `[attr=value]`, `:hover`.
+4. Type and pseudo-element selectors: `div`, `::before`.
+
+> If two selectors have equal specificity, the one that is declared later in the CSS will take precedence.
+> Specificity is a process of determining which css rule will be applied to an element. It actually determines which rules will take precedence. Inline style usually wins then id then class value (or pseudo-class or attribute selector), universal selector (*) has no specificity.
+
 
 ### Q. What are the reasons to use preprocessor?
 Allows you write css in high level with some special syntax (declaring variable, nested syntax, mathematical operations, etc.) and that is compiled to css. Preprocessor helps you to speed up develop, maintain, ensure best practices and also confirms concatenation, compression, etc.
