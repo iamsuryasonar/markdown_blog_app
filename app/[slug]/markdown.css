@@ -22,6 +22,15 @@
     opacity: 0.6;
 }
 
+.markdown h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    scroll-margin-top: 40px;
+}
+
 .markdown h1 {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -151,11 +160,11 @@
 }
 
 .sidebar {
-    padding: 20px 4px;
+    padding: 6px 4px;
 }
 
 .sidebar ul {
-    padding-left: 20px;
+    padding-left: 8px;
 }
 
 .sidebar li {
@@ -163,8 +172,8 @@
 }
 
 .sidebar a {
-    padding: 8px 0px;
-    color: #00FFCA;
+    padding: 4px 0px;
+    color: #feffffdd;
     cursor: pointer;
     /* text-decoration: underline; */
 }
