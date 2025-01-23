@@ -79,6 +79,7 @@ toc: |
         - [Q. Events in javascript?](#q-events-in-javascript)
         - [Q. Event handling?](#q-event-handling)
         - [Q. Event propagation - bubbling and capturing?](#q-event-propagation---bubbling-and-capturing)
+        - [Q. Event Delegation?](#q-event-delegation)
         - [Q. Custom events?](#q-custom-events)
         - [Q. Debouncing and throttling?](#q-debouncing-and-throttling)
         - [Q. Implement debouncing?](#q-implement-debouncing)
@@ -2785,6 +2786,27 @@ document.getElementById('outer').addEventListener('click', function() {
 </html>
 ```
 
+### Q. Event Delegation?
+Event Delegation is a technique in JavaScript where you add a single event listener to a parent element to manage events for its child elements. Instead of adding event listeners to each child element, you use the parent to "delegate" the event handling.
+
+This technique works because of event bubbling, where an event propagates (bubbles up) from the target element to its ancestors.
+
+**How Event Delegation Works**
+- Add an event listener to a parent element.
+- Use the event.target property to identify which child element triggered the event.
+- Perform actions based on the target.
+
+**Why Use Event Delegation?**
+- Improved Performance:
+Reduces memory usage by adding fewer event listeners.
+Useful when dealing with a large number of child elements or dynamically created elements.
+
+- Handles Dynamic Content:
+Event delegation works for dynamically added child elements because the parent remains the event listener.
+
+- Cleaner Code:
+Centralizes event handling, making the code more maintainable.
+
 ### Q. Custom events?
 Implementing custom events in JavaScript allows you to create and handle your own events beyond the built-in browser events like clicks and form submissions. Custom events are useful for creating modular and decoupled code. Here’s how you can implement and use custom events in JavaScript:
 
@@ -3467,7 +3489,11 @@ Hence it is proved that let is hoisted and the same goes for const.
 
 ### Q. Closure?
 
- A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+Closure means a function remembering its outer lexical environment even after the outer environment is executed.
+
+Or
+
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 Or
 
