@@ -12,6 +12,7 @@ toc: |
     - [Ways to center a div?](#q-ways-to-center-a-div)
     - [Media queries?](#q-media-queries)
     - [CSS Box model?](#q-css-box-model)
+    - [Box Sizing in CSS](#q-box-sizing-in-css)
     - [Position?](#q-position)
     - [flexbox?](#q-flexbox)
     - [grid?](#q-grid)
@@ -179,6 +180,20 @@ Total element height = height + (top padding) + (bottom padding) + (top border) 
 
 Understanding the CSS box model is essential for designing and laying out web pages effectively. By properly managing the content, padding, border, and margin properties of elements, you can create visually appealing and well-structured layouts that provide a consistent and intuitive user experience.
 
+### Box Sizing in CSS  
+Box sizing determines how the browser calculates the size of an element, including its width and height, based on the box model. It controls whether padding and border are included in the total dimensions or are added outside of the specified width and height.
+
+**Key Values for box-sizing**
+
+- content-box (default)
+
+The width and height of the element include only the content.
+Padding and border are added outside the content dimensions, increasing the total size of the element.
+
+- border-box
+
+The width and height of the element include padding and border.
+The content size is reduced to fit within the specified dimensions after accounting for padding and border.
 
 ### Q. Position?
 

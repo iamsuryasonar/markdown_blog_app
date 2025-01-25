@@ -17,6 +17,7 @@ toc: |
       - [Q. Phases of react.](#q-phases-of-react)
       - [Q. working of dom in react (reconciliation in react)](#q-working-of-dom-in-react-reconciliation-in-react)
       - [Q. React fiber?](#q-react-fiber)
+      - [Q. What is Fiber tree and how is it different from stack based reconciliation?](#q-what-is-fiber-tree-and-how-is-it-different-from-stack-based-reconciliation)
       - [Q. ReactDOM.render()?](#q-reactdomrender)
       - [Q. Components?](#q-components)
       - [Q. Stateful and Stateless component?](#q-stateful-and-stateless-component)
@@ -271,6 +272,23 @@ Improved Support for Asynchronous Rendering: Fiber facilitates the ability to pa
 While React Fiber introduced significant changes under the hood, it did not alter the public API of React, meaning that developers can continue using React as they did before. The primary purpose of React Fiber is to improve the performance and responsiveness of React applications, especially for complex UIs and heavy workloads, without requiring developers to rewrite their existing code.
 
 The introduction of React Fiber represents React's commitment to providing a more robust and efficient framework for building modern web applications, while maintaining the simplicity and declarative nature that has made React popular among developers.
+
+**How Does React Fiber Work?**
+
+React Fiber has two main phases:
+
+- Render Phase (Reconciliation):
+    React determines what changes need to be made to the UI by comparing the current and new Virtual DOM. This process can be paused and resumed.
+- Commit Phase:
+    Once React determines the necessary updates, it applies them to the DOM. This phase is synchronous and cannot be interrupted.
+
+### Q. What is Fiber tree and how is it different from stack based reconciliation?
+
+React Fiber introduced a fiber tree that is significantly different from the stack-based reconciliation algorithm used in older versions of React.
+
+ - Fiber Reconciliation (React 16+) uses a fiber tree, which is a linked list-like structure. Each node (fiber) represents a React component and contains pointers to its parent, first child and next sibling. This structure allows React to pause, resume, or abort rendering tasks. React can pause work on low-priority tasks (like updating non-visible components) to handle high-priority tasks (like user input or animations). This enables features like time slicing.
+
+ -  Stack Reconciliation (Pre-React 16) used the call stack to traverse the Virtual DOM tree. Once rendering began, it couldn't pause until the entire tree was processed, leading to potential performance issues for large or deeply nested trees. The rendering process was synchronous and could not be interrupted. For large trees, this could lead to noticeable frame drops or frozen UIs.
 
 ### Q. ReactDOM.render()?
 
@@ -748,8 +766,6 @@ const Profile = memo(function Profile({ person }) {
  Hooks are functions that let you “hook into” React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes. 
 
 Hooks are JavaScript functions, but they impose two additional rules:
-
-
 
 * Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
 * Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions. (There is just one other valid place to call Hooks — your own custom Hooks.)

@@ -13,6 +13,7 @@ toc: |
         - [Q. What is webpack?](#q-what-is-webpack)
         - [Q. Tree shaking?](#q-tree-shaking)
         - [Q. What is Babel?](#q-what-is-babel)
+        - [Q. Event Loop Tick?](#q-event-loop-tick)
         - [Q. Scope?](#q-scope)
         - [Q. Module Scope](#q-module-scope)
         - [Q. Scope chaining or lexical scoping?](#q-scope-chaining-or-lexical-scoping)
@@ -157,6 +158,15 @@ It is done by tools like webpack.
  Babel is a widely used JavaScript compiler that allows developers to write code in the latest version of JavaScript (ES6/ES7/ESNext) and convert it into backward-compatible versions that can run in older environments. It enables developers to use modern JavaScript features and syntax while ensuring compatibility with older browsers and platforms.
 
 JSX should not be implemented directly by browsers, but instead requires a compiler to transform it into ECMAScript. This is where Babel comes in. Babel acts as this compiler allowing us to leverage all the benefits of JSX while building React components.
+
+### Q. Event Loop Tick?
+An event loop tick refers to a single iteration of the event loop in JavaScript. The event loop is a mechanism that handles the execution of code, collects and processes events, and executes queued tasks in a specific order.
+
+Each tick of the event loop represents a complete cycle where the following happens:
+
+- The event loop checks the call stack to see if there's any code to execute.
+- If the call stack is empty, the event loop processes tasks from the microtask queue (Contains promises (.then, catch, finally) and MutationObserver callbacks) first, followed by the macrotask queue (Contains tasks like setTimeout, setInterval, setImmediate (Node.js), and I/O events.).
+- After processing all eligible tasks, the browser may update the UI (if necessary) before moving to the next tick.
 
 ### Q. Scope?
 
@@ -1174,8 +1184,6 @@ This simplified implementation demonstrates the basic mechanics of Promise.all b
 
 ### Q. How is an asynchronous operation handled?
 
-
-
 1. An asynchronous operation is initiated, and its callback is registered.
 2. The operation is handed off to the browser or Node.js runtime environment, allowing the rest of the code to continue executing.
 3. When the asynchronous operation completes, its callback is placed in the callback queue.
@@ -1797,7 +1805,7 @@ numbers2.forEach((num) => console.log(num * 2)); // logs 2, 4, 6, 8, 10
 
 ### Q. Modules?
 
- Modules in JavaScript are a way to organise and encapsulate code into separate files, allowing for better code organisation, reusability, and maintainability. Modules enable you to split your code into smaller, more manageable units, each with its own scope, dependencies, and exports.
+Modules in JavaScript are a way to organise and encapsulate code into separate files, allowing for better code organisation, reusability, and maintainability. Modules enable you to split your code into smaller, more manageable units, each with its own scope, dependencies, and exports.
 
 The import and export statements are used to facilitate this communication.
 
@@ -1837,6 +1845,18 @@ Default Import: You can import the default export from a module and give it a lo
 import myName from './module.js';
 console.log(myName); // Output: John
 ```
+
+| Feature                 | ES6 Modules                                         | CommonJS Modules                             |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------|
+| **Export Syntax**        | `export`, `export default`                         | `module.exports`                              |
+| **Import Syntax**        | `import { x } from 'file';`                        | `require('file')`                             |
+| **Asynchronous/Synchronous** | Asynchronous: Static imports are resolved asynchronously during the module loading phase, allowing non-blocking execution. Dynamic imports (`import()`) support runtime loading. | Synchronous: `require` is executed at runtime, blocking execution until the module is fully loaded. |
+| **Top-Level Imports**    | Static only                                         | Allowed inside functions or conditionally.    |
+| **Lazy Loading**         | Supported via `import()`                           | Not natively supported (requires workarounds). |
+| **Tooling Support**      | Optimized for tree-shaking and static analysis     | Less efficient for tree-shaking.              |
+| **Environment**          | Supported in browsers and Node.js                  | Primarily used in Node.js.                    |
+| **Usage**                | Modern standard for modules                        | Legacy module system in Node.js.              |
+
 
 ### Q. .js, .cjs, .mjs what is the difference?
  CJS, MJS, and .JS are file extensions used to denote different types of JavaScript files. Here's the difference between them:
