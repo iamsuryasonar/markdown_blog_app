@@ -18,6 +18,7 @@ toc: |
         - [Q. Module Scope](#q-module-scope)
         - [Q. Scope chaining or lexical scoping?](#q-scope-chaining-or-lexical-scoping)
         - [Q. Difference between Var, Let and Const?](#q-difference-between-var-let-and-const)
+        - [Q. Temporal Dead Zone](#q-temporal-dead-zone)
         - [Q. undefined vs null](#q-undefined-vs-null)
         - [Q. Template literals](#q-template-literals)
         - [Q. Object.is()](#q-objectis)
@@ -405,7 +406,21 @@ Hence it is proved that let is hoisted and the same goes for const.
 
 **If it is hoisted, why isn't the value of let variable undefined?**
 
-Because it is hoisted in separate memory space and could only be accessed when initialised with a value. Till the variable is initialised from the time of being  declared it is called to be in a temporal dead zone.
+Variables declared with let are hoisted to a separate memory space, but they cannot be accessed until they are declared or initialized with a value. The period between the start of the execution context to the point where the variable is declared/initialized is called the **Temporal Dead Zone (TDZ)**. During this time, any attempt to access the variable results in a ReferenceError.
+
+### Q.Temporal Dead Zone
+The Temporal Dead Zone (TDZ) is the period between the hoisting of a variable and the execution of its declaration where the variable exists in memory but cannot be accessed.
+During this time, any attempt to access the variable results in a ReferenceError.
+
+**Key Characteristics of TDZ:**
+- Applies to let and const (not var).
+- Starts at the beginning of the execution context (when the variable is hoisted).
+- Ends when the execution reaches the declaration of the variable.
+- Accessing the variable in the TDZ results in a ReferenceError.
+
+**Why Does the TDZ Exist?**
+The TDZ helps prevent common bugs caused by accessing variables before they are properly initialized.
+For example, without TDZ, accessing a variable before declaration could return undefined, leading to unexpected behavior in programs.
 
 ### Q. undefined vs null
 
